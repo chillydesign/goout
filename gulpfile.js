@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var minify = require('gulp-minify');
+//var browserSync = require('browser-sync');
 
 
 gulp.task('heya', function() {
@@ -39,8 +40,8 @@ gulp.task('compress', function() {
 
 
 
-
 // Run all Gulp tasks and serve application
 gulp.task('default', ['heya', 'sass', 'compress'], function() {
   gulp.watch('scss/**/*.scss', ['sass']);
+  gulp.watch('js/**/*.js',  ['compress'] );
 });
