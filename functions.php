@@ -119,7 +119,7 @@ function webfactor_styles()
     wp_register_style('reset', get_template_directory_uri() . '/reset.css', array(), wf_version(), 'all');
     wp_enqueue_style('reset'); // Enqueue it!
 
-    wp_register_style('wf_style', get_template_directory_uri() . '/style.css', array(), wf_version(),  'all');
+    wp_register_style('wf_style', get_template_directory_uri() . '/css/global.css', array(), wf_version(),  'all');
     wp_enqueue_style('wf_style'); // Enqueue it!
 }
 

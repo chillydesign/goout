@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-	
+
 		<!-- section -->
 		<section>
 
@@ -12,7 +12,7 @@
 
 		</section>
 		<!-- /section -->
-	
+
 
 <?php get_sidebar(); ?>
 
