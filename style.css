@@ -1,0 +1,245 @@
+/*
+	Theme Name: Webfactor Blank Theme
+	Theme URI: https://webfactor.ch
+	Description: Webfactor Blank Theme
+	Version: 0.0.1
+	Author: Webfactor
+	Author URI: https://webfactor.ch
+	Tags: Blank, HTML5, CSS3
+
+	License: MIT
+	License URI: http://opensource.org/licenses/mit-license.php
+*/
+
+
+body {
+	font:normal 62.5% 'Open Sans', 'Lato', arial;
+	line-height: 150%;
+	background: white;
+	color: #222;
+}
+
+/*TYPOGRAPHY*/
+
+h1 {font-size: 3.9em; padding:50px 0 50px;font-weight: normal;}
+h2 {font-size: 2.9em; padding: 0 0 20px;font-weight: bold}
+h3 {font-size: 2.21em;padding:0 0 20px;}
+h4 {font-size: 1.69em;padding:0 0 10px;font-weight: bold;text-transform: uppercase}
+
+p { font-size: 1.5em;padding:0 0 30px;line-height: 160%;  }
+li { font-size: 1.5em;padding:0 0 5px;line-height: 160%  }
+
+section p, section li {font-size:2em;}
+
+
+li li, li p {font-size: inherit;}
+ul ul , ul ol, ol ol {font-size: inherit}
+
+
+@media (min-width: 768px){
+	h1 {font-size: 5em;}
+	h2 {font-size: 3.1em}
+	h3 {font-size: 2.41em}
+	h4 {font-size: 1.79em}
+
+}
+
+
+
+
+
+
+
+a {transition: all 0.3s}
+a:link, a:active, a:visited {color: #b08453}
+a:hover {color:#f39e41}
+
+strong, b {font-weight: bold;}
+em, i {font-style: italic}
+
+table {
+	width: 100%;
+	margin:0 0 40px;
+}
+
+th, td {font-size: 1.5em;padding:10px;border:0}
+section td {font-size: 2em;line-height: 160%;padding:0 0 10px;}
+
+blockquote {
+	padding:20px 0 20px 40px;
+	border-left:4px solid #888;
+	margin:40px 20px 40px 40px;
+	font-size: 140%;
+	font-style: italic;
+	max-width: 700px;
+}
+blockquote p:last-child {padding-bottom: 0}
+
+input {padding: 10px;width: 100%;font-size: 1.5em;appearance:none;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*HEADER*/
+header {
+  position: relative;
+	background-color: #222;
+	color: #ddd;
+	margin:0 0 20px;
+
+
+}
+
+
+header nav {
+  margin: 0;
+  z-index: 5;
+  position: relative;
+
+}
+
+header li {
+	font-size: 1em;
+	display: block;
+}
+
+header a {
+	padding:15px;
+	font-size: 1.4em;
+	display: block;
+	transition: all 0.3s
+
+}
+
+header a:link, header a:visited, header a:hover, header a:active{
+	color: white;
+}
+
+
+a.branding {
+	text-align: center;
+}
+
+
+
+#menu_button {
+	 text-indent: 40px;
+    background: url(img/menu.svg) no-repeat center center;
+    background-size: 30px;
+    height: 30px;
+    width: 30px;
+    position: absolute;
+		text-indent: -9999px;
+    z-index: 301;
+    top: 10px;
+    left: 10px;
+    margin: 0;
+    font-size: 1.8em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    line-height: 1.4em;
+    font-weight: bold;
+}
+
+
+#navigation_menu {
+	position: fixed;
+	z-index: 200;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	height: 100%;
+	width:250px;
+	background: rgba(0,0,0,0.8);
+	padding: 15px;
+	-webkit-transform: translateX(-300px);
+	-moz-transform: translateX(-300px);
+	-ms-transform: translateX(-300px);
+	-o-transform: translateX(-300px);
+	transform: translateX(-300px);
+	-webkit-transition: all 0.6s  cubic-bezier(0.63, 0, 0.18, 1);
+	-moz-transition: all 0.6s  cubic-bezier(0.63, 0, 0.18, 1);
+	-ms-transition: all 0.6s  cubic-bezier(0.63, 0, 0.18, 1);
+	-o-transition: all 0.6s  cubic-bezier(0.63, 0, 0.18, 1);
+	transition: all 0.6s  cubic-bezier(0.63, 0, 0.18, 1);
+	overflow:scroll;
+}
+
+#navigation_menu.menu_visible {
+	-webkit-transform: translateX(0);
+	-moz-transform: translateX(0);
+	-ms-transform: translateX(0);
+	-o-transform: translateX(0);
+	transform: translateX(0);
+	box-shadow: 0 0 30px rgba(0,0,0,0.5)
+}
+#navigation_menu ul {
+	margin-top: 80px
+}
+
+#navigation_menu a {
+
+	text-decoration: none;
+	display: block;
+	padding:10px;
+	color: white;
+
+}
+#navigation_menu a:hover {
+
+}
+
+#navigation_menu li {
+
+	margin-top: 0;
+	margin-right: 15px;
+	position: relative;
+
+}
+
+@media (min-width:768px){
+	#menu_button {display: none}
+	#navigation_menu {padding:0;bottom:auto;height:auto;text-align:right;width:100%;background: none;-webkit-transform:none; -moz-transform:none; -ms-transform:none; -o-transform:none; transform:none;position: static}
+	#navigation_menu ul {margin: 0}
+	#navigation_menu li {display: inline-block;}
+	#navigation_menu  a {padding:15px 15px;display: inline-block;color: inherit;}
+	a.branding {text-align: left;}
+
+}
+
+
+
+
+
+
+
+
+
+
+/*FOOTER*/
+footer {
+	background:#222;
+	color: #ddd;
+	padding:20px 0;
+	margin:20px 0 0;
+}
+
+footer p {
+	padding:0
+}
+footer a {
+	color: white;
+}
