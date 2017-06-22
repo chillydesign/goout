@@ -5,6 +5,8 @@
 		'use strict';
 
 
+		console.log('scripts working !');
+
 
 				var $navigation_menu = $('#navigation_menu');
 				var $menu_button = $('#menu_button');
