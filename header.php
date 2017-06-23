@@ -27,7 +27,9 @@
 						</div>
 						<div class="col-sm-9">
 							<nav id="navigation_menu" role="navigation">
-								 <?php chilly_nav('primary-navigation'); ?>
+								 <ul>
+									 <?php chilly_nav('primary-navigation'); ?>
+								 </ul>
 							</nav>
 						</div>
 

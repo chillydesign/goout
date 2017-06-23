@@ -116,8 +116,7 @@ function webfactor_conditional_scripts()
 // Load HTML5 Blank styles
 function webfactor_styles()
 {
-    wp_register_style('reset', get_template_directory_uri() . '/reset.css', array(), wf_version(), 'all');
-    wp_enqueue_style('reset'); // Enqueue it!
+
 
     wp_register_style('wf_style', get_template_directory_uri() . '/css/global.css', array(), wf_version(),  'all');
     wp_enqueue_style('wf_style'); // Enqueue it!
@@ -127,7 +126,7 @@ function webfactor_styles()
 function register_html5_menu()
 {
     register_nav_menus(array( // Using array to specify more menus if needed
-        'header-menu' => __('Header Menu', 'webfactor'), // Main Navigation
+        'primary-navigation' => __('Primary Menu', 'webfactor'), // Main Navigation
         'sidebar-menu' => __('Sidebar Menu', 'webfactor'), // Sidebar Navigation
         'extra-menu' => __('Extra Menu', 'webfactor') // Extra Navigation if needed (duplicate as many as you need!)
     ));
