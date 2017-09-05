@@ -1,0 +1,38 @@
+
+.slick-slider {
+
+    position: relative;
+    margin:0;
+    padding: 0;
+
+    .slick-slide:focus {
+        outline:0;
+    }
+
+    .slick-arrow {
+
+       appearance:none;
+       background: url('../img/chevron-l.svg') no-repeat center center transparentize($light_grey,0.5);
+       height: 100%;
+       width:30px;
+       border: 0;
+       text-indent: -9999px;
+       position: absolute;
+       top:0;
+       left: 5px;
+       z-index: 2;
+       cursor: pointer;
+        outline: 0;
+
+       &.slick-next {
+           background-image: url('../img/chevron-r.svg');
+           left: auto;
+           right: 5px;
+       }
+       &.slick-prev {
+
+       }
+
+    }
+
+}

@@ -2,7 +2,7 @@
 			<footer class="footer" role="contentinfo">
 
 				<p class="container">
-					&copy; <?php echo date('Y'); ?>  <?php bloginfo('name'); ?>. Website by <a href="//webfactor.ch" title="Webfactor">Webfactor</a>.
+					&copy; <?php echo date('Y'); ?>  Go Out! Magazine Culturel Ggenevois – arts, culture &amp; lifestyle à Genève et en Suisse. Website by <a href="//webfactor.ch" title="Webfactor">Webfactor</a>.
 				</p>
 
 			</footer>

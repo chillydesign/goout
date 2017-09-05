@@ -2,15 +2,18 @@
 
 /*FOOTER*/
 footer {
-	background:#222;
-	color: #ddd;
+
+    font-family: $sans_font_stack;
 	padding:20px 0;
 	margin:20px 0 0;
+    text-align: center;
 }
 
 footer p {
-	padding:0
+	padding:0;
+    text-transform: uppercase;
+    font-size: 1.2em;
 }
 footer a {
-	color: white;
+
 }

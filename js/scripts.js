@@ -1,3 +1,7 @@
+import slick from '../node_modules/slick-carousel/slick/slick.min.js';
+
+
+
 (function ($, root, undefined) {
 
 	$(function () {
@@ -5,7 +9,14 @@
 		'use strict';
 
 
-		console.log('scripts working !');
+        $(".post_slider").slick({
+          dots: false,
+          infinite: true,
+          speed: 300,
+          slidesToShow: 1,
+          centerMode: false,
+          variableWidth: true
+        });
 
 
 				var $navigation_menu = $('#navigation_menu');

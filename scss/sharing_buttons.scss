@@ -1,0 +1,47 @@
+$share_height: 36px;
+.share_buttons {
+    position: relative;
+    bottom:10px;
+
+    .share_button {
+        display: inline-block;
+        height: $share_height;
+        width: $share_height;
+        border-radius: 50%;
+        border: 0;
+
+        background-color: darken($light_grey,20);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: #{$share_height * 0.6};
+
+        &.share_button_facebook {
+            background-image:url('../img/facebook-letter-logo.svg');
+        }
+        &.share_button_twitter  {
+            background-image:url('../img/twitter-logo.svg');
+        }
+        &.share_button_instagram {
+            background-image:url('../img/instagram.svg');
+        }
+        &.share_button_google {
+            background-image:url('../img/google.svg');
+        }
+        &.share_button_pinterest {
+            background-image:url('../img/pinterest.svg');
+        }
+
+        &:hover {
+            background-color: darken($light_grey, 10);
+        }
+    }
+
+}
+@media (min-width: 768px) {
+    .share_buttons {
+        text-align: right;
+        .share_button {
+            background-color: $light_grey;
+        }
+    }
+}
