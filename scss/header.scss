@@ -4,9 +4,8 @@
 
 /*HEADER*/
 header {
-  position: relative;
-	background-color: #222;
-	color: #ddd;
+   position: relative;
+	background-color:white;
 	margin:0 0 20px;
 
 
@@ -34,7 +33,7 @@ header a {
 }
 
 header a:link, header a:visited, header a:hover, header a:active{
-	color: white;
+
 }
 
 
@@ -75,24 +74,12 @@ a.branding {
 	width:250px;
 	background: rgba(0,0,0,0.8);
 	padding: 15px;
-	-webkit-transform: translateX(-300px);
-	-moz-transform: translateX(-300px);
-	-ms-transform: translateX(-300px);
-	-o-transform: translateX(-300px);
 	transform: translateX(-300px);
-	-webkit-transition: all 0.6s  cubic-bezier(0.63, 0, 0.18, 1);
-	-moz-transition: all 0.6s  cubic-bezier(0.63, 0, 0.18, 1);
-	-ms-transition: all 0.6s  cubic-bezier(0.63, 0, 0.18, 1);
-	-o-transition: all 0.6s  cubic-bezier(0.63, 0, 0.18, 1);
 	transition: all 0.6s  cubic-bezier(0.63, 0, 0.18, 1);
 	overflow:scroll;
 }
 
 #navigation_menu.menu_visible {
-	-webkit-transform: translateX(0);
-	-moz-transform: translateX(0);
-	-ms-transform: translateX(0);
-	-o-transform: translateX(0);
 	transform: translateX(0);
 	box-shadow: 0 0 30px rgba(0,0,0,0.5)
 }
@@ -105,7 +92,7 @@ a.branding {
 	text-decoration: none;
 	display: block;
 	padding:10px;
-	color: white;
+
 
 }
 #navigation_menu a:hover {
