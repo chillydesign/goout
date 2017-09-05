@@ -2,7 +2,7 @@
 .slick-slider {
 
     position: relative;
-    margin:0;
+    margin:0 0 10px;
     padding: 0;
 
     .slick-slide:focus {
@@ -11,28 +11,62 @@
 
     .slick-arrow {
 
-       appearance:none;
-       background: url('../img/chevron-l.svg') no-repeat center center transparentize($light_grey,0.5);
-       height: 100%;
-       width:30px;
-       border: 0;
-       text-indent: -9999px;
-       position: absolute;
-       top:0;
-       left: 5px;
-       z-index: 2;
-       cursor: pointer;
+        appearance:none;
+        background: url('../img/chevron-l.svg') no-repeat center center transparentize($light_grey,0.5);
+        height: 100%;
+        width:30px;
+        border: 0;
+        text-indent: -9999px;
+        position: absolute;
+        top:0;
+        left: 0;
+        z-index: 2;
+        cursor: pointer;
         outline: 0;
 
-       &.slick-next {
-           background-image: url('../img/chevron-r.svg');
-           left: auto;
-           right: 5px;
-       }
-       &.slick-prev {
+        &.slick-next {
+            background-image: url('../img/chevron-r.svg');
+            left: auto;
+            right: 0;
+        }
+        &.slick-prev {
 
-       }
+        }
 
     }
 
+
+    .slick-dots {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        position: absolute;
+        left: 0;
+        right: 0;
+        width: 100%;
+
+        li {
+            padding: 0;
+            display: inline-block;
+            button {
+                appearance:none;
+                height: 5px;
+                width: 5px;
+                border-radius: 50%;
+                margin:0 5px;
+                background: $medium_grey;
+                text-indent: -9999px;
+                padding: 0;
+                cursor: pointer;
+                border: 0;
+            }
+
+            &.slick-active {
+                button {
+                        background: darken($medium_grey,20);
+                }
+            }
+        }
+    }
 }

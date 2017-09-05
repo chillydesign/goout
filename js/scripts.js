@@ -18,6 +18,12 @@ import slick from '../node_modules/slick-carousel/slick/slick.min.js';
           variableWidth: true
         });
 
+        $('.image_slider').slick({
+            dots: true,
+            infinite: true,
+            centerMode: false
+        });
+
 
 				var $navigation_menu = $('#navigation_menu');
 				var $menu_button = $('#menu_button');
