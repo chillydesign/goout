@@ -2,7 +2,7 @@
     height: 400px;
     @extend .background_image;
     position: relative;
-    background-color: $light_grey;
+
 }
 
 
@@ -25,6 +25,12 @@
 
         a {
             border:0;
+        }
+
+        p.category {
+            border:0;
+            padding: 0;
+
         }
 
     }
@@ -78,6 +84,9 @@ p.category {
     text-transform: uppercase;
     padding: 0 0 10px;
     position: relative;
+    border-top:1px solid $brand_color;
+    display: inline-block;
+    color: $brand_color;
     a {
         border: 0;
     }

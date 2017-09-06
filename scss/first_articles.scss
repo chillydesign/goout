@@ -1,0 +1,43 @@
+
+$first_image_height: 350px;
+.first_articles_slider {
+    .first_article {
+        text-align: center;
+
+        h2 {
+            font-size: 7em;
+            a {
+                color: inherit;
+                border: 0;
+            }
+        }
+
+
+        .latest_image {
+            @extend .background_image;
+            height: $first_image_height;
+            margin:0 0 20px;
+            border: 0;
+            display: inline-block;
+        }
+
+    }
+
+    .slick-dots {
+        bottom:auto;
+        top: #{$first_image_height - 30px};
+    }
+}
+
+
+@media (min-width: 768px) {
+    .first_articles_slider {
+        .slick-dots {
+            width: 50%;
+            bottom: 30px;
+            top:auto;
+        }
+
+    }
+
+}

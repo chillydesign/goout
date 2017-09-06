@@ -61,9 +61,7 @@
                         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
                             <?php $image = ( has_post_thumbnail()) ? thumbnail_of_post_url(get_the_ID(),  'small') : ''; ?>
                             <?php $category = get_the_category( ); ?>
-                            <?php if($image): ?>
                                 <img src="<?php echo $image; ?>" alt="" />
-                            <?php endif; ?>
                             <?php if ( sizeof($category) > 0) : ?>
                                 <p class="category"><?php echo $category[0]->cat_name; ?></p>
                             <?php endif; ?>

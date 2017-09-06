@@ -1,0 +1,59 @@
+.latest_articles {
+
+    .latest_article {
+        display: inline-block;
+        padding: 0;
+        height: 530px;
+        margin: 0 0 20px;
+        overflow: hidden;
+        padding:0 20px 0 0;
+
+        .latest_image {
+            @extend .background_image;
+            height: 340px;
+            margin:0 0 20px;
+            border: 0;
+
+
+
+        }
+        .latest_text {
+
+            margin:0 0 20px;
+
+            h2 {
+                padding: 0 0 10px ;
+
+                a {
+                    color: inherit;
+                    border:0;
+                }
+            }
+
+            p {
+                font-size: 1.4em;
+            }
+
+        }
+
+
+
+
+    }
+
+}
+
+
+@media (min-width: 768px) {
+    .latest_article {
+        float:left;
+        width: 33%;
+        margin:0 0 20px 0;
+
+        &.latest_article_1 {
+            width:67%
+        }
+
+    }
+
+}
