@@ -26,19 +26,29 @@ import slick from '../node_modules/slick-carousel/slick/slick.min.js';
 
 
 				var $navigation_menu = $('#navigation_menu');
-				var $menu_button = $('#menu_button');
+				var $menu_buttons = $('.menu_button');
+				var $nav_overlay = $('#nav_overlay');
 
-				$menu_button.on('click', function(){
+				$menu_buttons.on('click', function(e){
+
+                    e.preventDefault();
 
 					$navigation_menu.toggleClass('menu_visible');
+					$nav_overlay.toggleClass('menu_visible');
 
 				});
+
+                $nav_overlay.on('click', function(){
+                    $navigation_menu.removeClass('menu_visible');
+                    $nav_overlay.removeClass('menu_visible');
+                })
 
 				// if press escape key, hide menu
 				$(document).on('keydown', function(e){
 
 					if(e.keyCode == 27 ){
 						$navigation_menu.removeClass('menu_visible');
+						$nav_overlay.removeClass('menu_visible');
 
 				 		$('.search_box').removeClass('visible');
 					}

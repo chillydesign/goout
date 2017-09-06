@@ -14,3 +14,11 @@
     background-position: center center;
     background-size: cover;
 }
+
+
+@keyframes fadeIn {
+
+    from { opacity: 0}
+    to { opacity: 1}
+
+}
