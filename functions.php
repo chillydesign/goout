@@ -564,6 +564,29 @@ function thumbnail_of_post_url( $post_id,  $size='large'  ) {
 
 
 
+function goout_posts_slider($posts) {
+    // turn a list of posts into a slider
+    $str = '';
+    $str .= '<ul class="post_slider" >';
+          while($posts->have_posts()) : $posts->the_post();
+            $str .= '<li>';
+                $str .= '<a href="' . get_the_permalink() .'" title="' . get_the_title() .'">';
+                     $image = ( has_post_thumbnail()) ? thumbnail_of_post_url(get_the_ID(),  'small') : '';
+                     $category = get_the_category( );
+                    $str .= '<img src="' . $image . '" alt="" />';
+                     if ( sizeof($category) > 0) :
+                        $str .= '<p class="category">' . $category[0]->cat_name . '</p>';
+                     endif;
+                    $str .= '<h3>' . get_the_title() . '</h3>';
+                    $str .= '<p>' . get_the_excerpt() . '</p>';
+                $str .= '</a>';
+            $str .= '</li>';
+          endwhile;
+    $str .= '</ul>';
+
+    echo $str;
+}
+
 
 
 
