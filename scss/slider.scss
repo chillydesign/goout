@@ -12,7 +12,8 @@
     .slick-arrow {
 
         appearance:none;
-        background: url('../img/chevron-l.svg') no-repeat center center transparentize($light_grey,0.5);
+        background: url('../img/chevron-l.svg') no-repeat center center;
+        // background-color:  transparentize($light_grey,0.5);
         height: 100%;
         width:30px;
         border: 0;

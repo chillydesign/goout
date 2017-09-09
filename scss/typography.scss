@@ -7,8 +7,9 @@ h1,h2,h3,h4,h5,h6  {
 
 h1 {font-size: 4em; padding:50px 0 50px;font-weight: bold;}
 h2 {font-size: 3.3em; padding: 0 0 20px;font-weight: bold}
-h3 {font-size: 2.7em;padding:0 0 20px;font-weight: bold}
-h4 {font-size: 1.69em;padding:0 0 10px;font-weight: bold;text-transform: uppercase}
+h3 {font-size: 2.7em;padding:0 0 20px;font-weight: bold;}
+h4 {font-size: 1.69em;padding:0 0 10px;font-weight: bold;}
+h5 {font-size: 3em;padding:0 0 30px;font-weight: bold;text-transform: uppercase}
 
 p {
     font-size: $font_size;
@@ -45,6 +46,7 @@ article ol {
     h2 {font-size: 3.1em}
     h3 {font-size: 2.7em}
     h4 {font-size: 1.79em}
+    h5 {font-size: 3.5em;}
 
 }
 

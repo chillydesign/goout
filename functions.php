@@ -345,7 +345,7 @@ add_action('wp_print_scripts', 'webfactor_conditional_scripts'); // Add Conditio
 add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
 add_action('wp_enqueue_scripts', 'webfactor_styles'); // Add Theme Stylesheet
 add_action('init', 'register_html5_menu'); // Add HTML5 Blank Menu
-add_action('init', 'create_post_type_html5'); // Add our HTML5 Blank Custom Post Type
+
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
 add_action('init', 'html5wp_pagination'); // Add our HTML5 Pagination
 
@@ -391,47 +391,7 @@ add_shortcode('html5_shortcode_demo_2', 'html5_shortcode_demo_2'); // Place [htm
 // Shortcodes above would be nested like this -
 // [html5_shortcode_demo] [html5_shortcode_demo_2] Here's the page title! [/html5_shortcode_demo_2] [/html5_shortcode_demo]
 
-/*------------------------------------*\
-	Custom Post Types
-\*------------------------------------*/
 
-// Create 1 Custom Post type for a Demo, called HTML5-Blank
-function create_post_type_html5()
-{
-    register_taxonomy_for_object_type('category', 'html5-blank'); // Register Taxonomies for Category
-    register_taxonomy_for_object_type('post_tag', 'html5-blank');
-    register_post_type('html5-blank', // Register Custom Post Type
-        array(
-        'labels' => array(
-            'name' => __('HTML5 Blank Custom Post', 'webfactor'), // Rename these to suit
-            'singular_name' => __('HTML5 Blank Custom Post', 'webfactor'),
-            'add_new' => __('Add New', 'webfactor'),
-            'add_new_item' => __('Add New HTML5 Blank Custom Post', 'webfactor'),
-            'edit' => __('Edit', 'webfactor'),
-            'edit_item' => __('Edit HTML5 Blank Custom Post', 'webfactor'),
-            'new_item' => __('New HTML5 Blank Custom Post', 'webfactor'),
-            'view' => __('View HTML5 Blank Custom Post', 'webfactor'),
-            'view_item' => __('View HTML5 Blank Custom Post', 'webfactor'),
-            'search_items' => __('Search HTML5 Blank Custom Post', 'webfactor'),
-            'not_found' => __('No HTML5 Blank Custom Posts found', 'webfactor'),
-            'not_found_in_trash' => __('No HTML5 Blank Custom Posts found in Trash', 'webfactor')
-        ),
-        'public' => true,
-        'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
-        'has_archive' => true,
-        'supports' => array(
-            'title',
-            'editor',
-            'excerpt',
-            'thumbnail'
-        ), // Go to Dashboard Custom HTML5 Blank post for supports
-        'can_export' => true, // Allows export in Tools > Export
-        'taxonomies' => array(
-            'post_tag',
-            'category'
-        ) // Add Category and Post Tags support
-    ));
-}
 
 /*------------------------------------*\
 	ShortCode Functions
@@ -588,6 +548,7 @@ function goout_posts_slider($posts) {
 }
 
 
+include('functions_custom_post_types.php');
 
 
 ?>

@@ -13,7 +13,7 @@
                     <div class="latest_text">
                         <p class="category"><?php the_category(', '); ?></p>
                         <h2><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php echo get_the_title(); ?></a></h2>
-                        <p> Ex doctrina est aliquip o aut nam quem aliqua fugiat. Se est quis ipsum quis, do duis incurreret consequat.De aute singulis iudicem ab eram cohaerescant laboris duis mentitum. Magna admodum cupidatat ad summis excepteur aut eiusmod. </p>
+                        <p><?php echo get_the_excerpt(); ?></p>
                     </div>
                 </div>
                 <?php if ($l == 1)  echo '</div><div class="row">'; ?>

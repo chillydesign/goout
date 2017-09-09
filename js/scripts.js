@@ -31,6 +31,14 @@ import slick from '../node_modules/slick-carousel/slick/slick.min.js';
             autoplay: true
         })
 
+        $('.image_slider').slick({
+            dots: true,
+            infinite: true,
+            arrows: true,
+            autoplay: true
+        })
+
+
 
         var $navigation_menu = $('#navigation_menu');
         var $menu_buttons = $('.menu_button');

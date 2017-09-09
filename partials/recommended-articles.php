@@ -16,7 +16,7 @@ $recommended = new WP_Query(array(
 if ($recommended->have_posts() ) :  ?>
 <div class="recommended_articles">
     <div class="container">
-        <h3>Articles Recommandes</h3>
+        <h5>Articles Recommandes</h5>
     </div>
 
     <?php goout_posts_slider($recommended); ?>

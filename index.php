@@ -4,6 +4,9 @@
 <?php get_template_part('partials/front', 'first-articles' ); ?>
 <?php get_template_part('partials/front', 'latest-articles' ); ?>
 <?php get_template_part('partials/front', 'on-en-parle' ); ?>
+<?php get_template_part('partials/front', 'focus' ); ?>
+<?php get_template_part('partials/front', 'latest-edition' ); ?>
+<?php get_template_part('partials/front', 'on-air' ); ?>
 
 
 

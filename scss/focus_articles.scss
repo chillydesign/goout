@@ -1,0 +1,40 @@
+.focus_articles {
+
+    margin-bottom: 100px;
+
+    .focus_article {
+
+        margin-bottom: 40px;
+        border-bottom: 1px solid $medium_grey;
+
+        &.focus_article_1 {
+            .share_buttons {
+                text-align: left;
+            }
+        }
+
+
+        .latest_image {
+            @extend .background_image;
+            height: 340px;
+            margin:0 0 0px;
+            border: 0;
+        }
+
+
+        p.category {
+            margin-top: 40px;
+        }
+
+        h2 {
+
+
+            a {
+                color: inherit;
+                border: 0;
+            }
+        }
+
+    }
+
+}

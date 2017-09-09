@@ -1,0 +1,21 @@
+.latest_edition {
+
+    margin-bottom: 100px;
+    
+    text-align: center;
+
+    h2  {
+        // font-size: 5em;
+        a {
+            color: inherit;
+            border: 0;
+        }
+    }
+
+    .latest_image {
+        @extend .background_image;
+        height: 200px;
+        margin:0 0 20px;
+        border: 0;
+    }
+}
