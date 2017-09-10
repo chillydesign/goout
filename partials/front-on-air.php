@@ -7,7 +7,10 @@ if ($videos->have_posts() ) :  while($videos->have_posts()) : $videos->the_post(
 
 $image_size = ($v == 0 ) ? 'large' : 'medium';
 $image = ( has_post_thumbnail()) ? thumbnail_of_post_url(get_the_ID(),  $image_size  ) : '';
-$vid_string = '<div class="on_air_video"><a  class="latest_image" href="' . get_the_permalink() . '" style="background-image:url(' . $image . ');" title="' .  get_the_title() . '"></a></div>';
+$vid_string = '<div class="on_air_video">';
+$vid_string .= '<a title="' .  get_the_title() . '" href="' . get_the_permalink() . '" ><h3>' .  get_the_title() . '</h3></a>';
+$vid_string .= '<div  class="latest_image" style="background-image:url(' . $image . ');" ></div>';
+$vid_string .='</div>';
 
 array_push($videos_array, $vid_string);
 

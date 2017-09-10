@@ -1,0 +1,106 @@
+$image_height: 150px;
+$image_height_mobile: 250px;
+$image_margin: 30px;
+
+.on_air_section {
+
+    background-color: $light_grey;
+
+    .on_air_video {
+        margin: 0  0 $image_margin;
+        position: relative;
+        height: $image_height_mobile;
+
+        a {
+            position: absolute;
+
+            display: inline-block;
+            top:0;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            background:   transparentize(black, 0.5);
+
+            z-index: 2;
+            border: 0;
+
+            &:after {
+                content: '';
+                z-index: 3;
+                position: absolute;
+                top:0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: url('../img/play.svg') no-repeat center center;
+                background-size: 50px;
+                transition: all $transition_time;
+            }
+
+            &:hover {
+                &:after {
+                    transform: scale(1.2);
+                }
+            }
+
+            h3 {
+                position: absolute;
+                bottom: 20px;
+                left: 20px;
+                color: white;
+                padding: 0;
+
+            }
+        }
+    }
+
+    .latest_image {
+
+        @extend .background_image;
+        background-color: $light_grey;
+        height: 100%;
+        margin:0 0;
+        border: 0;
+        display: inline-block;
+        position: absolute;
+        z-index: 1;
+    }
+
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+
+}
+
+@media (min-width: 768px) {
+    .on_air_section {
+        overflow: hidden;
+        height: #{ ($image_height * 3) + ($image_margin * 2)};
+
+        .on_air_video {
+            height: $image_height;
+
+        }
+
+        h3 {
+            font-size: 2em;
+        }
+
+        .large_video {
+            .on_air_video {
+                height: #{ ($image_height * 3) + ($image_margin * 2)};
+            }
+
+            h3 {
+                font-size: 4em;
+            }
+        }
+
+    }
+
+
+
+
+}

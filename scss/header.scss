@@ -60,7 +60,8 @@ nav#navigation_menu {
 
     ul {
         margin: 0;
-        padding:$header_height 0 0 50px;
+        padding:$header_height 0 0 0;
+        overflow: hidden;
 
         li {
             display: block;
@@ -68,10 +69,17 @@ nav#navigation_menu {
             margin: 0;
             a {
                 display: block;
-                padding:10px;
+                padding:10px 10px 10px 50px;
                 text-transform: uppercase;
-                color: $font_color;
+                color: lighten($font_color,10);
                 border:0;
+                transition: all 0.3s;
+
+                &:hover {
+                    transform: scale(1.06);
+                    color: black;
+                    @include linear-gradient(270deg, lighten($light_grey,4), lighten($light_grey,2));
+                }
             }
         }
     }

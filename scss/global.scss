@@ -6,9 +6,7 @@
 
 @import 'header';
 @import 'footer';
-@import '../node_modules/slick-carousel/slick/slick.scss';
-@import 'slider';
-@import 'sharing_buttons';
+
 
 
 
@@ -34,9 +32,13 @@ section {
 @import 'section_photo_and_text';
 @import 'section_slider';
 @import 'recommended_articles';
-@import 'first_articles';
-@import 'latest_articles';
-@import 'onenparles';
-@import 'focus_articles';
-@import 'latest_editions';
-@import 'on_air_section';
+
+@import 'front_first_articles';
+@import 'front_latest_articles';
+@import 'front_onenparles';
+@import 'front_focus_articles';
+@import 'front_latest_editions';
+@import 'front_on_air';
+@import '../node_modules/slick-carousel/slick/slick.scss';
+@import 'slider';
+@import 'sharing_buttons';

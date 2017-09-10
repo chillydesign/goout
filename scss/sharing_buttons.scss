@@ -9,6 +9,8 @@ $share_height: 36px;
         width: $share_height;
         border-radius: 50%;
         border: 0;
+        text-indent: -9999px;
+        text-align: left;
 
         background-color: darken($light_grey,20);
         background-repeat: no-repeat;

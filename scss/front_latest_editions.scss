@@ -4,11 +4,14 @@
 
     text-align: center;
 
+    a {
+        border:0;
+    }
+
     h2  {
         // font-size: 5em;
         a {
             color: inherit;
-            border: 0;
         }
     }
     .latest_edition_img {
