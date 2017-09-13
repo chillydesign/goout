@@ -1,0 +1,23 @@
+
+.pagination {
+    margin:10px 0;
+    padding: 0;
+    font-size: $font_size;
+    font-family: $sans_font_stack;
+    .page-numbers {
+        display: inline-block;
+        padding: 10px;
+        border: 1px solid $light_grey;
+
+        &.current {
+            background: $light_grey;
+            color: $medium_grey;
+        }
+    }
+
+    a {
+        display: inline-block;
+        color: inherit;
+    }
+
+}

@@ -18,11 +18,18 @@
     </head>
     <body <?php body_class(); ?>>
 
+
+<?php if (is_front_page() ): ?>
+    <?php get_template_part('partials/front', 'edition-cover'); ?>
+<?php endif; ?>
+
+
+
         <div class="container">
             <header class="header" id="header">
-
                 <a href="<?php echo home_url(); ?>" id="branding"><?php bloginfo('name'); ?></a>
-                <a href="#"  class="menu_button"id="open_menu_button" >Menu</a>
+                <a href="#"  class="menu_button" id="open_menu_button" >Menu</a>
+                <p id="slogan">Magazine Culturel Genevois</p>
             </header>
         </div>
 

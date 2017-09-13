@@ -1,43 +1,40 @@
-<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
-	<!-- article -->
-	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-		<!-- post thumbnail -->
-		<?php if ( has_post_thumbnail()) : // Check if thumbnail exists ?>
-			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-				<?php the_post_thumbnail(array(120,120)); // Declare pixel size you need inside the array ?>
-			</a>
-		<?php endif; ?>
-		<!-- /post thumbnail -->
+<?php $pp = 0; if (have_posts()):  ?>
+    <div class="latest_articles">
+        <div class="row">
+            <?php while (have_posts()) : the_post(); ?>
 
-		<!-- post title -->
-		<h2>
-			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-		</h2>
-		<!-- /post title -->
+                <div class=" latest_article col-sm-4">
+                    <!-- article -->
+                    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-		<!-- post details -->
-		<span class="date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span>
-		<span class="author"><?php _e( 'Published by', 'webfactor' ); ?> <?php the_author_posts_link(); ?></span>
-		<span class="comments"><?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'webfactor' ), __( '1 Comment', 'webfactor' ), __( '% Comments', 'webfactor' )); ?></span>
-		<!-- /post details -->
 
-		<?php html5wp_excerpt('html5wp_index'); // Build your custom callback length in functions.php ?>
+                        <?php $image = ( has_post_thumbnail()) ? thumbnail_of_post_url(get_the_ID(),  'medium') : ''; ?>
+                        <a  class="latest_image" href="<?php the_permalink(); ?>" style="background-image:url('<?php echo $image; ?>');" title="<?php the_title(); ?>"></a>
+                        <div class="latest_text">
 
-		<?php edit_post_link(); ?>
+                            <h2><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
 
-	</article>
-	<!-- /article -->
+                            <?php html5wp_excerpt('html5wp_index'); // Build your custom callback length in functions.php ?>
 
-<?php endwhile; ?>
+                        </div>
+
+                    </article>
+                    <!-- /article -->
+                </div>
+                <?php if ($pp % 3 == 2)  echo '</div><!--  END OF ROW --><div class="row">'; ?>
+
+                <?php $pp++; endwhile; ?>
+        </div><!--  END OF ROW -->
+    </div> <!-- END OF LATEST ARTICLES -->
 
 <?php else: ?>
 
-	<!-- article -->
-	<article>
-		<h2><?php _e( 'Sorry, nothing to display.', 'webfactor' ); ?></h2>
-	</article>
-	<!-- /article -->
+    <!-- article -->
+    <article>
+        <h2><?php _e( 'Sorry, nothing to display.', 'webfactor' ); ?></h2>
+    </article>
+    <!-- /article -->
 
 <?php endif; ?>

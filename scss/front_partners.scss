@@ -1,0 +1,44 @@
+$partner_height: 75px;
+
+.partners_slider {
+
+    margin:0 0 100px;
+    padding: 0;
+
+
+    .partner_li {
+
+        margin: 0;
+        padding: 0 20px;
+
+        a {
+            border: 0;
+            padding: 0;
+            margin: 0;
+            display: inline-block;
+
+            img {
+
+                filter: grayscale(1);
+                opacity: 0.5;
+                height: $partner_height;
+                width: auto;
+                margin:0 0 20px;
+                transition: all $transition_time;
+
+
+            }
+
+            &:hover {
+                img {
+                    filter: grayscale(0);
+                    opacity: 1;
+                }
+            }
+
+        }
+
+
+    }
+
+}

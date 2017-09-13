@@ -4,11 +4,11 @@ $v = 0;
 $videos_array = array();
 // loop through all videos, get their images and then add to array for later echoing out
 if ($videos->have_posts() ) :  while($videos->have_posts()) : $videos->the_post();
-
+$video = get_field('video');
 $image_size = ($v == 0 ) ? 'large' : 'medium';
 $image = ( has_post_thumbnail()) ? thumbnail_of_post_url(get_the_ID(),  $image_size  ) : '';
-$vid_string = '<div class="on_air_video">';
-$vid_string .= '<a title="' .  get_the_title() . '" href="' . get_the_permalink() . '" ><h3>' .  get_the_title() . '</h3></a>';
+$vid_string = '<div class="on_air_video on_air_video_'. $image_size .'">';
+$vid_string .= '<a data-lity title="' .  get_the_title() . '" href="' . $video . '" ><h3>' .  get_the_title() . '</h3></a>';
 $vid_string .= '<div  class="latest_image" style="background-image:url(' . $image . ');" ></div>';
 $vid_string .='</div>';
 

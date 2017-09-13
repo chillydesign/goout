@@ -68,14 +68,11 @@
 
 <?php else: ?>
 
-    <!-- article -->
-    <article>
-        <div class="container">
-            <h1><?php _e( 'Sorry, nothing to display.', 'webfactor' ); ?></h1>
-        </div>
 
+    <article class="container">
+            <h1><?php _e( 'Sorry, nothing to display.', 'webfactor' ); ?></h1>
     </article>
-    <!-- /article -->
+
 
 <?php endif; ?>
 

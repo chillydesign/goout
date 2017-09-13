@@ -532,10 +532,10 @@ function goout_posts_slider($posts) {
             $str .= '<li>';
                 $str .= '<a href="' . get_the_permalink() .'" title="' . get_the_title() .'">';
                      $image = ( has_post_thumbnail()) ? thumbnail_of_post_url(get_the_ID(),  'small') : '';
-                     $category = get_the_category( );
+                     $categories = get_the_category( );
                     $str .= '<img src="' . $image . '" alt="" />';
-                     if ( sizeof($category) > 0) :
-                        $str .= '<p class="category">' . $category[0]->cat_name . '</p>';
+                     if ( sizeof($categories) > 0) :
+                        $str .= '<p class="category">' . $categories[0]->cat_name . '</p>';
                      endif;
                     $str .= '<h3>' . get_the_title() . '</h3>';
                     $str .= '<p>' . get_the_excerpt() . '</p>';
@@ -546,6 +546,33 @@ function goout_posts_slider($posts) {
 
     echo $str;
 }
+
+
+function convert_posts_to_strings() {
+    $posts_array = []; $v = 0;
+    if (have_posts()): while (have_posts()) : the_post();
+    $image_size = ($v == 0 ) ? 'large' : 'medium';
+    $permalink = get_the_permalink();
+    $categories =  get_the_category( );
+    $image = ( has_post_thumbnail()) ? thumbnail_of_post_url(get_the_ID(),  $image_size  ) : '';
+    $post_string = '<div class="latest_article">';
+    $post_string .= '<a href="' . $permalink . '"  class="latest_image" style="background-image:url(' . $image . ');" ></a>';
+    $post_string .= '<div class="latest_text">';
+    if ( sizeof($categories) > 0) :
+       $post_string .= '<p class="category">' . $categories[0]->cat_name . '</p>';
+    endif;
+    $post_string .= '<h2><a href="' . $permalink . '">'.  get_the_title() .'</a></h2>';
+    $post_string .= '<p>' . get_the_excerpt() .'</p>';
+    $post_string .='</div>';
+    $post_string .='</div>';
+    array_push($posts_array, $post_string);
+    $v++; endwhile; endif;
+
+    return $posts_array;
+}
+
+
+
 
 
 include('functions_custom_post_types.php');

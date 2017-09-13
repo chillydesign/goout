@@ -1,0 +1,22 @@
+.artist_of_month_box {
+    border:1px solid $font_color;
+
+    img  {
+        width: 100%;
+        height: auto;
+        margin:0 0 -1px;
+    }
+
+    h2 {
+        font-size: $font_size;
+        padding: 10px 10px 0;
+        margin: 0;
+    }
+    p {
+        padding: 0  10px;
+    }
+    h4 {
+        padding: 10px;
+        border-bottom: 4px solid $font_color;
+    }
+}

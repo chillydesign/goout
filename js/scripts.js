@@ -1,5 +1,6 @@
-import slick from '../node_modules/slick-carousel/slick/slick.min.js';
 
+import slick from '../node_modules/slick-carousel/slick/slick.min.js';
+import lity from '../node_modules/lity/dist/lity.min.js';
 
 
 (function ($, root, undefined) {
@@ -9,34 +10,47 @@ import slick from '../node_modules/slick-carousel/slick/slick.min.js';
         'use strict';
 
 
-        $(".post_slider").slick({
-            dots: false,
-            infinite: true,
-            speed: 300,
-            slidesToShow: 1,
-            centerMode: false,
-            variableWidth: true
-        });
+        var $post_sliders = $(".post_slider");
+            $post_sliders.slick({
+                dots: false,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 1,
+                centerMode: false,
+                variableWidth: true
+            });
 
-        $('.image_slider').slick({
-            dots: true,
-            infinite: true,
-            centerMode: false
-        });
 
-        $('.first_articles_slider').slick({
-            dots: true,
-            infinite: true,
-            arrows: false,
-            autoplay: true
-        })
 
-        $('.image_slider').slick({
-            dots: true,
-            infinite: true,
-            arrows: true,
-            autoplay: true
-        })
+
+        var $first_articles_sliders = $('.first_articles_slider');
+            $first_articles_sliders.slick({
+                dots: true,
+                infinite: true,
+                arrows: false,
+                autoplay: true
+            })
+
+
+        var $image_sliders = $('.image_slider');
+            $image_sliders.slick({
+                dots: true,
+                infinite: true,
+                arrows: true,
+                autoplay: true
+            })
+
+
+            var $partners_slider = $('.partners_slider');
+                $partners_slider.slick({
+                    dots: false,
+                    infinite: true,
+                    arrows: true,
+                    autoplay: true,
+                    centerMode: false,
+                    variableWidth: true
+                })
+
 
 
 

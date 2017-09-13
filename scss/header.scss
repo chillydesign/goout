@@ -1,5 +1,7 @@
 $header_height: 90px;
 $logo_height: 50px;
+$big_logo_height: 100px;
+$big_header_height: 160px;
 
 // * {
 //     outline:1px solid transparentize(purple,0.5);
@@ -12,6 +14,18 @@ header {
     height: $header_height;
     background: white;
 }
+
+#slogan {
+    display: none;
+    position: absolute;
+    right:0;
+    line-height: $big_header_height;
+    text-transform: uppercase;
+    top:-10px;
+    text-align: right;
+}
+
+
 
 #branding, #open_menu_button, #close_menu_button {
     position: absolute;
@@ -40,6 +54,31 @@ header {
 #close_menu_button {
     background: url('../img/close.svg') no-repeat center center;
     left: 60px;
+}
+
+body.home {
+    header {
+        height:$big_header_height;
+    }
+    #branding {
+        left: calc(50% - 100px);
+        width: 200px;
+        height: $big_logo_height;
+    }
+
+
+}
+
+
+@media (min-width: 992px) {
+
+    body.home {
+        #slogan {
+            display: inline-block;
+
+        }
+    }
+
 }
 
 

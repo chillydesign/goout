@@ -1,6 +1,6 @@
 <?php /* Template Name: Demo Page Template */ get_header(); ?>
 
-	
+
 		<!-- section -->
 		<section>
 
@@ -38,7 +38,7 @@
 
 		</section>
 		<!-- /section -->
-	
+
 
 <?php get_sidebar(); ?>
 

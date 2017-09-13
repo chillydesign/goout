@@ -3,6 +3,7 @@
 @import 'mixins';
 @import 'reset';
 @import 'typography';
+@import 'pagination';
 
 @import 'header';
 @import 'footer';
@@ -23,22 +24,31 @@ section {
     padding:30px 0;
 }
 
+@import 'slider';
+@import 'sharing_buttons';
 
 
 @import 'single';
+@import 'single_hotspot';
 @import 'post_slider';
+@import 'artistofmonth';
 @import 'section_advert_and_text';
 @import 'section_full_size_image';
 @import 'section_photo_and_text';
+@import 'section_video';
 @import 'section_slider';
 @import 'recommended_articles';
 
+@import 'front_edition_cover';
 @import 'front_first_articles';
 @import 'front_latest_articles';
 @import 'front_onenparles';
 @import 'front_focus_articles';
 @import 'front_latest_editions';
 @import 'front_on_air';
+@import 'front_partners';
+@import 'index';
+@import 'index_agenda';
+
 @import '../node_modules/slick-carousel/slick/slick.scss';
-@import 'slider';
-@import 'sharing_buttons';
+@import '../node_modules/lity/dist/lity';

@@ -1,19 +1,30 @@
 <?php get_header(); ?>
+<?php  $posts_array =  convert_posts_to_strings();  ?>
 
-	
-		<!-- section -->
-		<section>
 
-			<h1><?php _e( 'Categories for ', 'webfactor' ); single_cat_title(); ?></h1>
 
-			<?php get_template_part('loop'); ?>
 
-			<?php get_template_part('pagination'); ?>
+<div class="container">
 
-		</section>
-		<!-- /section -->
-	
+    <h1><?php single_cat_title(); ?></h1>
+    <?php get_template_part('partials/categories-list'); ?>
 
-<?php get_sidebar(); ?>
+</div><!--  END OF CONTAINER -->
+
+
+<div class="container">
+    <?php get_template_part('partials/index', 'first-articles');  // also includes artist of the month  ?>
+</div><!--  END OF CONTAINER -->
+
+<?php get_template_part('partials/index', 'agenda');   ?>
+
+
+<div class="container">
+    <?php get_template_part('partials/index', 'more-articles');   ?>
+    <?php get_template_part('pagination'); ?>
+</div><!--  END OF CONTAINER -->
+
+
+
 
 <?php get_footer(); ?>

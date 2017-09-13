@@ -1,0 +1,22 @@
+.categories_list {
+    font-family: $sans_font_stack;
+    margin:0 0 20px;
+    padding: 0;
+    li {
+        display: inline-block;
+        font-size: $small_font_size;
+        a {
+            display: inline-block;
+            padding:5px;
+            border:0;
+            color: inherit;
+
+        }
+
+        &.active_link {
+            a {
+                border-bottom: 1px solid $brand_color;
+            }
+        }
+    }
+}
