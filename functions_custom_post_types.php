@@ -215,6 +215,74 @@ function create_custom_post_types() {
 
 
 
+        register_post_type('cityguidearticle', // Register Custom Post Type
+        array(
+            'labels' => array(
+                'name' => __('CityGuide Articles', 'html5blank'), // Rename these to suit
+                'singular_name' => __('CityGuide Article', 'html5blank'),
+                'add_new' => __('Ajouter', 'html5blank'),
+                'add_new_item' => __('Add New CityGuide Article', 'html5blank'),
+                'edit' => __('Edit', 'html5blank'),
+                'edit_item' => __('Edit CityGuide Article', 'html5blank'),
+                'new_item' => __('New CityGuide Article', 'html5blank'),
+                'view' => __('View CityGuide Article', 'html5blank'),
+                'view_item' => __('View CityGuide Article', 'html5blank'),
+                'search_items' => __('Search CityGuide Article', 'html5blank'),
+                'not_found' => __('No CityGuide Articles found', 'html5blank'),
+                'not_found_in_trash' => __('No CityGuide Article found in Trash', 'html5blank')
+            ),
+            'public' => true,
+            'exclude_from_search' => true,
+            'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
+            'has_archive' => true,
+            'supports' => array(
+                'title',
+                'thumbnail',
+                'editor',
+                'excerpt'
+            ), // Go to Dashboard Custom HTML5 Blank post for supports
+            'can_export' => true, // Allows export in Tools > Export
+            'taxonomies' => array(
+
+            ) // Add Category and Post Tags support
+        ));
+
+
+    register_post_type('cityguide', // Register Custom Post Type
+    array(
+        'labels' => array(
+            'name' => __('City Guides', 'html5blank'), // Rename these to suit
+            'singular_name' => __('City Guide', 'html5blank'),
+            'add_new' => __('Ajouter', 'html5blank'),
+            'add_new_item' => __('Add New City Guide', 'html5blank'),
+            'edit' => __('Edit', 'html5blank'),
+            'edit_item' => __('Edit City Guide', 'html5blank'),
+            'new_item' => __('New City Guide', 'html5blank'),
+            'view' => __('View City Guide', 'html5blank'),
+            'view_item' => __('View City Guide', 'html5blank'),
+            'search_items' => __('Search City Guide', 'html5blank'),
+            'not_found' => __('No City Guides found', 'html5blank'),
+            'not_found_in_trash' => __('No City Guide found in Trash', 'html5blank')
+        ),
+        'public' => true,
+        'exclude_from_search' => false,
+        'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
+        'has_archive' => true,
+        'supports' => array(
+            'title',
+            'thumbnail',
+            'editor',
+            'excerpt'
+        ), // Go to Dashboard Custom HTML5 Blank post for supports
+        'can_export' => true, // Allows export in Tools > Export
+        'taxonomies' => array(
+        ) // Add Category and Post Tags support
+    ));
+
+
+
+
+
     $labels_hotspot_cat = array(
         'name'                       => 'Categories',
         'singular_name'              => 'Categorie',

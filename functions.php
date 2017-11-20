@@ -605,8 +605,6 @@ function convert_events_to_strings() {
 
 function show_advert($post) {
     $image = thumbnail_of_post_url($post->ID,  'large' ) ;
-
-
     if ($image) :
         $str = '<div class="dvrt_container">';
         $str .= '<div class="dvrt_image" style="background-image:url(\'' .  $image . '\')"></div>';
@@ -615,6 +613,27 @@ function show_advert($post) {
     endif;
 
 }
+
+
+function get_cityguidearticles_for_cityguide($cityguide_id){
+
+    $articles = new WP_Query(array(
+        'post_type'  => 'cityguidearticle',
+        'posts_per_page' => -1,
+        'post_status' => 'publish',
+        'meta_query' => array(
+            array(
+                'key'     => 'city_guide',
+                'value'   => $cityguide_id,
+                'compare' => '=',
+            )
+        )
+    ));
+    return $articles;
+
+}
+
+
 
 
 

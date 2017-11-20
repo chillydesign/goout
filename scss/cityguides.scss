@@ -1,0 +1,148 @@
+.cityguide_header {
+
+
+    @extend .background_image;
+    min-height: 200px;
+    margin:0 0 20px;
+    text-align: center;
+
+
+    .cityguide_header_text {
+        padding: 30px;
+        background: transparentize(white, 0.2);
+        max-width: 600px;
+        margin: auto;
+        font-size: 80%;
+        color: #777;
+
+        h1 {
+            font-size: 5em;
+            padding: 0 0 20px;
+        }
+    }
+
+    ul.city_guide_stats {
+        list-style: none;
+
+        li {
+            display: inline-block;
+            padding: 0 7px 5px;
+            font-family: $sans_font_stack;
+            font-size: 1.35em;
+            color: #999;
+            text-transform: uppercase;
+        }
+    }
+
+}
+
+.address_supplemenaires {
+    background: $medium_grey;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+
+    h3 {
+        text-transform: uppercase;
+        color: white;
+        font-size: 1.8em;
+        padding: 0 0 40px;
+        text-align: center;
+
+    }
+
+    ul {
+
+
+        li {
+            list-style: none;
+            display: block;
+            text-transform: uppercase;
+            font-size: $small_font_size;
+            margin: 0 0 10px;
+
+            span {
+                display: inline-block;
+                padding: 1px;
+            }
+
+            span.cityguide_name {
+                color: lighten($medium_grey, 30);
+            }
+            span.cityguide_category {
+                color: lighten($medium_grey, 30);
+            }
+
+            a.cityguide_website {
+                color: darken( $medium_grey, 30);
+                border: 0;
+                &:hover {
+                    border: 0;
+                }
+            }
+        }
+    }
+
+
+
+}
+
+
+
+.cityguidearticle_text {
+
+    background: $medium_grey;
+    padding: 30px;
+    color: white;
+    font-size: 80%;
+    margin: 0 0 20px;
+
+    h1 {
+        padding: 0 0 20px;
+
+    }
+
+
+
+
+    a.city_guide_link {
+        font-size: 2.2em;
+        color: white;
+        border: 0;
+        text-transform: uppercase;
+        padding: 0 0 10px;
+        display: inline-block;
+
+        &:hover {
+            color: white;
+        }
+    }
+
+    &.cityguide_text {
+        h2 {
+            text-transform: uppercase;
+        }
+        p {
+            font-size: 1.6em;
+        }
+        a {
+            color: #666;
+            font-style: italic;
+            border:0;
+        }
+        li {
+            font-size: 1.6em;
+        }
+    }
+
+}
+
+ul.cityguide_metas {
+    margin: 0 0 20px;
+    padding: 0;
+    li {
+        list-style: none;
+        display: block;
+        font-family: $sans_font_stack;
+    }
+}
