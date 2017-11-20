@@ -45,6 +45,8 @@
                     <p class="category">Issue <?php echo get_field('issue_number'); ?></p>
                     <h2><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php echo get_the_title(); ?></a></h2>
                     <p><?php echo get_the_excerpt(); ?></p>
+
+                    <p><a class="abonnez_vous" href="">Abonnez-vous</a></p>
                 </div>
             </div>
         </div>

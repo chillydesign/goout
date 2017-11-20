@@ -11,6 +11,8 @@ $h = 0;
     <div class="container">
         <div class="hotspot_articles ">
         <h5>Hot spots</h5>
+        <?php get_template_part('partials/categories-hotspots'); ?>
+
             <div class="row">
                 <?php  while($hotspots->have_posts()) : $hotspots->the_post();  ?>
                     <?php $col_class = ( $h == 1 ) ? 'col-sm-8' : 'col-sm-4' ?>
@@ -30,6 +32,8 @@ $h = 0;
                     <?php  $h++; endwhile; ?>
             </div>
         </div> <!-- END OF hotspots latest articles -->
+        <p class="plus_icon"><a  href="<?php echo get_post_type_archive_link( 'hotspot' ); ?>">Plus</a></p>
+
     </div>
 <?php endif;  ?>
 <?php wp_reset_query(); ?>

@@ -51,7 +51,7 @@ $evenements = new WP_Query(array(
 
         </div>
 
-
+            <p class="plus_icon"><a  href="<?php echo get_post_type_archive_link( 'evenement' ); ?>">Plus</a></p>
 
 
     </div>

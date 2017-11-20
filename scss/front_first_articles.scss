@@ -16,6 +16,11 @@ $first_image_height: 350px;
             }
         }
 
+        p {
+            margin: auto;
+            max-width: 400px;
+        }
+
 
         .latest_image {
             @extend .background_image;

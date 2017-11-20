@@ -3,7 +3,7 @@
 $onenparles = new WP_Query(array(
     'post_type' => 'post',
     'posts_per_page' =>  6,
-    'offset' => 10,
+//    'offset' => 10,
     'meta_query' => array(  /// DONT SHOW FOCUS ARTICLES
         'relation' => 'OR',
         array(

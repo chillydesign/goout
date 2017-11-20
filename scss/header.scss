@@ -49,6 +49,7 @@ header {
     background: url('../img/menu.svg') no-repeat center center;
     left: 10px;
     z-index: 100;
+
 }
 
 #close_menu_button {
@@ -64,6 +65,10 @@ body.home {
         left: calc(50% - 100px);
         width: 200px;
         height: $big_logo_height;
+    }
+
+    #open_menu_button {
+        top:50px;
     }
 
 

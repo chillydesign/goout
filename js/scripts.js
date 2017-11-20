@@ -50,7 +50,7 @@ import lity from '../node_modules/lity/dist/lity.min.js';
                     infinite: true,
                     arrows: true,
                     autoplay: true,
-                    centerMode: false,
+                    centerMode: true,
                     variableWidth: true
                 })
 

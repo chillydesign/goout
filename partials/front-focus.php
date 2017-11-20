@@ -51,9 +51,14 @@ $f = 0;
 
             <?php  $f++; endwhile; ?>
 
+            <p class="plus_icon"><a  href="<?php echo get_post_type_archive_link( 'post' ); ?>">Plus</a></p>
+
 
     </div> <!-- END OF recommended_articles -->
 </div>
+
+
+
 
 <?php endif;  ?>
 <?php wp_reset_query(); ?>

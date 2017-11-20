@@ -132,3 +132,26 @@ input {
     font-family: $font_stack;
     appearance:none;
 }
+
+
+$plus_icon_height: 35px;
+p.plus_icon {
+        text-align: center;
+    a {
+        display: inline-block;
+        background: url('../img/plus.svg') no-repeat center center;
+        text-indent: -9999px;
+        height:$plus_icon_height;
+        width: 30%;
+        margin: auto;
+        background-size: $plus_icon_height;
+        border: 0;
+        transition: transform 0.3s;
+        &:hover {
+            border: 0;
+            transform: scale(1.3);
+        }
+    }
+
+
+}
