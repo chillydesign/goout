@@ -603,6 +603,21 @@ function convert_events_to_strings() {
 
 
 
+function show_advert($post) {
+    $image = thumbnail_of_post_url($post->ID,  'large' ) ;
+
+
+    if ($image) :
+        $str = '<div class="dvrt_container">';
+        $str .= '<div class="dvrt_image" style="background-image:url(\'' .  $image . '\')"></div>';
+        $str .= '</div>';
+        echo $str;
+    endif;
+
+}
+
+
+
 
 include('functions_custom_post_types.php');
 
