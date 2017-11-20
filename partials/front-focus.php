@@ -1,13 +1,28 @@
+<?php
 
+$focus_args = array(
+    'post_type' => 'post',
+    'posts_per_page' =>  3,
+    'meta_query' => array(
+		array(
+			'key'     => 'focus',
+            'value'   => '1',
+            'compare' => '=',
+		)
+    )
+);
 
+$focus = new WP_Query( $focus_args );
+$f = 0;
+
+ ?>
+
+<?php   if ($focus->have_posts() ) :  ?>
 <div class="container">
-
     <div class="focus_articles">
 
         <h5>Focus</h5>
-
-            <?php $latest = new WP_Query(array('post_type' => 'post',   'posts_per_page' =>  3 )); $f = 0;  ?>
-            <?php  if ($latest->have_posts() ) :  while($latest->have_posts()) : $latest->the_post();  ?>
+            <?php while($focus->have_posts()) : $focus->the_post();  ?>
                 <?php $col_class = ( $f == 1 ) ? ['col-sm-6 col-sm-push-6', 'col-sm-6 col-sm-pull-6' ] : ['col-sm-6', 'col-sm-6'] ?>
                 <div class="focus_article focus_article_<?php echo $f; ?>">
                     <div class="row">
@@ -34,8 +49,11 @@
 
                 </div>
 
-            <?php  $f++; endwhile;endif;  ?>
-            <?php wp_reset_query(); ?>
+            <?php  $f++; endwhile; ?>
+
 
     </div> <!-- END OF recommended_articles -->
 </div>
+
+<?php endif;  ?>
+<?php wp_reset_query(); ?>

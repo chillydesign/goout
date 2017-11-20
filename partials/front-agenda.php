@@ -31,10 +31,12 @@ $evenements = new WP_Query(array(
                                 <?php if(  $event_cat && sizeof($event_cat) > 0 ): ?>
                                      <p class="category"><?php echo $event_cat[0]->name; ?></p>
                                  <?php endif; ?>
+                                 <div class="latest_text_inner">
                                  <?php if  ($date ): ?>
                                      <p class="date"><?php echo $date; ?></p>
                                  <?php endif; ?>
                                 <h2><?php echo $title; ?></h2>
+                                </div>
                             </div>
 
                         </a>

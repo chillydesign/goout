@@ -9,6 +9,7 @@
 <?php get_template_part('partials/front', 'latest-edition' ); ?>
 <?php get_template_part('partials/front', 'on-air' ); ?>
 <?php get_template_part('partials/front', 'agenda' ); ?>
+<?php get_template_part('partials/front', 'hot-spots' ); ?>
 <?php get_template_part('partials/front', 'partners' ); ?>
 <?php get_template_part('partials/front', 'instagram' ); ?>
 

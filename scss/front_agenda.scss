@@ -32,26 +32,33 @@
                 .latest_text {
                     position: absolute;
                     bottom: 0;
-                    padding: 20px;
-                    background-color: transparentize(black, 0.5);
+
+
                     left: 0;
                     width: 100%;
                     color: white;
 
+                    .latest_text_inner {
+                            background-color: transparentize(black, 0.5);
+                                padding: 0  20px 10px;
+                    }
+
                     .date {
                         font-family: $sans_font_stack;
                         padding: 5px 0;
+                        font-size: $small_font_size;
                     }
 
                     .category {
                         background: $brand_color;
                         color:white;
-                        padding: 5px;
-                            font-size: $small_font_size;
+                        padding: 3px 8px;
+                        font-size: 1.1em;
                     }
 
                     h2 {
                         padding: 0;
+                        font-size: 1.8em;
                     }
 
                     a {
