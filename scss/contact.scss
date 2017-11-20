@@ -1,0 +1,68 @@
+
+#map_container {
+
+    height: 400px;
+    background: $light_grey;
+    margin: 0 0 50px;
+}
+
+#contact_details {
+
+    text-align: center;
+    margin-bottom: 30px;
+
+    img {
+        width: 110px;
+        height: auto;
+        margin: 0 0 10px
+    }
+}
+
+
+#contact_form_container {
+    background: black;
+    padding:50px 0;
+
+    p {
+        font-size: 1em;
+    }
+
+    ::placeholder {
+        color: transparentize(white, 0.2);
+    }
+
+    form {
+        input, textarea {
+            margin:0 0 20px;
+            background: none;
+            border:0;
+            border-bottom: 1px solid white;
+            color: white;
+            font-family: $sans_font_stack;
+            font-size: $small_font_size;
+        }
+        textarea {
+            border: 1px solid white;
+        }
+
+        input.wpcf7-submit {
+            width: auto;
+            padding: 10px 20px;
+            background: white;
+            color: $font_color;
+            cursor: pointer;
+        }
+
+        .wpcf7-response-output {
+            color: transparentize(white, 0.3);
+            padding: 15px;
+            font-size: $font_size;
+        }
+
+        .wpcf7-not-valid-tip {
+            font-size: $small_font_size;
+            position: relative;
+            top:-5px;
+        }
+    }
+}

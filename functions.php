@@ -88,7 +88,7 @@ function webfactor_nav()
 }
 
 function wf_version(){
-  return '0.0.1';
+  return '0.0.2';
 }
 
 // Load HTML5 Blank scripts (header.php)
@@ -566,6 +566,35 @@ function convert_posts_to_strings() {
     $post_string .='</div>';
     $post_string .='</div>';
     array_push($posts_array, $post_string);
+    $v++; endwhile; endif;
+
+    return $posts_array;
+}
+
+
+function convert_events_to_strings() {
+    $posts_array = []; $v = 0;
+    if (have_posts()): while (have_posts()) : the_post();
+    $image_size = ($v % 2 == 1 ) ? 'medium' : 'large';
+    $push_event_up = ($v % 8 == 4 || $v % 8 == 6 ) ? 'push_up' : '';
+    $date = get_field('date');
+    $permalink = get_the_permalink();
+    $event_cat = get_the_terms( get_the_ID(), 'event_cat' );
+    $image = ( has_post_thumbnail()) ? thumbnail_of_post_url(get_the_ID(),  $image_size  ) : '';
+    $post_string = '<div class="'. $push_event_up . ' latest_event latest_event_'. $image_size .'">';
+    $post_string .= '<a href="' . $permalink . '"  class="latest_image" style="background-image:url(' . $image . ');" >';
+    $post_string .= '<div class="latest_text">';
+    if  ($event_cat && sizeof($event_cat) > 0 ):
+       $post_string .= '<p class="category">' . $event_cat[0]->name  . '</p>';
+    endif;
+    if  ($date ):
+       $post_string .= '<p class="date">' . $date  . '</p>';
+    endif;
+    $post_string .= '<h2>'.  get_the_title() .'</h2>';
+    $post_string .='</div>';
+    $post_string .='</a></div>';
+    array_push($posts_array, $post_string);
+    if ($v % 4 == 3) $v++;;
     $v++; endwhile; endif;
 
     return $posts_array;

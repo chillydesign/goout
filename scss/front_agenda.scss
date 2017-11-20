@@ -1,0 +1,63 @@
+.front_agenda {
+    margin-bottom: 100px;
+
+}
+
+
+.latest_event {
+
+    &.latest_event_medium {
+        .latest_image {
+            height: 300px ;
+        }
+    }
+
+    &.push_up {
+        .latest_image {
+            position: relative;
+            top:-40px;
+        }
+    }
+
+
+          .latest_image {
+                @extend .background_image;
+                height: 340px;
+                margin:0 0 20px;
+                border: 0;
+                position: relative;
+
+
+
+                .latest_text {
+                    position: absolute;
+                    bottom: 0;
+                    padding: 20px;
+                    background-color: transparentize(black, 0.5);
+                    left: 0;
+                    width: 100%;
+                    color: white;
+
+                    .date {
+                        font-family: $sans_font_stack;
+                        padding: 5px 0;
+                    }
+
+                    .category {
+                        background: $brand_color;
+                        color:white;
+                        padding: 5px;
+                            font-size: $small_font_size;
+                    }
+
+                    h2 {
+                        padding: 0;
+                    }
+
+                    a {
+                        color: white;
+                    }
+
+                }
+            }
+}

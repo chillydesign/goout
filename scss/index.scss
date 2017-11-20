@@ -18,5 +18,17 @@
                 border-bottom: 1px solid $brand_color;
             }
         }
+
+        input {
+            margin-left: 10px;
+            font-size: 1em;
+            border:0;
+            border-bottom: 1px solid $font_color;
+            font-family: $sans_font_stack;
+            background: url('../img/search.svg') no-repeat center left;
+            background-size: 18px;
+            padding-left: 30px;
+            width:100px;
+        }
     }
 }

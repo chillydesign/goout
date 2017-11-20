@@ -10,7 +10,7 @@
 
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="<?php bloginfo('description'); ?>">
+        <meta name="description" content="<?php  echo $site_description = get_bloginfo('description'); ?>">
 
         <?php wp_head(); ?>
 
@@ -29,7 +29,7 @@
             <header class="header" id="header">
                 <a href="<?php echo home_url(); ?>" id="branding"><?php bloginfo('name'); ?></a>
                 <a href="#"  class="menu_button" id="open_menu_button" >Menu</a>
-                <p id="slogan">Magazine Culturel Genevois</p>
+                <p id="slogan"><?php echo $site_description; ?></p>
             </header>
         </div>
 

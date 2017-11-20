@@ -69,9 +69,34 @@ function create_custom_post_types() {
             ) // Add Category and Post Tags support
         ));
 
+        $labels_event_cat = array(
+            'name'                       => 'Categories',
+            'singular_name'              => 'Categorie',
+            'menu_name'                  => 'Categorie',
+            'all_items'                  => 'Toutes les Categories',
+            'parent_item'                => 'Categorie parente',
+            'parent_item_colon'          => 'Categorie parente:',
+            'new_item_name'              => 'Nom de la nouvelle categorie',
+            'add_new_item'               => 'Ajouter une categorie',
+            'edit_item'                  => 'Modifier categorie',
+            'update_item'                => 'Mettre à jur la categorie',
+            'separate_items_with_commas' => 'Separer les categories avec des virgules',
+            'search_items'               => 'Chercher dans les categories',
+            'add_or_remove_items'        => 'Ajouter ou supprimer des categories',
+            'choose_from_most_used'      => 'Choisir parmi les categories les plus utilisées',
+        );
+        $args_event_cat = array(
+            'labels'                     => $labels_event_cat,
+            'hierarchical'               => true,
+            'public'                     => true,
+            'show_ui'                    => true,
+            'show_admin_column'          => true,
+            'show_in_nav_menus'          => true,
+            'show_tagcloud'              => false,
+        );
+        register_taxonomy( 'event_cat', array( 'evenement' ), $args_event_cat );
 
-
-    $labels = array(
+    $labels_partner_cat = array(
         'name'                       => 'Categories',
         'singular_name'              => 'Categorie',
         'menu_name'                  => 'Categorie',
@@ -87,8 +112,8 @@ function create_custom_post_types() {
         'add_or_remove_items'        => 'Ajouter ou supprimer des categories',
         'choose_from_most_used'      => 'Choisir parmi les categories les plus utilisées',
     );
-    $args = array(
-        'labels'                     => $labels,
+    $args_partner_cat = array(
+        'labels'                     => $labels_partner_cat,
         'hierarchical'               => true,
         'public'                     => true,
         'show_ui'                    => true,
@@ -96,7 +121,7 @@ function create_custom_post_types() {
         'show_in_nav_menus'          => true,
         'show_tagcloud'              => false,
     );
-    register_taxonomy( 'partner_cat', array( 'partenaire' ), $args );
+    register_taxonomy( 'partner_cat', array( 'partenaire' ), $args_partner_cat );
 
 
     register_post_type('partenaire', // Register Custom Post Type
