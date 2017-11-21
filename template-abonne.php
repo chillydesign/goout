@@ -82,12 +82,12 @@
                         </div>
                     </div>
 
-                    <div class="field">    <textarea name="message" id="message" placeholder="Message"></textarea></div>
+                    <div class="field textarea_field">    <textarea name="message" id="message" placeholder="Message"></textarea></div>
                 </div>
 
 
                 <div class="col-sm-3">
-                    <p>Vous allez adorer recevoir le magazine cha ue debut de mois pour faire vos choix de sorties. Alors abonnez - vous selon votre humeur du moment. Soutenez go</p>
+                    <p>Vous allez adorer recevoir le magazine chaque debut de mois pour faire vos choix de sorties. Alors abonnez - vous selon votre humeur du moment. Soutenez go</p>
 
                     <div class="field"><input type="submit" value="Je m'incris" name="submit_abonne" /></div>
 

@@ -12,7 +12,7 @@
 
                     <div class="row">
 
-                        <div class="col-xs-4">
+                        <div class="col-xs-4" style="padding-right:0">
                             <a  href="<?php the_permalink(); ?>">
                                 <img class="latest_edition_img" src="<?php echo $image; ?>" alt="<?php the_title(); ?>">
                             </a>

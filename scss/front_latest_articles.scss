@@ -8,6 +8,13 @@
         margin-bottom: 20px;
         overflow: hidden;
 
+
+        &.latest_article_no_fixed_height {
+            height: auto;
+            overflow: auto;
+
+        }
+
         .latest_image {
             @extend .background_image;
             height: 340px;
@@ -29,6 +36,19 @@
 
             p {
                 font-size: $small_font_size;
+            }
+
+
+            &.latest_text_dark {
+                h2 {
+                    background: $font_color;
+                    color: white;
+                    padding: 10px;
+                    margin-top: -20px;
+                    margin-bottom: 5px;
+                    text-align: center;
+                    font-size: 2em;
+                }
             }
 
         }

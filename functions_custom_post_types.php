@@ -83,13 +83,12 @@ function create_custom_post_types() {
                 'not_found_in_trash' => __('No Cool Thing found in Trash', 'html5blank')
             ),
             'public' => true,
-            'exclude_from_search' => false,
+            'exclude_from_search' => true,
             'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
             'has_archive' => true,
             'supports' => array(
                 'title',
-                'thumbnail',
-                'editor'
+                'thumbnail'
             ), // Go to Dashboard Custom HTML5 Blank post for supports
             'can_export' => true, // Allows export in Tools > Export
             'taxonomies' => array(

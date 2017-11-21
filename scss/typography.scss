@@ -121,21 +121,49 @@ form {
     .field {
         margin-bottom: 20px;
     }
+
+    $textarea_lineheight: 40px;
+    .textarea_field {
+        position: relative;
+        overflow: scroll;
+        height: #{ ($textarea_lineheight * 3) + 2px};
+
+        &::after {
+            position: absolute;
+            top:0;
+            height: 2px;
+            background: white;
+            width: 100%;
+            left:0;
+            content: '';
+        }
+
+        textarea {
+            display: block;
+            
+            resize:none;
+            height: #{$textarea_lineheight * 10};
+            line-height: $textarea_lineheight;
+            background-image: linear-gradient($font_color 1px, transparent 1px);
+            background-size: 100% $textarea_lineheight;
+
+        }
+    }
 }
 input , textarea {
-    padding: 10px;
+    padding:  5px 10px ;
     width: 100%;
-    font-size: $font_size;
+    font-size: $small_font_size;
     font-family: $font_stack;
     appearance:none;
     border:0;
     outline: 0;
     border-bottom: 1px solid $font_color;
+    font-family: $sans_font_stack;
+
 
 }
-textarea {
-    min-height: 100px;
-}
+
 input[type="submit"] {
     background: $font_color;
     color: white;

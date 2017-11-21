@@ -8,6 +8,9 @@
 
     <h1><?php single_cat_title(); ?></h1>
     <?php get_template_part('partials/categories-coolthings'); ?>
+    <?php get_template_part('partials/archive-coolthings'); ?>
+    <?php get_template_part('pagination'); ?>
+
 
 </div><!--  END OF CONTAINER -->
 

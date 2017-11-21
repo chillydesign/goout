@@ -103,6 +103,17 @@ import matchHeight from '../node_modules/jquery-match-height/dist/jquery.matchHe
 
 
 
+        $('.menu-item-has-children > a').each(function(){
+            var $this = $(this);
+            $this.append('<div class="expander">Expand</div>');
+
+            $('.expander', $this).on('click', function(e){
+                e.preventDefault();
+                $this.parent().find('ul').toggle();
+            })
+        })
+
+
 
 
 

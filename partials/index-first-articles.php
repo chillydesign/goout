@@ -12,7 +12,7 @@ global $posts_array;
 <?php if ( sizeof($posts_array) > 0 ) : ?>
 
 
-        <div class="container">
+
             <div class="latest_articles">
             <div class="row">
                 <div class="col-sm-8">
@@ -35,5 +35,5 @@ global $posts_array;
 
 
         </div>
-    </div>
+
 <?php endif; ?>
