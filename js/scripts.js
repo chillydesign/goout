@@ -2,7 +2,7 @@
 import slick from '../node_modules/slick-carousel/slick/slick.min.js';
 import lity from '../node_modules/lity/dist/lity.min.js';
 import matchHeight from '../node_modules/jquery-match-height/dist/jquery.matchHeight.js';
-
+import Instafeed from '../node_modules/instafeed.js/instafeed.js';
 
 (function ($, root, undefined) {
 
@@ -102,7 +102,7 @@ import matchHeight from '../node_modules/jquery-match-height/dist/jquery.matchHe
         })
 
 
-
+        // submenus in navigation
         $('.menu-item-has-children > a').each(function(){
             var $this = $(this);
             $this.append('<div class="expander">Expand</div>');
@@ -114,6 +114,29 @@ import matchHeight from '../node_modules/jquery-match-height/dist/jquery.matchHe
         })
 
 
+        var $down_arrow = $('#down_arrow');
+        var $header = $('#header');
+        $down_arrow.on('click', function(e){
+            e.preventDefault();
+            $("html, body").animate({ scrollTop: $header.offset().top }, 1000);
+        })
+
+
+
+
+        // instagram
+        var feed = new Instafeed({
+            get: 'user',
+            userId: 349717879,
+            accessToken: '349717879.1677ed0.9f51e62ce0034d3baa1be090f1855602',
+            sortBy: 'most-recent',
+            limit: 6,
+            resolution: 'standard_resolution',
+            template: '<a href="{{link}}" style="background-image:url({{image}})"></a>',
+            success: function(data) {
+            }
+        });
+        feed.run();
 
 
 
