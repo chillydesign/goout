@@ -31,13 +31,9 @@
 
 <?php else: ?>
 
-	<!-- article -->
 	<article class="container">
-
 		<h2><?php _e( 'Sorry, nothing to display.', 'webfactor' ); ?></h2>
-
 	</article>
-	<!-- /article -->
 
 <?php endif; ?>
 

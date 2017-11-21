@@ -62,6 +62,15 @@ import matchHeight from '../node_modules/jquery-match-height/dist/jquery.matchHe
 
 
 
+        // subscription form
+        var $abonne_labels = $('.abonne_label');
+        $abonne_labels.on('click', function(){
+            $abonne_labels.removeClass('selected');
+            $(this).addClass('selected');
+        })
+
+
+
         var $navigation_menu = $('#navigation_menu');
         var $menu_buttons = $('.menu_button');
         var $nav_overlay = $('#nav_overlay');

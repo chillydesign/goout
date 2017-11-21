@@ -617,7 +617,7 @@ function show_advert($post) {
 
 function get_cityguidearticles_for_cityguide($cityguide_id){
 
-    $articles = new WP_Query(array(
+    $posts = new WP_Query(array(
         'post_type'  => 'cityguidearticle',
         'posts_per_page' => 3,
         'post_status' => 'publish',
@@ -629,9 +629,24 @@ function get_cityguidearticles_for_cityguide($cityguide_id){
             )
         )
     ));
-    return $articles;
+    return $posts;
 
 }
+
+
+
+function get_cityguide_and_escapades() {
+    $posts = new WP_Query(array(
+        'post_type'  => array(
+            'cityguide',
+            'escapade'
+        ),
+        'posts_per_page' => 10,
+        'post_status' => 'publish'
+    ));
+    return $posts;
+}
+
 
 
 

@@ -1,11 +1,14 @@
 $primary_color: #b20825;
 $brand_color: $primary_color;
 
+$font_color: #333;
+
 $background_color: #fff;
 $medium_grey: #aaa;
 $light_grey: #ececec;
+$dark_grey: $font_color;
 
-$font_color: #333;
+
 
 $font_stack:  'Cormorant Garamond',  'Libre Bodoni' , georgia, serif;
 $sans_font_stack:  'Helvetica Neue',  Helvetica, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,  Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
