@@ -34,7 +34,7 @@
                         <ul class=" restaurant_meta col-sm-4">
                             <?php if($location): ?><li>Location: <?php echo $location; ?></li><?php endif;?>
                             <?php if($phone): ?><li>Phone: <?php echo $phone; ?></li><?php endif;?>
-                            <?php if($website): ?><li>Website: <?php echo esc_url($website); ?></li><?php endif;?>
+                            <?php if($website): ?><li>Website: <a href="<?php echo esc_url($website); ?>"><?php echo $website; ?></a></li><?php endif;?>
                         </ul>
                     </div>
 

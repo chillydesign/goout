@@ -46,11 +46,11 @@
                     <?php $classes = ( $aa % 2 == 0 ) ?  [ 'col-sm-6', 'col-sm-6'  ] : [ 'col-sm-6 col-sm-push-6', 'col-sm-6 col-sm-pull-6'  ]; ?>
 
 
-                    <div class="row">
+                    <div class="row"  data-mh="city-group">
 
 
                         <div class="<?php echo $classes[0]; ?>">
-                            <div class="cityguidearticle_text cityguide_text">
+                            <div class="cityguidearticle_text cityguide_text city_match">
 
                                 <h2><?php the_title(); ?></h2>
                                 <p><?php echo get_the_excerpt(); ?></p>
@@ -64,11 +64,11 @@
 
                         </div>
                         <div class="<?php echo $classes[1]; ?>">
-                            <div class="image_slider">
+                            <div class="image_slider city_match">
                                 <?php foreach ($gallery as $image) : ?>
-                                    <img src="<?php echo $image['sizes']['large']; ?>" alt="">
+                                    <div  class="city_image city_match" style="background-image:url(<?php echo $image['sizes']['medium']; ?>)"></div>
                                 <?php endforeach; ?>
-                                
+
                             </div>
 
                         </div>

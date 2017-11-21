@@ -1,7 +1,7 @@
 
 import slick from '../node_modules/slick-carousel/slick/slick.min.js';
 import lity from '../node_modules/lity/dist/lity.min.js';
-
+import matchHeight from '../node_modules/jquery-match-height/dist/jquery.matchHeight.js';
 
 
 (function ($, root, undefined) {
@@ -37,7 +37,7 @@ import lity from '../node_modules/lity/dist/lity.min.js';
 
         var $image_sliders = $('.image_slider');
             $image_sliders.slick({
-                dots: true,
+                dots: false,
                 infinite: true,
                 arrows: true,
                 autoplay: true
@@ -53,6 +53,11 @@ import lity from '../node_modules/lity/dist/lity.min.js';
                     centerMode: true,
                     variableWidth: true
                 })
+
+
+
+
+        $('.city_match').matchHeight();
 
 
 

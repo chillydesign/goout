@@ -87,8 +87,6 @@
 
 }
 
-
-
 .cityguidearticle_text {
 
     background: $medium_grey;
@@ -133,6 +131,11 @@
         li {
             font-size: 1.6em;
         }
+
+
+
+
+
     }
 
 }
@@ -146,3 +149,13 @@ ul.cityguide_metas {
         font-family: $sans_font_stack;
     }
 }
+
+
+
+    .image_slider {
+        .city_image {
+                @extend .background_image;
+                min-height: 200px;
+            }
+
+    }
