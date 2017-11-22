@@ -18,14 +18,14 @@
 
         <h3>JE M'ABONNE</h3>
 
-        <form method="get" action="">
+        <form action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post">
 
 
             <div class="row">
                 <div class="col-sm-6 col-md-3">
-                    <label class="selected abonne_label">
+                    <label class=" abonne_label">
                         <span>Le Sympathetique</span><span class="subscription_price">50 chf</span>
-                        <input selected="selected" type="radio" name="subscription_type" value="sympathetique" />
+                        <input type="radio" name="subscription_type" value="sympathetique" />
                     </label>
                 </div>
                 <div class="col-sm-6 col-md-3">
@@ -89,7 +89,10 @@
                 <div class="col-sm-3">
                     <p>Vous allez adorer recevoir le magazine chaque debut de mois pour faire vos choix de sorties. Alors abonnez - vous selon votre humeur du moment. Soutenez go</p>
 
-                    <div class="field"><input type="submit" value="Je m'incris" name="submit_abonne" /></div>
+                    <div class="field">
+                        <input type="hidden" name="action" value="abonne_form">
+                        <input type="submit" value="Je m'incris" name="submit_abonne" />
+                    </div>
 
                 </div>
             </div>

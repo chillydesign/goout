@@ -654,6 +654,7 @@ function get_cityguide_and_escapades() {
 
 
 include('functions_custom_post_types.php');
+include('functions_abonne_form.php');
 
 
 ?>
