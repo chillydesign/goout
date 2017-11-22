@@ -13,6 +13,36 @@ import Instafeed from '../node_modules/instafeed.js/instafeed.js';
 
 
 
+        var $issues_sliders = $(".issues_slider");
+        var $latest_edition_covers = $('.latest_edition_cover');
+        var $prev_issue_number = $('#prev_issue_number');
+        var $next_issue_number = $('#next_issue_number');
+        $issues_sliders.slick({
+            dots: false,
+            infinite: true,
+            speed: 300,
+            slidesToShow: 1,
+            centerMode: false,
+            variableWidth: true
+        });
+
+        // update the issue numbers on the slider arrows
+        $issues_sliders.on('afterChange', function(event, slick, currentSlide, nextSlide){
+
+            var $nextSlideIndex = ((currentSlide + 1 + 5) % 5);
+            var $prevSlideIndex = ((currentSlide - 1 + 5) % 5);
+            var $nextSlide = $latest_edition_covers[ $nextSlideIndex  ];
+            var $prevSlide = $latest_edition_covers[ $prevSlideIndex ];
+            var $nextIssueNumber = $nextSlide.dataset.issuenumber;
+            var $prevIssueNumber = $prevSlide.dataset.issuenumber;
+            $next_issue_number.html($nextIssueNumber);
+            $prev_issue_number.html($prevIssueNumber);
+
+        });
+
+
+
+
         var $post_sliders = $(".post_slider");
             $post_sliders.slick({
                 dots: false,
