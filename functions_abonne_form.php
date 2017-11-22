@@ -19,7 +19,7 @@ function process_abonne_form() {
 
             if ( trim($_POST['last_name']) != '' &&
                  trim($_POST['email']) != '' &&
-                 trim($_POST['subscription_type']) != '' 
+                 trim($_POST['subscription_type']) != ''
               ) {
                 // SEND EMAILS TO THE ADMIN AND THE PERSON WHO SUBMITTED
                 send_abonne_emails( $_POST);
@@ -56,7 +56,7 @@ function send_abonne_emails($data){
     $subject = 'Nouvelle abonne';
 
     $fields = abonne_fields();
-    $content = '<p>Une nouvelle inscription a été enregistrée pour le camp d’été :</p><br /><br /><ul>';
+    $content = '<p>Une nouvelle inscription a été enregistrée pour le camp d’été :</p><ul>';
     foreach ($fields as $key => $value) :
         $content .=  '<li> <strong>'. $value.'</strong>: '.  sanitize_text_field( $data[$key] ) .' </li>';
     endforeach;
