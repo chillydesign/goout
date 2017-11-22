@@ -8,12 +8,17 @@ $partner_height: 60px;
     h5 {
         background: $light_grey;
         text-align: center;
-        color: $medium_grey;
+
         font-family: $sans_font_stack;
         font-size: 1.3em;
         padding: 10px 0;
         margin: 0 0 20px;
         font-weight: normal;
+
+        a {
+            color: $medium_grey;
+            border: 0;
+        }
 
     }
 }
@@ -67,6 +72,48 @@ $partner_height: 60px;
         }
 
 
+    }
+
+}
+
+
+
+.partners_archive_container {
+    display: flex;
+    flex-wrap:wrap;
+
+    .single_partner {
+
+        max-width: #{100% / 3};
+        width: #{100% / 3};
+        flex:1 0 auto;
+        margin: 0 0 20px;
+
+        a {
+            border:0;
+            &:hover {
+                border:0;
+            }
+        }
+        .partner_image {
+
+            @extend .background_image;
+            width: 100%;
+            height: 130px;
+            background-size: contain;
+            background-color: white;
+        }
+
+    }
+}
+
+@media (min-width: 768px) {
+    .partners_archive_container {
+        .single_partner {
+
+            max-width: #{100% / 6};
+            width: #{100% / 6};
+        }
     }
 
 }

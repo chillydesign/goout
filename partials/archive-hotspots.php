@@ -8,7 +8,7 @@
                         <?php $link = get_the_permalink();  ?>
                         <?php $image = ( has_post_thumbnail()) ? thumbnail_of_post_url(get_the_ID(),  'medium') : ''; ?>
                         <a  class="latest_image" href="<?php echo ($link); ?>" style="background-image:url('<?php echo $image; ?>');" title="<?php the_title(); ?>"></a>
-                        <div class="latest_text latest_text_dark">
+                        <div class="latest_text ">
                             <h2><a href="<?php echo esc_url($link); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
                         </div>
                     </article>
