@@ -1,18 +1,18 @@
 <?php
 /*
- *  Author: Todd Motto | @toddmotto
- *  URL: webfactor.com | @webfactor
- *  Custom functions, support, custom post types and more.
- */
+*  Author: Todd Motto | @toddmotto
+*  URL: webfactor.com | @webfactor
+*  Custom functions, support, custom post types and more.
+*/
 
 /*------------------------------------*\
-	External Modules/Files
+External Modules/Files
 \*------------------------------------*/
 
 // Load any external files you have here
 
 /*------------------------------------*\
-	Theme Support
+Theme Support
 \*------------------------------------*/
 
 if (!isset($content_width))
@@ -30,65 +30,66 @@ if (function_exists('add_theme_support'))
     add_image_size('large', 1600, '', true); // Large Thumbnail
     add_image_size('medium', 800, '', true); // Medium Thumbnail
     add_image_size('small', 400, '', true); // Small Thumbnail
+    add_image_size('tiny', 30, 30, true); // Tiny Thumbnail // used for checking brightness
     add_image_size('square', 200, 200, true); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
 
     // Add Support for Custom Backgrounds - Uncomment below if you're going to use
     /*add_theme_support('custom-background', array(
-	'default-color' => 'FFF',
-	'default-image' => get_template_directory_uri() . '/img/bg.jpg'
-    ));*/
+    'default-color' => 'FFF',
+    'default-image' => get_template_directory_uri() . '/img/bg.jpg'
+));*/
 
-    // Add Support for Custom Header - Uncomment below if you're going to use
-    /*add_theme_support('custom-header', array(
-	'default-image'			=> get_template_directory_uri() . '/img/headers/default.jpg',
-	'header-text'			=> false,
-	'default-text-color'		=> '000',
-	'width'				=> 1000,
-	'height'			=> 198,
-	'random-default'		=> false,
-	'wp-head-callback'		=> $wphead_cb,
-	'admin-head-callback'		=> $adminhead_cb,
-	'admin-preview-callback'	=> $adminpreview_cb
-    ));*/
+// Add Support for Custom Header - Uncomment below if you're going to use
+/*add_theme_support('custom-header', array(
+'default-image'			=> get_template_directory_uri() . '/img/headers/default.jpg',
+'header-text'			=> false,
+'default-text-color'		=> '000',
+'width'				=> 1000,
+'height'			=> 198,
+'random-default'		=> false,
+'wp-head-callback'		=> $wphead_cb,
+'admin-head-callback'		=> $adminhead_cb,
+'admin-preview-callback'	=> $adminpreview_cb
+));*/
 
-    // Enables post and comment RSS feed links to head
-    add_theme_support('automatic-feed-links');
+// Enables post and comment RSS feed links to head
+add_theme_support('automatic-feed-links');
 
-    // Localisation Support
-    load_theme_textdomain('webfactor', get_template_directory() . '/languages');
+// Localisation Support
+load_theme_textdomain('webfactor', get_template_directory() . '/languages');
 }
 
 /*------------------------------------*\
-	Functions
+Functions
 \*------------------------------------*/
 
 // HTML5 Blank navigationh
 function webfactor_nav()
 {
-	wp_nav_menu(
-	array(
-		'theme_location'  => 'header-menu',
-		'menu'            => '',
-		'container'       => 'div',
-		'container_class' => 'menu-{menu slug}-container',
-		'container_id'    => '',
-		'menu_class'      => 'menu',
-		'menu_id'         => '',
-		'echo'            => true,
-		'fallback_cb'     => 'wp_page_menu',
-		'before'          => '',
-		'after'           => '',
-		'link_before'     => '',
-		'link_after'      => '',
-		'items_wrap'      => '<ul>%3$s</ul>',
-		'depth'           => 0,
-		'walker'          => ''
-		)
-	);
+    wp_nav_menu(
+        array(
+            'theme_location'  => 'header-menu',
+            'menu'            => '',
+            'container'       => 'div',
+            'container_class' => 'menu-{menu slug}-container',
+            'container_id'    => '',
+            'menu_class'      => 'menu',
+            'menu_id'         => '',
+            'echo'            => true,
+            'fallback_cb'     => 'wp_page_menu',
+            'before'          => '',
+            'after'           => '',
+            'link_before'     => '',
+            'link_after'      => '',
+            'items_wrap'      => '<ul>%3$s</ul>',
+            'depth'           => 0,
+            'walker'          => ''
+        )
+    );
 }
 
 function wf_version(){
-  return '0.0.5';
+    return '0.0.5';
 }
 
 // Load HTML5 Blank scripts (header.php)
@@ -294,49 +295,49 @@ function enable_threaded_comments()
 // Custom Comments Callback
 function webfactorcomments($comment, $args, $depth)
 {
-	$GLOBALS['comment'] = $comment;
-	extract($args, EXTR_SKIP);
+    $GLOBALS['comment'] = $comment;
+    extract($args, EXTR_SKIP);
 
-	if ( 'div' == $args['style'] ) {
-		$tag = 'div';
-		$add_below = 'comment';
-	} else {
-		$tag = 'li';
-		$add_below = 'div-comment';
-	}
-?>
+    if ( 'div' == $args['style'] ) {
+        $tag = 'div';
+        $add_below = 'comment';
+    } else {
+        $tag = 'li';
+        $add_below = 'div-comment';
+    }
+    ?>
     <!-- heads up: starting < for the html tag (li or div) in the next line: -->
     <<?php echo $tag ?> <?php comment_class(empty( $args['has_children'] ) ? '' : 'parent') ?> id="comment-<?php comment_ID() ?>">
-	<?php if ( 'div' != $args['style'] ) : ?>
-	<div id="div-comment-<?php comment_ID() ?>" class="comment-body">
-	<?php endif; ?>
-	<div class="comment-author vcard">
-	<?php if ($args['avatar_size'] != 0) echo get_avatar( $comment, $args['180'] ); ?>
-	<?php printf(__('<cite class="fn">%s</cite> <span class="says">says:</span>'), get_comment_author_link()) ?>
-	</div>
-<?php if ($comment->comment_approved == '0') : ?>
-	<em class="comment-awaiting-moderation"><?php _e('Your comment is awaiting moderation.') ?></em>
-	<br />
-<?php endif; ?>
+    <?php if ( 'div' != $args['style'] ) : ?>
+        <div id="div-comment-<?php comment_ID() ?>" class="comment-body">
+        <?php endif; ?>
+        <div class="comment-author vcard">
+            <?php if ($args['avatar_size'] != 0) echo get_avatar( $comment, $args['180'] ); ?>
+            <?php printf(__('<cite class="fn">%s</cite> <span class="says">says:</span>'), get_comment_author_link()) ?>
+        </div>
+        <?php if ($comment->comment_approved == '0') : ?>
+            <em class="comment-awaiting-moderation"><?php _e('Your comment is awaiting moderation.') ?></em>
+            <br />
+        <?php endif; ?>
 
-	<div class="comment-meta commentmetadata"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>">
-		<?php
-			printf( __('%1$s at %2$s'), get_comment_date(),  get_comment_time()) ?></a><?php edit_comment_link(__('(Edit)'),'  ','' );
-		?>
-	</div>
+        <div class="comment-meta commentmetadata"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>">
+            <?php
+            printf( __('%1$s at %2$s'), get_comment_date(),  get_comment_time()) ?></a><?php edit_comment_link(__('(Edit)'),'  ','' );
+            ?>
+        </div>
 
-	<?php comment_text() ?>
+        <?php comment_text() ?>
 
-	<div class="reply">
-	<?php comment_reply_link(array_merge( $args, array('add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
-	</div>
-	<?php if ( 'div' != $args['style'] ) : ?>
-	</div>
-	<?php endif; ?>
+        <div class="reply">
+            <?php comment_reply_link(array_merge( $args, array('add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+        </div>
+        <?php if ( 'div' != $args['style'] ) : ?>
+        </div>
+    <?php endif; ?>
 <?php }
 
 /*------------------------------------*\
-	Actions + Filters + ShortCodes
+Actions + Filters + ShortCodes
 \*------------------------------------*/
 
 // Add Actions
@@ -394,7 +395,7 @@ add_shortcode('html5_shortcode_demo_2', 'html5_shortcode_demo_2'); // Place [htm
 
 
 /*------------------------------------*\
-	ShortCode Functions
+ShortCode Functions
 \*------------------------------------*/
 
 // Shortcode Demo with Nested Capability
@@ -415,23 +416,23 @@ function html5_shortcode_demo_2($atts, $content = null) // Demo Heading H2 short
 function chilly_nav($menu){
 
     wp_nav_menu(
-    array(
-        'theme_location'  => $menu,
-        'menu'            => '',
-        'container'       => 'div',
-        'container_class' => 'menu-{menu slug}-container',
-        'container_id'    => '',
-        'menu_class'      => 'menu',
-        'menu_id'         => '',
-        'echo'            => true,
-        'fallback_cb'     => 'wp_page_menu',
-        'before'          => '',
-        'after'           => '',
-        'link_before'     => '',
-        'link_after'      => '',
-        'items_wrap'      => '%3$s',
-        'depth'           => 0,
-        'walker'          => ''
+        array(
+            'theme_location'  => $menu,
+            'menu'            => '',
+            'container'       => 'div',
+            'container_class' => 'menu-{menu slug}-container',
+            'container_id'    => '',
+            'menu_class'      => 'menu',
+            'menu_id'         => '',
+            'echo'            => true,
+            'fallback_cb'     => 'wp_page_menu',
+            'before'          => '',
+            'after'           => '',
+            'link_before'     => '',
+            'link_after'      => '',
+            'items_wrap'      => '%3$s',
+            'depth'           => 0,
+            'walker'          => ''
         )
     );
 
@@ -456,17 +457,17 @@ add_shortcode( 'chilly_map', 'chilly_map' );
 
 function disable_wp_emojicons() {
 
-  // all actions related to emojis
-  remove_action( 'admin_print_styles', 'print_emoji_styles' );
-  remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-  remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
-  remove_action( 'wp_print_styles', 'print_emoji_styles' );
-  remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
-  remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
-  remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
+    // all actions related to emojis
+    remove_action( 'admin_print_styles', 'print_emoji_styles' );
+    remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+    remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+    remove_action( 'wp_print_styles', 'print_emoji_styles' );
+    remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
+    remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
+    remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
 
-  // filter to remove TinyMCE emojis
-  // add_filter( 'tiny_mce_plugins', 'disable_emojicons_tinymce' );
+    // filter to remove TinyMCE emojis
+    // add_filter( 'tiny_mce_plugins', 'disable_emojicons_tinymce' );
 }
 add_action( 'init', 'disable_wp_emojicons' );
 
@@ -486,8 +487,8 @@ function remove_json_api () {
     remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
     // Remove oEmbed-specific JavaScript from the front-end and back-end.
     remove_action( 'wp_head', 'wp_oembed_add_host_js' );
-   // Remove all embeds rewrite rules.
-  // add_filter( 'rewrite_rules_array', 'disable_embeds_rewrites' );
+    // Remove all embeds rewrite rules.
+    // add_filter( 'rewrite_rules_array', 'disable_embeds_rewrites' );
 
 }
 add_action( 'after_setup_theme', 'remove_json_api' );
@@ -515,10 +516,10 @@ function count_to_bootstrap_class($count){
 
 function thumbnail_of_post_url( $post_id,  $size='large'  ) {
 
-     $image_id = get_post_thumbnail_id(  $post_id );
-     $image_url = wp_get_attachment_image_src($image_id, $size  );
-     $image = $image_url[0];
-     return $image;
+    $image_id = get_post_thumbnail_id(  $post_id );
+    $image_url = wp_get_attachment_image_src($image_id, $size  );
+    $image = $image_url[0];
+    return $image;
 
 }
 
@@ -528,23 +529,23 @@ function goout_posts_slider($posts) {
     // turn a list of posts into a slider
     $str = '';
     $str .= '<ul class="post_slider" >';
-          while($posts->have_posts()) : $posts->the_post();
-            $str .= '<li>';
-                $str .= '<a href="' . get_the_permalink() .'" title="' . get_the_title() .'">';
-                     $image = ( has_post_thumbnail()) ? thumbnail_of_post_url(get_the_ID(),  'small') : '';
-                     $categories = get_the_category( );
-                    $str .= '<img src="' . $image . '" alt="" />';
-                     if ( sizeof($categories) > 0) :
-                        $str .= '<p class="category">' . $categories[0]->cat_name . '</p>';
-                     endif;
-                    $str .= '<h3>' . get_the_title() . '</h3>';
-                    $str .= '<p>' . get_the_excerpt() . '</p>';
-                $str .= '</a>';
-            $str .= '</li>';
-          endwhile;
-    $str .= '</ul>';
+    while($posts->have_posts()) : $posts->the_post();
+    $str .= '<li>';
+    $str .= '<a href="' . get_the_permalink() .'" title="' . get_the_title() .'">';
+    $image = ( has_post_thumbnail()) ? thumbnail_of_post_url(get_the_ID(),  'small') : '';
+    $categories = get_the_category( );
+    $str .= '<img src="' . $image . '" alt="" />';
+    if ( sizeof($categories) > 0) :
+        $str .= '<p class="category">' . $categories[0]->cat_name . '</p>';
+    endif;
+    $str .= '<h3>' . get_the_title() . '</h3>';
+    $str .= '<p>' . get_the_excerpt() . '</p>';
+    $str .= '</a>';
+    $str .= '</li>';
+endwhile;
+$str .= '</ul>';
 
-    echo $str;
+echo $str;
 }
 
 
@@ -559,7 +560,7 @@ function convert_posts_to_strings() {
     $post_string .= '<a href="' . $permalink . '"  class="latest_image" style="background-image:url(' . $image . ');" ></a>';
     $post_string .= '<div class="latest_text">';
     if ( sizeof($categories) > 0) :
-       $post_string .= '<p class="category">' . $categories[0]->cat_name . '</p>';
+        $post_string .= '<p class="category">' . $categories[0]->cat_name . '</p>';
     endif;
     $post_string .= '<h2><a href="' . $permalink . '">'.  get_the_title() .'</a></h2>';
     $post_string .= '<p>' . get_the_excerpt() .'</p>';
@@ -585,10 +586,10 @@ function convert_events_to_strings() {
     $post_string .= '<a href="' . $permalink . '"  class="latest_image" style="background-image:url(' . $image . ');" >';
     $post_string .= '<div class="latest_text">';
     if  ($event_cat && sizeof($event_cat) > 0 ):
-       $post_string .= '<p class="category">' . $event_cat[0]->name  . '</p>';
+        $post_string .= '<p class="category">' . $event_cat[0]->name  . '</p>';
     endif;
     if  ($date ):
-       $post_string .= '<p class="date">' . $date  . '</p>';
+        $post_string .= '<p class="date">' . $date  . '</p>';
     endif;
     $post_string .= '<h2>'.  get_the_title() .'</h2>';
     $post_string .='</div>';
@@ -648,7 +649,44 @@ function get_cityguide_and_escapades() {
 }
 
 
+function getBrightness($url) {
 
+    if (   stripos( $url, '.jpg' )  > 0 ||    stripos( $url, '.jpeg' )  > 0  ) {
+        $gdHandle = imagecreatefromjpeg($url);
+    } else if (   stripos( $url, '.png' )  )  {
+        $gdHandle = imagecreatefromjpeg($url);
+    } else {
+        $gdHandle = false;
+    }
+
+
+    if ($gdHandle) {
+        $width = imagesx($gdHandle);
+        $height = imagesy($gdHandle);
+
+        $totalBrightness = 0;
+
+        for ($x = 0; $x < $width; $x++) {
+            for ($y = 0; $y < $height; $y++) {
+                $rgb = imagecolorat($gdHandle, $x, $y);
+
+                $red = ($rgb >> 16) & 0xFF;
+                $green = ($rgb >> 8) & 0xFF;
+                $blue = $rgb & 0xFF;
+
+                $totalBrightness += (max($red, $green, $blue) + min($red, $green, $blue)) / 2;
+            }
+        }
+
+        imagedestroy($gdHandle);
+
+        return ($totalBrightness / ($width * $height)) / 2.55;
+
+    }
+
+
+
+}
 
 
 

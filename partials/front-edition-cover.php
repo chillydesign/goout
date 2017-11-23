@@ -6,14 +6,17 @@ $latest_editions = new WP_Query(array(
     'meta_key'  => 'issue_number'
 ));
 
-
+$home_url =  home_url();
 $edition_numbers = array();
 $edition_strings = array();
 if ($latest_editions->have_posts() ):  while($latest_editions->have_posts()) : $latest_editions->the_post();
     $image = get_field('big_image');
     $issue_number = get_field('issue_number');
     $subtitle = get_field('subtitle');
-    $str =  '<div data-issuenumber="'. $issue_number .'" class="latest_edition_cover" style="background-image:url('.  $image['sizes']['large'] . ');">';
+    $brightness = getBrightness( $image['sizes']['tiny'] );
+    $bright_class = ($brightness > 50) ? 'edition_cover_light' : 'edition_cover_dark';
+    $str =  '<div data-issuenumber="'. $issue_number .'" class="'. $bright_class .' latest_edition_cover" style="background-image:url('.  $image['sizes']['large'] . ');">';
+    $str .=  '<a href="'. $home_url .'" class="branding"></a>';
     $str .= '<a href="' .  get_the_permalink() .'" class="subtitle">issue ' . $issue_number . '<span>' . $subtitle  .'</span></a>';
     $str .= '</div>';
     array_push($edition_strings, $str);
@@ -27,8 +30,6 @@ wp_reset_query();
 <?php  if ( sizeof($edition_strings) > 0) :  ?>
 
     <div id="latest_editions_cover">
-
-        <a href="<?php echo home_url(); ?>" class="branding"><?php bloginfo('name'); ?></a>
 
         <div class="issues_slider">
             <?php echo implode('',  $edition_strings ); ?>

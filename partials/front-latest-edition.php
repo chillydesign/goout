@@ -20,7 +20,7 @@
                         <div class="col-xs-8">
 
                             <div class="image_slider">
-                                <?php foreach($featured_pages as $page): ?>
+                                <?php if ($featured_pages): foreach($featured_pages as $page): ?>
                                     <div class="featured_page">
                                         <img class="latest_edition_img" src="<?php echo $page['sizes']['small']; ?>" alt="<?php the_title(); ?>">
                                     </div>
@@ -31,7 +31,7 @@
 
 
 
-                                <?php endforeach; ?>
+                                <?php endforeach; endif; ?>
                             </div>
                         </div>
                     </div>

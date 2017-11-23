@@ -1,4 +1,5 @@
 <?php $content =  get_sub_field('content'); ?>
+<?php $advert = false  ?>
 
 <div class="container">
     <div class="row">

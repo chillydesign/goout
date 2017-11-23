@@ -11,17 +11,6 @@
     box-shadow: 0 -30px 50px transparentize(black,0.7) inset;
     position: relative;
 
-    .branding {
-        position: absolute;
-        top:20px;
-        left:20px;
-        z-index: 100;
-        border: 0;
-        &:hover {
-            border:0;
-        }
-    }
-
 
     .latest_edition_cover {
         @extend .background_image;
@@ -30,6 +19,20 @@
         width: 100%;
         width: 100vw;
         position: relative;
+
+
+
+            .branding {
+                position: absolute;
+                top:20px;
+                left:20px;
+                z-index: 100;
+                border: 0;
+                &:hover {
+                    border:0;
+                }
+            }
+
 
         .subtitle {
             position: absolute;
@@ -53,6 +56,22 @@
                 font-size: 60%;
                 margin-top:10px;
             }
+        }
+
+        &.edition_cover_dark {
+            background-color:#222;
+
+            .subtitle {
+                color: white;
+                border-top: 1px solid white;
+            }
+            .branding {
+                background-image: url('../img/logo-white.svg');
+            }
+
+        }
+        &.edition_cover_light {
+
         }
 
     }
@@ -107,8 +126,8 @@
     top: calc(50% - 10px);
     left: 50px;
     font-size: 2.6em;
-    color: black;
-    text-shadow: 1px 1px 0 white;
+    color: #888;
+
 
 }
 #next_issue_number {
