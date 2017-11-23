@@ -13,7 +13,7 @@
 <?php get_template_part('partials/front', 'focus' ); ?>
 <?php get_template_part('partials/front', 'latest-edition' ); ?>
 <?php get_template_part('partials/front', 'on-air' ); ?>
-<?php get_template_part('partials/front', 'agenda' ); ?>
+<?php // get_template_part('partials/front', 'agenda' ); ?>
 <?php if (sizeof($adverts) > 0 ) show_advert($adverts[0]); ?>
 <?php get_template_part('partials/front', 'cool-spots' ); ?>
 <?php if (sizeof($adverts) > 1 ) show_advert($adverts[1]); ?>
