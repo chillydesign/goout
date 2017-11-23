@@ -35,6 +35,10 @@ header {
     width: 30px;
     height: $logo_height;
     top: #{ ($header_height -  $logo_height) /2 };
+
+    &:hover {
+        border: 0;
+    }
 }
 
 
