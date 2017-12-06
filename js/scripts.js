@@ -155,18 +155,20 @@ import Instafeed from '../node_modules/instafeed.js/instafeed.js';
 
 
         // instagram
-        var feed = new Instafeed({
-            get: 'user',
-            userId: 349717879,
-            accessToken: '349717879.1677ed0.9f51e62ce0034d3baa1be090f1855602',
-            sortBy: 'most-recent',
-            limit: 6,
-            resolution: 'standard_resolution',
-            template: '<a href="{{link}}" style="background-image:url({{image}})"></a>',
-            success: function(data) {
-            }
-        });
-        feed.run();
+        if ( $('#instafeed').length  ) {
+            var feed = new Instafeed({
+                get: 'user',
+                userId: 349717879,
+                accessToken: '349717879.1677ed0.9f51e62ce0034d3baa1be090f1855602',
+                sortBy: 'most-recent',
+                limit: 6,
+                resolution: 'standard_resolution',
+                template: '<a href="{{link}}" style="background-image:url({{image}})"></a>',
+                success: function(data) {
+                }
+            });
+            feed.run();
+        }
 
 
 
