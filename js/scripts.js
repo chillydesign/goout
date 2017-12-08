@@ -3,6 +3,8 @@ import slick from '../node_modules/slick-carousel/slick/slick.min.js';
 import lity from '../node_modules/lity/dist/lity.min.js';
 import matchHeight from '../node_modules/jquery-match-height/dist/jquery.matchHeight.js';
 import Instafeed from '../node_modules/instafeed.js/instafeed.js';
+import Headroom from '../node_modules/headroom.js/dist/headroom.js';
+
 
 (function ($, root, undefined) {
 
@@ -44,47 +46,54 @@ import Instafeed from '../node_modules/instafeed.js/instafeed.js';
 
 
         var $post_sliders = $(".post_slider");
-            $post_sliders.slick({
-                dots: false,
-                infinite: true,
-                speed: 300,
-                slidesToShow: 1,
-                centerMode: false,
-                variableWidth: true
-            });
+        $post_sliders.slick({
+            dots: false,
+            infinite: true,
+            speed: 300,
+            slidesToShow: 1,
+            centerMode: false,
+            variableWidth: true
+        });
 
 
 
 
         var $first_articles_sliders = $('.first_articles_slider');
-            $first_articles_sliders.slick({
-                dots: true,
-                infinite: true,
-                arrows: false,
-                autoplay: true
-            })
+        $first_articles_sliders.slick({
+            dots: true,
+            infinite: true,
+            arrows: false,
+            autoplay: true
+        })
 
 
         var $image_sliders = $('.image_slider');
-            $image_sliders.slick({
-                dots: false,
-                infinite: true,
-                arrows: true,
-                autoplay: true
-            })
+        $image_sliders.slick({
+            dots: false,
+            infinite: true,
+            arrows: true,
+            autoplay: true
+        })
 
 
-            var $partners_slider = $('.partners_slider');
-                $partners_slider.slick({
-                    dots: false,
-                    infinite: true,
-                    arrows: true,
-                    autoplay: true,
-                    centerMode: true,
-                    variableWidth: true
-                })
+        var $partners_slider = $('.partners_slider');
+        $partners_slider.slick({
+            dots: false,
+            infinite: true,
+            arrows: true,
+            autoplay: true,
+            centerMode: true,
+            variableWidth: true
+        })
 
 
+
+        // grab an element
+        var myElement = document.getElementById("secondary_header");
+        // construct an instance of Headroom, passing the element
+        var headroom  = new Headroom(myElement);
+        // initialise
+        headroom.init();
 
 
         $('.city_match').matchHeight();
@@ -173,44 +182,75 @@ import Instafeed from '../node_modules/instafeed.js/instafeed.js';
 
 
         // MAP
-                if (typeof lat != 'undefined' && typeof lng != 'undefined') {
+        var location_map_container = $('#map_container');
 
-                    console.log(lat,lng);
+        if ( location_map_container.length  ) {
 
-                    var map_theme = [{"featureType":"administrative","elementType":"all","stylers":[{"saturation":"-100"}]},{"featureType":"administrative.province","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"landscape","elementType":"all","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},{"featureType":"poi","elementType":"all","stylers":[{"saturation":-100},{"lightness":"50"},{"visibility":"simplified"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":"-100"}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"all","stylers":[{"lightness":"30"}]},{"featureType":"road.local","elementType":"all","stylers":[{"lightness":"40"}]},{"featureType":"transit","elementType":"all","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffff00"},{"lightness":-25},{"saturation":-97}]},{"featureType":"water","elementType":"labels","stylers":[{"lightness":-25},{"saturation":-100}]}];
+            if (    typeof lat != 'undefined' && typeof lng != 'undefined'  ) {
 
-                    var map_options = {
-                        zoom: 14,
-                        mapTypeControl: true,
-                        scrollwheel: false,
-                        draggable: true,
-                        navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
-                        mapTypeId: google.maps.MapTypeId.ROADMAP,
-                        styles: map_theme
-                    };
+                var position = new google.maps.LatLng(lat,lng);
+                create_map(position, 14, location_map_container);
 
+            } else if (typeof place_location  != 'undefined') {
 
-                    var location_map_container = $('#map_container');
-                    location_map_container.css({
-                        width : '100%'
-                    })
+                var geocoder = new google.maps.Geocoder();
+                geocoder.geocode({'address': place_location}, function(results, status) {
+                         if (status === 'OK') {
+                            if (results.length > 0) {
+                                var position =  results[0].geometry.location ;
+                                create_map(position, 16,  location_map_container);
+                             }
 
-                    var location_map = new google.maps.Map(location_map_container.get(0), map_options);
-
-                    // var infowindow = new google.maps.InfoWindow({content: ''});
-                    var position = new google.maps.LatLng(lat,lng);
-
-                       var marker = new google.maps.Marker({
-                         position: position,
-                         map: location_map,
-                         optimized: false
-                       });
-
-                       location_map.setCenter(position);
+                         } else {
+                           console.log('Geocode was not successful for the following reason: ' + status);
+                         }
+                     });
 
 
-                }; // END  IF MAPLOCATION
-                // END OF MAP
+            }
+
+        }; // end of if have a #map_container
+        // END OF MAP
     });
+
+
+    function create_map(position, zoom,  location_map_container) {
+
+
+        var map_theme = [{"featureType":"administrative","elementType":"all","stylers":[{"saturation":"-100"}]},{"featureType":"administrative.province","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"landscape","elementType":"all","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},{"featureType":"poi","elementType":"all","stylers":[{"saturation":-100},{"lightness":"50"},{"visibility":"simplified"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":"-100"}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"all","stylers":[{"lightness":"30"}]},{"featureType":"road.local","elementType":"all","stylers":[{"lightness":"40"}]},{"featureType":"transit","elementType":"all","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffff00"},{"lightness":-25},{"saturation":-97}]},{"featureType":"water","elementType":"labels","stylers":[{"lightness":-25},{"saturation":-100}]}];
+
+        var map_options = {
+            zoom: zoom,
+            mapTypeControl: true,
+            scrollwheel: false,
+            draggable: true,
+            navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            styles: map_theme
+        };
+
+
+
+        location_map_container.css({
+            width : '100%'
+        })
+
+        var location_map = new google.maps.Map(location_map_container.get(0), map_options);
+
+        // var infowindow = new google.maps.InfoWindow({content: ''});
+        var icon_url = 'https://webfactor.ch/projets/goout/wp-content/themes/goout/img/map_marker.png';
+
+        var marker = new google.maps.Marker({
+            position: position,
+            map: location_map,
+            optimized: false,
+             icon: icon_url
+        });
+
+        location_map.setCenter(position);
+
+    }
+
+
 
 })(jQuery, this);

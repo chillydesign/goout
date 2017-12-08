@@ -33,7 +33,7 @@
 
         </div>
         <div class="col-sm-4 col-sm-push-2">
-            <img src="<?php echo $tdu;?>/img/marker.png" alt="">
+            <img src="<?php echo $tdu;?>/img/marker_black.png" alt="">
             <h4>L’Arcade</h4>
             <p>16, rue du Diorama <br>
             1204 Genève</p>

@@ -89,7 +89,7 @@ function webfactor_nav()
 }
 
 function wf_version(){
-    return '0.0.5';
+    return '0.0.6';
 }
 
 // Load HTML5 Blank scripts (header.php)
@@ -604,6 +604,20 @@ function convert_events_to_strings() {
 
 
 
+    function generate_sharing_buttons($link, $title, $image='') {
+
+        return '
+        <div class="share_buttons" >
+            <a class="share_button share_button_facebook" href="https://www.facebook.com/sharer/sharer.php?u='.$link.'"></a>
+            <a class="share_button share_button_twitter" href="http://www.twitter.com/share?url='.$link.'&via=GOOUTMAG&text='.$title.'&image-src='.$image.'"></a>
+            <a class="share_button share_button_google" href="https://plus.google.com/share?url='.$link.'"></a>
+            <a class="share_button share_button_pinterest" href="http://pinterest.com/pin/create/button/?url='.$link.'&description='.$title.'&media='.$image.'"></a>
+            <a class="share_button share_button_instagram" href="#"></a>
+        </div>';
+
+
+    }
+
 function show_advert($post) {
     $image = thumbnail_of_post_url($post->ID,  'large' ) ;
     if ($image) :
@@ -689,6 +703,43 @@ function getBrightness($url) {
 }
 
 
+function generate_map($location) {
+
+    $str = '';
+
+    $str .= '<div style="height:200px" id="map_container"></div>';
+    $str .= "<script type='text/javascript' src='//maps.google.com/maps/api/js?key=AIzaSyC-BDJZU14ltCrYRPei33a4ZSQfJqRbxNY&#038;ver=4.8.1'></script>";
+    $str .=  '<script> var  place_location = "'. $location. '";</script>';
+
+
+    echo $str;
+}
+
+
+
+
+function generate_stars($amount, $max, $class) {
+    $str = '';
+    $whole_amount = floor($amount);
+    $has_half = ($amount != $whole_amount );
+    $need_to_do_half = true;
+    for ($i=0; $i < $max ; $i++) {
+        if ($i< $whole_amount) {
+            $str .= '<span class="'.$class.' active"></span>';
+        } else {
+            if ( $has_half && $need_to_do_half ) {
+                $str .= '<span class="'.$class.' active half "></span>';
+                $need_to_do_half = false;
+                $i++;
+            }
+            if ($i < $max) {
+                $str .= '<span class="'.$class.' "></span>';
+            }
+
+        }
+    }
+    return $str;
+}
 
 
 include('functions_custom_post_types.php');

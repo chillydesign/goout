@@ -225,7 +225,32 @@ function create_custom_post_types() {
 
 
 
-
+    $labels_coolspot_tag = array(
+        'name'                       => 'Etiquettes',
+        'singular_name'              => 'Etiquette',
+        'menu_name'                  => 'Etiquette',
+        'all_items'                  => 'Toutes les Etiquettes',
+        'parent_item'                => 'Etiquette parente',
+        'parent_item_colon'          => 'Etiquette parente:',
+        'new_item_name'              => 'Nom de la nouvelle étiquette',
+        'add_new_item'               => 'Ajouter une étiquette',
+        'edit_item'                  => 'Modifier étiquette',
+        'update_item'                => 'Mettre à jur la étiquette',
+        'separate_items_with_commas' => 'Separer les étiquettes avec des virgules',
+        'search_items'               => 'Chercher dans les étiquettes',
+        'add_or_remove_items'        => 'Ajouter ou supprimer des étiquettes',
+        'choose_from_most_used'      => 'Choisir parmi les étiquettes les plus utilisées',
+    );
+    $args_coolspot_tag = array(
+        'labels'                     => $labels_coolspot_tag,
+        'hierarchical'               => false,
+        'public'                     => true,
+        'show_ui'                    => true,
+        'show_admin_column'          => true,
+        'show_in_nav_menus'          => true,
+        'show_tagcloud'              => true,
+    );
+    register_taxonomy( 'coolspot_tag', array( 'coolspot' ), $args_coolspot_tag );
 
     $labels_coolspot_cat = array(
         'name'                       => 'Categories',

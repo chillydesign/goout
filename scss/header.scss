@@ -1,5 +1,7 @@
 $header_height: 90px;
+$small_header_height: 50px;
 $logo_height: 50px;
+$small_logo_height: 30px;
 $big_logo_height: 100px;
 $big_header_height: 160px;
 
@@ -13,6 +15,36 @@ header {
     position: relative;
     height: $header_height;
     background: white;
+    left: 0;
+    right: 0;
+    width: 100%;
+
+
+    &#secondary_header {
+        position: fixed;
+        height: $small_header_height;
+        top:0;
+        z-index: 1000;
+        transform:  translateY(-100%);
+        transition: all 0.5s;
+        box-shadow: 0 0 0;
+
+
+        &.headroom--unpinned {
+            transform: translateY(-100%);
+        }
+        &.headroom--pinned {
+            transform: translateY(0);
+            box-shadow: 0 4px 4px rgba(0,0,0,0.1);
+        }
+
+        &.headroom--top {
+            transform: translateY(-100%);
+        }
+
+    }
+
+
 }
 
 #slogan {
@@ -27,7 +59,7 @@ header {
 
 
 
-.branding, #open_menu_button, #close_menu_button {
+.branding, .open_menu_button, #close_menu_button {
     position: absolute;
     background-size: contain;
     text-indent: -9999px;
@@ -49,7 +81,7 @@ header {
     width:100px;
 }
 
-#open_menu_button {
+.open_menu_button {
     background: url('../img/menu.svg') no-repeat center center;
     left: 10px;
     z-index: 100;
@@ -61,19 +93,39 @@ header {
     left: 50px;
 }
 
-body.home {
-    header {
-        height:$big_header_height;
+
+#secondary_header {
+    .branding, .open_menu_button, #close_menu_button {
+        height: $small_logo_height;
+        top: #{ ($small_header_height -  $small_logo_height) /2 };
     }
-    .branding {
-        left: calc(50% - 100px);
-        width: 200px;
-        height: $big_logo_height;
+    .branding  {
+        right: 30px;
+    }
+    .open_menu_button {
+        left: 30px;
+
+    }
+}
+
+body.home {
+    header#header {
+        height:$big_header_height;
+
+         .branding {
+            left: calc(50% - 100px);
+            width: 200px;
+            height: $big_logo_height;
+        }
+
+        .open_menu_button {
+            top:50px;
+        }
+
     }
 
-    #open_menu_button {
-        top:50px;
-    }
+
+
 
 
 }
@@ -136,6 +188,23 @@ nav#navigation_menu {
                 }
             }
 
+            &.border_top > a {
+                position: relative;
+                &:after {
+                    content: '';
+                    width: 100%;
+                    width: calc(100% - 60px);
+                    right: 10px;
+                    border-top:1px solid $light_grey;
+                    position: absolute;
+                    top:0;
+
+
+
+                }
+
+            }
+
 
 
             .expander {
@@ -159,10 +228,10 @@ nav#navigation_menu {
 
                 li {
                     font-size: 0.8em;
-                     a {
-                         padding: 6px 6px 6px 70px;
-                         text-transform: capitalize;
-                     }
+                    a {
+                        padding: 6px 6px 6px 70px;
+                        text-transform: capitalize;
+                    }
                 }
 
             }

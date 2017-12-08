@@ -26,9 +26,9 @@
 
 
         <div class="container">
-            <header class="header" id="header">
+            <header class="header"  id="header">
                 <a href="<?php echo home_url(); ?>" class="branding"><?php bloginfo('name'); ?></a>
-                <a href="#"  class="menu_button" id="open_menu_button" >Menu</a>
+                <a href="#"  class="menu_button open_menu_button" >Menu</a>
                 <p id="slogan"><?php echo $site_description; ?></p>
             </header>
         </div>
@@ -40,3 +40,10 @@
                 <?php chilly_nav('primary-navigation'); ?>
             </ul>
         </nav>
+
+        <header class="header headroom "  id="secondary_header">
+
+            <a href="<?php echo home_url(); ?>" class="branding"><?php bloginfo('name'); ?></a>
+            <a href="#"  class="menu_button open_menu_button" >Menu</a>
+
+        </header>
