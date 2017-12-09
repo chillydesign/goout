@@ -7,6 +7,10 @@ foreach( $images as $image ):
 
     $str .= '<img src="' . $image['sizes']['medium'] . '"  alt="" />';
 
+    if (strlen($image['caption'])) :
+            $str .= '<p class="caption">' . $image['caption']   . '</p>';
+    endif;
+
     $str .= '</li>';
     array_push($image_array, $str);
 endforeach;

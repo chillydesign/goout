@@ -12,7 +12,7 @@ $share_height: 36px;
         text-indent: -9999px;
         text-align: left;
 
-        background-color: darken($light_grey,30);
+        background-color: darken($light_grey,5);
         background-repeat: no-repeat;
         background-position: center center;
         background-size: #{$share_height * 0.6};
@@ -34,7 +34,7 @@ $share_height: 36px;
         }
 
         &:hover {
-            background-color: darken($light_grey, 10);
+            background-color: darken($light_grey, 20);
         }
     }
 
@@ -43,7 +43,7 @@ $share_height: 36px;
     .share_buttons {
         text-align: right;
         .share_button {
-            background-color:  darken($light_grey,30);
+            background-color:  darken($light_grey,5);
         }
     }
 }

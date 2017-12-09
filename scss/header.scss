@@ -153,7 +153,7 @@ nav#navigation_menu {
     height: 100%;
     left: 0;
     transition: all $transition_time;
-    z-index: 1000;
+    z-index: 9001;
     position:fixed;
 
 
@@ -218,6 +218,10 @@ nav#navigation_menu {
                 left: 19px;
                 border-radius: 50%;
                 transition: all 0.3s;
+
+                &.expanded {
+                    transform: rotate(135deg);
+                }
 
             }
 

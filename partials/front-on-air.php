@@ -15,7 +15,7 @@ $vid_string = '<div class="on_air_video on_air_video_'. $image_size .'">';
 $vid_string .= '<a data-lity title="' .  $title . '" href="#video_inline_'.$video_id.'" ><h3>' . $title . '</h3></a>';
 $vid_string .= '<div  class="latest_image" style="background-image:url(' . $image . ');" ></div>';
 $vid_string .='</div>';
-$vid_string .= '<div id="video_inline_'. $video_id .'" class="lity-hide"><div class="video_iframe_container">'. wp_oembed_get($video).'<p><strong>'. strtoupper($title) .'</strong> -  '.  $excerpt.'</p>'.  generate_sharing_buttons(get_the_permalink(),  $title, '' ).'</div></div>';
+$vid_string .= '<div id="video_inline_'. $video_id .'" class="lity-hide"><div class="video_iframe_container"><div class="container"><div class="row"><div class="col-sm-6"><h3>'.$title.'</h3><p>'.  $excerpt.'</p>'.  generate_sharing_buttons(get_the_permalink(),  $title, '' ).'</div><div class="col-sm-6">'. wp_oembed_get($video).'</div></div></div></div></div>';
 
 
 

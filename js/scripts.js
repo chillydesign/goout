@@ -174,8 +174,10 @@ require('jquery.viewport');
             $this.append('<div class="expander">Expand</div>');
 
             $('.expander', $this).on('click', function(e){
+                var $expander = $(this);
                 e.preventDefault();
                 $this.parent().find('ul').toggle();
+                $expander.toggleClass('expanded');
             })
         })
 

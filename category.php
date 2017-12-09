@@ -16,7 +16,7 @@
     <?php get_template_part('partials/index', 'first-articles');  // also includes artist of the month  ?>
 </div><!--  END OF CONTAINER -->
 
-<?php get_template_part('partials/index', 'agenda');   ?>
+<?php  // get_template_part('partials/index', 'agenda');   ?>
 
 
 <div class="container">
