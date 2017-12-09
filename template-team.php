@@ -47,21 +47,39 @@ foreach ($members as $member) :
 
     foreach ($author_posts as $author_post) {
 
+        $date =   date('d.m.Y', strtotime($author_post->post_date));
+        if ( $author_post->post_type == 'coolspot' ){
+            $posttype = 'Cool spot';
+        } else if ( $author_post->post_type == 'coolthing' ){
+            $posttype = 'Cool thing';
+        } else if ( $author_post->post_type == 'cityguidearticle' ){
+            $posttype = 'City guide article';
+        } else if ( $author_post->post_type == 'cityguide' ){
+            $posttype = 'City guide ';
+        }else if ( $author_post->post_type == 'escapade' ){
+            $posttype = 'Escapade ';
+        } else {
+            $posttype = 'Post';
+        }
 
-//        $categories =  get_the_category( );
+
+        $categories =  get_the_category( $author_post->ID  );
         $image = ( has_post_thumbnail(  $author_post->ID )) ? thumbnail_of_post_url( $author_post->ID, 'medium'  ) : '';
         $member_detail .= '<div class="col-sm-4">';
         $member_detail .= '<div class="latest_article">';
         $member_detail .= '<a href="' . $author_post->guid . '"  class="latest_image" style="background-image:url(' . $image . ');" ></a>';
         $member_detail .= '<div class="latest_text">';
-        // if ( sizeof($categories) > 0) :
-        //     $member_detail .= '<p class="category">' . $categories[0]->cat_name . '</p>';
-        // endif;
+        if ( sizeof($categories) > 0) :
+            $member_detail .= '<p class="category">' . $categories[0]->cat_name . '</p>';
+        else:
+            $member_detail .= '<p class="category">' . $posttype. '</p>';
+        endif;
         $member_detail .= '<h2><a href="' . $author_post->guid . '">'.  $author_post->post_title .'</a></h2>';
-        $member_detail .= '<p>' . $author_post->post_excerpt .'</p>';
-        $member_detail .= '</div>  <!-- END OF LATEST TEXT --> ';
-        $member_detail .= '</div>  <!-- END OF LATEST ARTICLE --> ';
-        $member_detail .= '</div>  <!-- END OF COL -->';
+        $member_detail .= '<p>' . $author_post->post_excerpt .'<a href="' . $author_post->guid . '"> lire plus</a></p>';
+        $member_detail .= '<p class="date">' . $date .'</p>';
+        $member_detail .= '</div><!-- END OF LATEST TEXT --> ';
+        $member_detail .= '</div><!-- END OF LATEST ARTICLE --> ';
+        $member_detail .= '</div><!-- END OF COL -->';
         if ($ap % 3 ==2 )     $member_detail .= '</div> <!-- END OF ROW --><div class="row">';
         $ap++;
     }

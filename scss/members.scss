@@ -80,7 +80,7 @@
 
 
     .latest_articles {
-        margin-top: 20px;
+        margin-top: 40px;
         h3 {
             text-transform: uppercase;
             font-family: $sans_font_stack;
@@ -89,6 +89,27 @@
         }
         h2 {
             font-size: 2em !important;
+        }
+
+         .latest_article {
+             .latest_image {
+                height: 250px;
+            }
+            p {
+                padding: 0 0 10px;
+                a {
+                    color: black;
+                    font-weight: bold;
+                    font-style: italic;
+                    border: 0;
+                }
+            }
+         }
+
+        .date {
+            color: $primary_color;
+            font-family: $sans_font_stack;
+            font-size: $small_font_size;
         }
     }
 
