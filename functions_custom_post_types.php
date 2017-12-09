@@ -355,7 +355,7 @@ function create_custom_post_types() {
                     'not_found_in_trash' => __('No Cool Thing found in Trash', 'html5blank')
                 ),
                 'public' => true,
-                'exclude_from_search' => true,
+                'exclude_from_search' => false,
                 'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
                 'has_archive' => true,
                 'supports' => array(

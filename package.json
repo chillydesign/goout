@@ -27,6 +27,7 @@
     "instafeed.js": "^1.4.1",
     "jquery": "^3.2.1",
     "jquery-match-height": "^0.7.2",
+    "jquery.viewport": "^1.0.0",
     "lity": "^2.3.0",
     "slick-carousel": "^1.7.1"
   },

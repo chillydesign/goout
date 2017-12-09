@@ -10,6 +10,7 @@
     background:$light_grey;
     box-shadow: 0 -30px 50px transparentize(black,0.7) inset;
     position: relative;
+    z-index: 9000;
 
 
     .latest_edition_cover {
@@ -79,10 +80,14 @@
 
     .slick-slider .slick-arrow {
         left: 10px;
+        width: 64px;
+        background-size: 30px;
+        background-position: left;
 
         &.slick-next {
             left: auto;
             right: 10px;
+            background-position: right;
         }
     }
 

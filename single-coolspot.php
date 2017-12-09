@@ -4,7 +4,7 @@
 <?php if (have_posts()): while (have_posts()) : the_post(); ?>
     <!-- article -->
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
+        <?php $post_id = get_the_ID(); ?>
         <?php $la_fourchette_rating = get_field('la_fourchette_rating'); ?>
         <?php $star_rating = get_field('star_rating'); ?>
         <?php $price_rating = get_field('price_rating'); ?>
@@ -15,16 +15,16 @@
         <?php $location = get_field('location'); ?>
         <?php $website = get_field('website'); ?>
         <?php $gallery = get_field('gallery'); ?>
-        <?php $tags =  get_the_terms( get_the_ID(), 'coolspot_tag' ); ?>
-        <?php $tags =  array_map( function($tag) { return $tag->name;    }, $tags);  ?>
-        <?php $cat =  get_the_terms( get_the_ID(), 'coolspot_cat' ); ?>
-        <?php $cat =  array_map( function($cat) {
+        <?php $tags =  get_the_terms( $post_id, 'coolspot_tag' ); ?>
+        <?php  if($tags) $tags_string =  array_map( function($tag) { return $tag->name;    }, $tags);  ?>
+        <?php $cat =  get_the_terms( $post_id, 'coolspot_cat' ); ?>
+        <?php $cat_strings =  array_map( function($cat) {
              return   '<span>' . $cat->name[0] .'</span>' .  $cat->name;
           }, $cat);  ?>
 
 
         <div class="container">
-                <p class="coolspot_cat"> <?php echo implode($cat, ' | '); ?></p>
+                <p class="coolspot_cat"> <?php echo implode($cat_strings, ' | '); ?></p>
 
         </div>
 
@@ -52,7 +52,7 @@
                         <?php if($chef): ?><li><div class="icon_chef">Chef:</div> <p><?php echo $chef; ?></p></li><?php endif;?>
 
 
-                        <?php if($tags): ?><li><div class="icon_tag">Etiquettes:</div> <p><?php echo implode($tags, ' | ' ); ?></p></li><?php endif;?>
+                        <?php if($tags): ?><li><div class="icon_tag">Etiquettes:</div> <p><?php echo implode($tags_string, ' | ' ); ?></p></li><?php endif;?>
 
                         <?php if($opening_times): ?><li><div class="icon_opening">Opening times:</div><p><?php echo $opening_times; ?></p></li><?php endif;?>
                         <?php if($location): ?><li><div class="icon_location">Location:</div> <p><?php echo $location; ?></p></li><?php endif;?>
@@ -102,7 +102,20 @@
                     <?php  if($location)  generate_map($location);     ?>
 
 
+                    <?php  if( sizeof($cat) > 0)  $other_coolspots = show_random_coolspots($cat[0]->slug, 3, $post_id  ); ?>
 
+                    <?php if (sizeof($other_coolspots)> 0) : ?>
+                        <div class="other_coolspots">
+                        <h2>Restaurants <span>similaires</span></h2>
+                        <?php foreach ($other_coolspots as $other_coolspot) : ?>
+                            <?php $other_image = thumbnail_of_post_url( $other_coolspot->ID, 'small' ); ?>
+                                <div class="other_coolspot">
+                                    <a  href="<?php echo $other_coolspot->guid; ?>" class="other_coolspot_image" style="background-image:url(<?php echo $other_image; ?>);" ></a>
+                                <h3><a href="<?php echo $other_coolspot->guid; ?>"><?php echo $other_coolspot->post_title; ?></a></h3>
+                                </div>
+                        <?php endforeach; ?>
+                    </div>
+                    <?php endif; ?>
 
 
                 </div>

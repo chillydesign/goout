@@ -12,17 +12,50 @@
 
 
 body {
-	background: $background_color;
-	color: $font_color;
-	font-family: $font_stack;
-	font-size: 62.5%;
-	font-weight: normal;
+    background: $background_color;
+    color: $font_color;
+    font-family: $font_stack;
+    font-size: 62.5%;
+    font-weight: normal;
 }
 
 
 section {
     padding:30px 0;
 }
+
+
+
+.animate_in_viewport {
+
+
+    overflow: hidden;
+    article {
+        transition: all 1s ease-in-out;
+        transform: translateX(-110%);
+
+
+    }
+
+    // &.animate_in_viewport_0 { transition-delay: 0s};
+    // &.animate_in_viewport_1 { transition-delay: 0.5s};
+    // &.animate_in_viewport_2 { transition-delay: 1s};
+    // &.animate_in_viewport_3 { transition-delay: 1.5s};
+    // &.animate_in_viewport_4 { transition-delay: 2s};
+    // &.animate_in_viewport_5 { transition-delay: 2.5s};
+
+    &.animating {
+        article {
+                transform: translateX(0%);
+
+        }
+    }
+}
+
+
+
+
+
 
 @import 'slider';
 @import 'sharing_buttons';
@@ -53,6 +86,7 @@ section {
 @import 'front_agenda';
 
 @import 'partners';
+@import 'members';
 @import 'index';
 @import 'index_agenda';
 @import 'coolthings';

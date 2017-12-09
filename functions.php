@@ -89,7 +89,7 @@ function webfactor_nav()
 }
 
 function wf_version(){
-    return '0.0.6';
+    return '0.0.8';
 }
 
 // Load HTML5 Blank scripts (header.php)
@@ -699,6 +699,27 @@ function getBrightness($url) {
     }
 
 
+
+}
+
+
+
+function show_random_coolspots($category, $limit, $post_id ) {
+    // dont show the post with postid. its alreaydy visible on the page
+    $coolspots = get_posts(array(
+        'post_type'  => 'coolspot',
+        'posts_per_page' => $limit,
+        'post_status' => 'publish',
+        'post__not_in' => array($post_id),
+        'tax_query' => array(
+        		array(
+        			'taxonomy' => 'coolspot_cat',
+        			'field'    => 'slug',
+        			'terms'    => $category,
+        		),
+        	),
+    ));
+    return $coolspots;
 
 }
 

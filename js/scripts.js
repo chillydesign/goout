@@ -4,7 +4,7 @@ import lity from '../node_modules/lity/dist/lity.min.js';
 import matchHeight from '../node_modules/jquery-match-height/dist/jquery.matchHeight.js';
 import Instafeed from '../node_modules/instafeed.js/instafeed.js';
 import Headroom from '../node_modules/headroom.js/dist/headroom.js';
-
+require('jquery.viewport');
 
 (function ($, root, undefined) {
 
@@ -13,6 +13,21 @@ import Headroom from '../node_modules/headroom.js/dist/headroom.js';
         'use strict';
 
 
+        // do window.scroll events periodically to save resoutces
+        var scrollTimer = null;
+        var $window = $(window);
+        $window.scroll(function () {
+            if (scrollTimer) {
+                clearTimeout(scrollTimer);   // clear any previous pending timer
+            }
+            scrollTimer = setTimeout(handleScroll, 100);   // set new timer
+        });
+
+        handleScroll();
+        function handleScroll() {
+            scrollTimer = null;
+            $('.animate_in_viewport:in-viewport').addClass('animating');
+        }
 
 
         var $issues_sliders = $(".issues_slider");
@@ -88,16 +103,28 @@ import Headroom from '../node_modules/headroom.js/dist/headroom.js';
 
 
 
-        // grab an element
-        var myElement = document.getElementById("secondary_header");
+
         // construct an instance of Headroom, passing the element
-        var headroom  = new Headroom(myElement);
-        // initialise
-        headroom.init();
+        var header_headroom = document.getElementById("secondary_header");
+        var headroom  = new Headroom(header_headroom);
+        headroom.init(); // initialise
 
 
+
+
+        // match height
         $('.city_match').matchHeight();
 
+
+        var $member_details = $('.member_details');
+        $('.member_container').on('click', function(e){
+            e.preventDefault();
+            var $this = $(this);
+            var $member = $this.data('member');
+            $('.member_details .member_detail').removeClass('member_visible');
+            $('#' + $member   ).addClass('member_visible');
+            $('html,body').animate({ scrollTop: $member_details.offset().top }, 1000);
+        })
 
 
 
@@ -195,16 +222,16 @@ import Headroom from '../node_modules/headroom.js/dist/headroom.js';
 
                 var geocoder = new google.maps.Geocoder();
                 geocoder.geocode({'address': place_location}, function(results, status) {
-                         if (status === 'OK') {
-                            if (results.length > 0) {
-                                var position =  results[0].geometry.location ;
-                                create_map(position, 16,  location_map_container);
-                             }
+                    if (status === 'OK') {
+                        if (results.length > 0) {
+                            var position =  results[0].geometry.location ;
+                            create_map(position, 16,  location_map_container);
+                        }
 
-                         } else {
-                           console.log('Geocode was not successful for the following reason: ' + status);
-                         }
-                     });
+                    } else {
+                        console.log('Geocode was not successful for the following reason: ' + status);
+                    }
+                });
 
 
             }
@@ -244,7 +271,7 @@ import Headroom from '../node_modules/headroom.js/dist/headroom.js';
             position: position,
             map: location_map,
             optimized: false,
-             icon: icon_url
+            icon: icon_url
         });
 
         location_map.setCenter(position);
