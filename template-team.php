@@ -75,7 +75,7 @@ foreach ($members as $member) :
             $member_detail .= '<p class="category">' . $posttype. '</p>';
         endif;
         $member_detail .= '<h2><a href="' . $author_post->guid . '">'.  $author_post->post_title .'</a></h2>';
-        $member_detail .= '<p>' . $author_post->post_excerpt .'<a href="' . $author_post->guid . '"> lire plus</a></p>';
+        $member_detail .= '<p>' . $author_post->post_excerpt .'<a class="read_more" href="' . $author_post->guid . '"> lire plus</a></p>';
         $member_detail .= '<p class="date">' . $date .'</p>';
         $member_detail .= '</div><!-- END OF LATEST TEXT --> ';
         $member_detail .= '</div><!-- END OF LATEST ARTICLE --> ';

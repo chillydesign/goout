@@ -563,7 +563,7 @@ function convert_posts_to_strings() {
         $post_string .= '<p class="category">' . $categories[0]->cat_name . '</p>';
     endif;
     $post_string .= '<h2><a href="' . $permalink . '">'.  get_the_title() .'</a></h2>';
-    $post_string .= '<p>' . get_the_excerpt() .'</p>';
+    $post_string .= '<p>' . get_the_excerpt() .'<a class="read_more" href="' . $permalink . '"> lire plus...</a></p>';
     $post_string .='</div>';
     $post_string .='</div>';
     array_push($posts_array, $post_string);

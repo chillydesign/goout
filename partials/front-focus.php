@@ -29,16 +29,17 @@ $f = 0;
 
                         <div class="<?php echo $col_class[0]; ?>">
 
+                            <?php $permalink = get_the_permalink();  ?>
                             <?php $image = ( has_post_thumbnail()) ? thumbnail_of_post_url(get_the_ID(),  'large') : ''; ?>
-                            <a  class="latest_image" href="<?php the_permalink(); ?>" style="background-image:url('<?php echo $image; ?>');" title="<?php the_title(); ?>">
+                            <a  class="latest_image" href="<?php echo $permalink; ?>" style="background-image:url('<?php echo $image; ?>');" title="<?php the_title(); ?>">
                             </a>
 
                         </div>
                         <div class="<?php echo $col_class[1]; ?>">
 
                             <p class="category"><?php the_category(', '); ?></p>
-                            <h2><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php echo get_the_title(); ?></a></h2>
-                            <p><?php echo get_the_excerpt(); ?></p>
+                            <h2><a href="<?php echo $permalink; ?>" title="<?php the_title(); ?>"><?php echo get_the_title(); ?></a></h2>
+                            <p><?php echo get_the_excerpt(); ?><a class="read_more" href="' . $permalink . '"> lire plus...</a></p>
 
                             <?php get_template_part('partials/sharing-buttons'); ?>
 

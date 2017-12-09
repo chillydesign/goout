@@ -70,6 +70,13 @@ a {
         border-bottom: 1px solid $primary_color;
 
     }
+
+    &.read_more {
+        font-weight: bold;
+        font-style: italic;
+        color: inherit;
+        border: 0;
+    }
 }
 
 .button {
