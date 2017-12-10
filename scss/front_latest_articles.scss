@@ -1,6 +1,18 @@
 .latest_articles {
 
-    margin-bottom: 100px;
+    margin-bottom: 00px;
+
+
+
+    .larger_article_image {
+        .latest_article {
+            height: 600px;
+            .latest_image {
+                height: 350px;
+            }
+        }
+    }
+
 
     .latest_article {
 
@@ -21,6 +33,7 @@
             margin:0 0 20px;
             border: 0;
         }
+
         .latest_text {
 
             margin:0 0 20px;
