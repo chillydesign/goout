@@ -7,7 +7,7 @@
 
                 <div class=" latest_article col-sm-4">
                     <!-- article -->
-                    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                    <article >
 
 
                         <?php $image = ( has_post_thumbnail()) ? thumbnail_of_post_url(get_the_ID(),  'medium') : ''; ?>

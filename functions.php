@@ -724,6 +724,16 @@ function show_random_coolspots($category, $limit, $post_id ) {
 }
 
 
+
+// show more custom post types on author.php page
+add_action( 'pre_get_posts', function ( $q ) {
+    if( !is_admin() && $q->is_main_query() && $q->is_author() ) {
+        $q->set( 'post_type', array('post', 'coolspot', 'coolthing', 'cityguidearticle', 'cityguide', 'escapade') );
+    }
+});
+
+
+
 function generate_map($location) {
 
     $str = '';
