@@ -1,22 +1,8 @@
 <?php
 
 $onenparles = new WP_Query(array(
-    'post_type' => 'post',
-    'posts_per_page' =>  6,
-    'offset' => 10,
-    'meta_query' => array(  /// DONT SHOW FOCUS ARTICLES
-        'relation' => 'OR',
-        array(
-            'key'     => 'focus',
-            'value'   => '1',
-            'compare' => '!='
-        ),
-        array(
-            'key'     => 'focus',
-            'compare' => 'NOT EXISTS'
-        )
-    )
-
+    'post_type' => 'news',
+    'posts_per_page' =>  6
 ));
 
 // if have posts in this category
