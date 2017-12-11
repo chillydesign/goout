@@ -6,6 +6,7 @@
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
         <?php $post_id = get_the_ID(); ?>
         <?php $la_fourchette_rating = get_field('la_fourchette_rating'); ?>
+        <?php $la_fourchette_site_link = get_field('la_fourchette_site_link'); ?>
         <?php $star_rating = get_field('star_rating'); ?>
         <?php $price_rating = get_field('price_rating'); ?>
         <?php $opening_times = get_field('opening_times'); ?>
@@ -40,7 +41,7 @@
 
                 <ul class="restaurant_meta">
 
-                        <?php if($la_fourchette_rating): ?><li> <strong><span class="fourchette_rating"><?php echo $la_fourchette_rating; ?></span>/10 </strong> &nbsp; sur lafourchette.ch</li><?php endif;?>
+                        <?php if($la_fourchette_rating): ?><li> <strong><span class="fourchette_rating"><?php echo $la_fourchette_rating; ?></span>/10 </strong> &nbsp; <span class="surlafourchette">sur <a href="<?php echo $la_fourchette_site_link; ?>" target="_blank">lafourchette.ch</a></span></li><?php endif;?>
 
                         <?php if($price_rating || $price_rating == '0'): ?>
                             <li>
