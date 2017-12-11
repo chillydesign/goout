@@ -8,6 +8,37 @@ function create_custom_post_types() {
 
 
 
+        register_post_type('news', // Register Custom Post Type
+        array(
+            'labels' => array(
+                'name' => __('News', 'html5blank'), // Rename these to suit
+                'singular_name' => __('News', 'html5blank'),
+                'add_new' => __('Ajouter', 'html5blank'),
+                'add_new_item' => __('Add New News', 'html5blank'),
+                'edit' => __('Edit', 'html5blank'),
+                'edit_item' => __('Edit News', 'html5blank'),
+                'new_item' => __('New News', 'html5blank'),
+                'view' => __('View News', 'html5blank'),
+                'view_item' => __('View News', 'html5blank'),
+                'search_items' => __('Search News', 'html5blank'),
+                'not_found' => __('No News found', 'html5blank'),
+                'not_found_in_trash' => __('No News found in Trash', 'html5blank')
+            ),
+            'public' => true,
+            'exclude_from_search' => false,
+            'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
+            'has_archive' => true,
+            'supports' => array(
+                'title',
+                'thumbnail',
+                'excerpt'
+            ), // Go to Dashboard Custom HTML5 Blank post for supports
+            'can_export' => true, // Allows export in Tools > Export
+            'taxonomies' => array(
+            ) // Add Category and Post Tags support
+        ));
+
+
     register_post_type('escapade', // Register Custom Post Type
     array(
         'labels' => array(
