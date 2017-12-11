@@ -3,7 +3,9 @@
 
 <div class="container">
 
-    <h1>City Guides</h1>
+
+    <h1 class="fancy_title">Voyage <strong><em>voyage</em></strong>, plus loin que la nuit et le jour voyage voyage <strong><em>Cool Trips</em></strong></h1>
+    
     <?php get_template_part('partials/cooltrips-list'); ?>
 
 

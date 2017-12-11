@@ -6,11 +6,12 @@ $coolspots = new WP_Query(array(
 ));
 $h = 0;
 
+$coolspotarchivelink  = get_post_type_archive_link( 'coolspot' );
 ?>
 <?php  if ($coolspots->have_posts() ) :  ?>
     <div class="container">
         <div class="coolspot_articles ">
-        <h5>Cool spots</h5>
+        <h5><a href="<?php echo $coolspotarchivelink ; ?>">Cool spots</a></h5>
         <?php get_template_part('partials/categories-coolspots'); ?>
 
             <div class="row">
@@ -32,7 +33,7 @@ $h = 0;
                     <?php  $h++; endwhile; ?>
             </div>
         </div> <!-- END OF coolspots latest articles -->
-        <p class="plus_icon"><a  href="<?php echo get_post_type_archive_link( 'coolspot' ); ?>">Plus</a></p>
+        <p class="plus_icon"><a  href="<?php echo $coolspotarchivelink; ?>">Plus</a></p>
 
     </div>
 <?php endif;  ?>

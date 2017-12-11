@@ -6,7 +6,7 @@
 
 <div class="container">
 
-    <h1><?php single_cat_title(); ?></h1>
+    <h1 class="fancy_title"> <span style="display:none"><?php single_cat_title(); ?></span>  Notre selection de <strong><em>Cool Things</em></strong> rien que pour les <strong><em>cool cats</em></strong>.</h1>
     <?php get_template_part('partials/categories-coolthings'); ?>
     <?php get_template_part('partials/archive-coolthings'); ?>
     <?php get_template_part('pagination'); ?>

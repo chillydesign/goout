@@ -9,7 +9,7 @@ $onenparles = new WP_Query(array(
 if ($onenparles->have_posts() ) :  ?>
 <div class="onenparle_articles ">
     <div class="container">
-        <h5>On En Parle</h5>
+        <h5><a  href="<?php echo get_post_type_archive_link( 'news' ); ?>">On En Parle</a></h5>
     </div>
     <?php goout_posts_slider($onenparles); ?>
 </div> <!-- END OF recommended_articles -->

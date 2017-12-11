@@ -29,7 +29,7 @@ wp_reset_query();
 
 <?php if ( sizeof($videos_array) > 0 ) : ?>
     <div class="container">
-        <h5>On Air</h5>
+        <h5><a  href="<?php echo get_post_type_archive_link( 'video' ); ?>">On Air</a></h5>
     </div>
     <div class="on_air_section">
 

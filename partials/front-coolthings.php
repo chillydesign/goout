@@ -5,12 +5,12 @@ $coolthings = new WP_Query(array(
     'posts_per_page' =>  5
 ));
 $c = 0;
-
+$coolthingarchivelink  = get_post_type_archive_link( 'coolthing' );
 ?>
 <?php  if ($coolthings->have_posts() ) :  ?>
     <div class="container">
         <div class=" coolthing_articles ">
-        <h5>Cool things</h5>
+        <h5><a href="<?php echo $coolthingarchivelink; ?>">Cool things</a></h5>
 
         <?php get_template_part('partials/categories-coolthings'); ?>
 
@@ -31,7 +31,7 @@ $c = 0;
                     <?php  $c++; endwhile; ?>
             </div>
         </div> <!-- END OF coolthings latest articles -->
-        <p class="plus_icon"><a  href="<?php echo get_post_type_archive_link( 'coolthing' ); ?>">Plus</a></p>
+        <p class="plus_icon"><a  href="<?php echo $coolthingarchivelink; ?>">Plus</a></p>
     </div>
 <?php endif;  ?>
 <?php wp_reset_query(); ?>
