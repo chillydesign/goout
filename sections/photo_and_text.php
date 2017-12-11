@@ -5,9 +5,9 @@
 <?php
 
 if ( $image_position == 'right' ) {
-    $classes = [ 'col-sm-8', 'col-sm-4'  ];
+    $classes = [ 'col-sm-8', 'col-sm-3 col-sm-push-1'  ];
 } else {
-    $classes = [ 'col-sm-8 col-sm-push-4', 'col-sm-4 col-sm-pull-8'  ];
+    $classes = [ 'col-sm-8 col-sm-push-4', 'col-sm-3 col-sm-pull-8'  ];
 };
 
 
@@ -17,7 +17,7 @@ if ( $image_position == 'right' ) {
 <div class="container">
     <div class="row">
         <div class="<?php echo $classes[0]; ?>">
-        
+
                 <?php echo $content; ?>
 
 

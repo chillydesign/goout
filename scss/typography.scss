@@ -79,6 +79,15 @@ a {
     }
 }
 
+h5 a {
+    text-decoration: none;
+    border-bottom: none;
+
+    &:link, &:visited, &:active {
+        color: $font_color;
+    }
+}
+
 .button {
     background: $dark_grey;
     padding: 20px 30px;
