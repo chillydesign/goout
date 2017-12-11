@@ -5,7 +5,8 @@
                 <?php $col_class = ( $pp  % 5 == 0 ) ? 'col-sm-8' : 'col-sm-4' ?>
                 <div class=" animate_in_viewport    latest_article latest_article_no_fixed_height <?php echo $col_class; ?>">
                     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                        <?php $link = get_field('link');  ?>
+                        <?php //$link = get_field('link');  ?>
+                        <?php $link = get_permalink(); ?>
                         <?php $image = ( has_post_thumbnail()) ? thumbnail_of_post_url(get_the_ID(),  'medium') : ''; ?>
                         <a  class="latest_image" href="<?php echo esc_url($link); ?>" style="background-image:url('<?php echo $image; ?>');" title="<?php the_title(); ?>"></a>
                         <div class="latest_text latest_text_dark">

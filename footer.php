@@ -17,9 +17,9 @@
     </div>
 
 </footer>
-<!-- /footer -->
-
-
+<!-- end of footer -->
+</div>
+<!-- end of pushy div -->
 
 <?php wp_footer(); ?>
 <?php $tdu = get_template_directory_uri(); ?>

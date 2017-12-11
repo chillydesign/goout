@@ -147,12 +147,14 @@ require('jquery.viewport');
 
             $navigation_menu.toggleClass('menu_visible');
             $nav_overlay.toggleClass('menu_visible');
+            $('.pushydiv').toggleClass('pushybody');
 
         });
 
         $nav_overlay.on('click', function(){
             $navigation_menu.removeClass('menu_visible');
             $nav_overlay.removeClass('menu_visible');
+              $('.pushydiv').removeClass('pushybody');
         })
 
         // if press escape key, hide menu
@@ -161,6 +163,7 @@ require('jquery.viewport');
             if(e.keyCode == 27 ){
                 $navigation_menu.removeClass('menu_visible');
                 $nav_overlay.removeClass('menu_visible');
+                  $('.pushydiv').removeClass('pushybody');
 
                 $('.search_box').removeClass('visible');
             }

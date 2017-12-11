@@ -61,10 +61,10 @@ header {
 
 .branding, .open_menu_button, #close_menu_button {
     position: absolute;
-    background-size: contain;
+    background-size: contain!important;
     text-indent: -9999px;
     border:0;
-    width: 30px;
+    width: 25px;
     height: $logo_height;
     top: #{ ($header_height -  $logo_height) /2 };
 
@@ -89,7 +89,7 @@ header {
 }
 
 #close_menu_button {
-    background: url('../img/close.svg') no-repeat center center;
+    background: url('../img/cross.svg') no-repeat center center;
     left: 50px;
 }
 
@@ -145,6 +145,11 @@ body.home {
 
 $nav_width:320px;
 
+.pushydiv {transition: all $transition_time;}
+.pushybody {
+  transform: translateX( #{$nav_width} );
+
+}
 nav#navigation_menu {
     transform: translateX( #{$nav_width * -1} );
     width: $nav_width;
@@ -183,7 +188,7 @@ nav#navigation_menu {
                     @include linear-gradient(270deg, lighten($light_grey,4), lighten($light_grey,2));
 
                     .expander {
-                        background-color: darken($light_grey,10);
+                        //background-color: darken($light_grey,10);
                     }
                 }
             }
@@ -208,7 +213,7 @@ nav#navigation_menu {
 
 
             .expander {
-                background: url('../img/plus.svg') no-repeat 0 0 $light_grey;
+                background: url('../img/plus.svg') no-repeat 0 0 transparent;
                 background-size: 20px;
                 width: 20px;
                 height: 20px;

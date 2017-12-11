@@ -23,7 +23,14 @@
     <?php get_template_part('partials/front', 'edition-cover'); ?>
 <?php endif; ?>
 
+<nav id="navigation_menu" role="navigation">
+    <a href="#" class="menu_button" id="close_menu_button" >Close</a>
+    <ul>
+        <?php chilly_nav('primary-navigation'); ?>
+    </ul>
+</nav>
 
+<div class="pushydiv"> <!-- DIV TO BE PUSHED WHEN MENU OPENS -->
 
         <div class="container">
             <header class="header"  id="header">
@@ -34,12 +41,7 @@
         </div>
 
 
-        <nav id="navigation_menu" role="navigation">
-            <a href="#" class="menu_button" id="close_menu_button" >Close</a>
-            <ul>
-                <?php chilly_nav('primary-navigation'); ?>
-            </ul>
-        </nav>
+
 
         <header class="header "  id="secondary_header">
 
