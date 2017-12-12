@@ -14,6 +14,7 @@ $focus_args = array(
 
 $focus = new WP_Query( $focus_args );
 $f = 0;
+$focus_archive_link = get_post_type_archive_link( 'post' )  . '?focus=focus';
 
  ?>
 
@@ -21,7 +22,7 @@ $f = 0;
 <div class="container">
     <div class="focus_articles">
 
-        <h5>Focus</h5>
+        <h5><a href="<?php echo $focus_archive_link ; ?>">Focus</a></h5>
             <?php while($focus->have_posts()) : $focus->the_post();  ?>
                 <?php $col_class = ( $f == 1 ) ? ['col-sm-6 col-sm-push-6', 'col-sm-6 col-sm-pull-6' ] : ['col-sm-6', 'col-sm-6'] ?>
                 <div class="focus_article focus_article_<?php echo $f; ?>">
@@ -52,7 +53,7 @@ $f = 0;
 
             <?php  $f++; endwhile; ?>
 
-            <p class="plus_icon"><a  href="<?php echo get_post_type_archive_link( 'post' ); ?>">Plus</a></p>
+            <p class="plus_icon"><a  href="<?php echo $focus_archive_link;  ?>">Plus</a></p>
 
 
     </div> <!-- END OF recommended_articles -->

@@ -3,7 +3,7 @@
         <div class="row">
             <?php while (have_posts()) : the_post(); ?>
                 <?php $col_class = ( $pp  % 5 == 0 ) ? 'col-sm-8' : 'col-sm-4' ?>
-                <div class=" animate_in_viewport    latest_article latest_article_no_fixed_height <?php echo $col_class; ?>">
+                <div class="  latest_article latest_article_no_fixed_height <?php echo $col_class; ?>">
                   <?php
                     $video = get_field('video');
                     $excerpt = get_the_excerpt(  );

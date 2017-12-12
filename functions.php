@@ -725,10 +725,31 @@ function show_random_coolspots($category, $limit, $post_id ) {
 
 
 
+// add focus to get params accessible by get_query_var
+function add_query_vars_filter( $vars ){
+  $vars[] = "focus";
+  return $vars;
+}
+add_filter( 'query_vars', 'add_query_vars_filter' );
+
+
+
 // show more custom post types on author.php page
+// also only show focus posts on index.php if requested.
 add_action( 'pre_get_posts', function ( $q ) {
-    if( !is_admin() && $q->is_main_query() && $q->is_author() ) {
-        $q->set( 'post_type', array('post', 'coolspot', 'coolthing', 'cityguidearticle', 'cityguide', 'escapade') );
+    if( !is_admin() && $q->is_main_query() ) {
+
+        if ($q->is_author() ) {
+            $q->set( 'post_type', array('post', 'coolspot', 'coolthing', 'cityguidearticle', 'cityguide', 'escapade') );
+        }  else if  ($q->is_home() ) {
+            $is_focus = get_query_var( 'focus' );
+            if ($is_focus == "focus" ) {
+                $focus_query =  array( array('key'     => 'focus', 'value'   => '1','compare' => '=')  );
+                $q->set('meta_query' , $focus_query);
+            }
+        }
+
+
     }
 });
 
