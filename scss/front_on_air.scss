@@ -89,7 +89,13 @@ $small_play_icon_size: 30px;
 
 
 }
-
+.post-type-archive-video .on_air_section {
+  height: auto;
+  background: white;
+  .on_air_video {
+    height: 300px;
+  }
+}
 
 .lity-container {
     width: 100%;

@@ -6,6 +6,32 @@ add_action('init', 'create_custom_post_types'); // Add our HTML5 Blank Custom Po
 function create_custom_post_types() {
 
 
+  $labels_news_cat = array(
+      'name'                       => 'Catégories',
+      'singular_name'              => 'Catégorie',
+      'menu_name'                  => 'Catégorie',
+      'all_items'                  => 'Toutes les Catégories',
+      'parent_item'                => 'Catégorie parente',
+      'parent_item_colon'          => 'Catégorie parente:',
+      'new_item_name'              => 'Nom de la nouvelle categorie',
+      'add_new_item'               => 'Ajouter une categorie',
+      'edit_item'                  => 'Modifier categorie',
+      'update_item'                => 'Mettre à jur la categorie',
+      'separate_items_with_commas' => 'Separer les categories avec des virgules',
+      'search_items'               => 'Chercher dans les categories',
+      'add_or_remove_items'        => 'Ajouter ou supprimer des categories',
+      'choose_from_most_used'      => 'Choisir parmi les categories les plus utilisées',
+  );
+  $args_news_cat = array(
+      'labels'                     => $labels_news_cat,
+      'hierarchical'               => true,
+      'public'                     => true,
+      'show_ui'                    => true,
+      'show_admin_column'          => true,
+      'show_in_nav_menus'          => true,
+      'show_tagcloud'              => false,
+  );
+  register_taxonomy( 'news_cat', array( 'news' ), $args_news_cat );
 
 
         register_post_type('news', // Register Custom Post Type
@@ -35,7 +61,9 @@ function create_custom_post_types() {
             ), // Go to Dashboard Custom HTML5 Blank post for supports
             'can_export' => true, // Allows export in Tools > Export
             'taxonomies' => array(
+                'news_cat'
             ) // Add Category and Post Tags support
+
         ));
 
 
@@ -104,12 +132,12 @@ function create_custom_post_types() {
     ));
 
     $labels_event_cat = array(
-        'name'                       => 'Categories',
-        'singular_name'              => 'Categorie',
-        'menu_name'                  => 'Categorie',
-        'all_items'                  => 'Toutes les Categories',
-        'parent_item'                => 'Categorie parente',
-        'parent_item_colon'          => 'Categorie parente:',
+        'name'                       => 'Catégories',
+        'singular_name'              => 'Catégorie',
+        'menu_name'                  => 'Catégorie',
+        'all_items'                  => 'Toutes les Catégories',
+        'parent_item'                => 'Catégorie parente',
+        'parent_item_colon'          => 'Catégorie parente:',
         'new_item_name'              => 'Nom de la nouvelle categorie',
         'add_new_item'               => 'Ajouter une categorie',
         'edit_item'                  => 'Modifier categorie',
@@ -130,13 +158,14 @@ function create_custom_post_types() {
     );
     register_taxonomy( 'event_cat', array( 'evenement' ), $args_event_cat );
 
+
     $labels_partner_cat = array(
-        'name'                       => 'Categories',
-        'singular_name'              => 'Categorie',
-        'menu_name'                  => 'Categorie',
-        'all_items'                  => 'Toutes les Categories',
-        'parent_item'                => 'Categorie parente',
-        'parent_item_colon'          => 'Categorie parente:',
+        'name'                       => 'Catégories',
+        'singular_name'              => 'Catégorie',
+        'menu_name'                  => 'Catégorie',
+        'all_items'                  => 'Toutes les Catégories',
+        'parent_item'                => 'Catégorie parente',
+        'parent_item_colon'          => 'Catégorie parente:',
         'new_item_name'              => 'Nom de la nouvelle categorie',
         'add_new_item'               => 'Ajouter une categorie',
         'edit_item'                  => 'Modifier categorie',
@@ -284,12 +313,12 @@ function create_custom_post_types() {
     register_taxonomy( 'coolspot_tag', array( 'coolspot' ), $args_coolspot_tag );
 
     $labels_coolspot_cat = array(
-        'name'                       => 'Categories',
-        'singular_name'              => 'Categorie',
-        'menu_name'                  => 'Categorie',
-        'all_items'                  => 'Toutes les Categories',
-        'parent_item'                => 'Categorie parente',
-        'parent_item_colon'          => 'Categorie parente:',
+        'name'                       => 'Catégories',
+        'singular_name'              => 'Catégorie',
+        'menu_name'                  => 'Catégorie',
+        'all_items'                  => 'Toutes les Catégories',
+        'parent_item'                => 'Catégorie parente',
+        'parent_item_colon'          => 'Catégorie parente:',
         'new_item_name'              => 'Nom de la nouvelle categorie',
         'add_new_item'               => 'Ajouter une categorie',
         'edit_item'                  => 'Modifier categorie',
@@ -343,12 +372,12 @@ function create_custom_post_types() {
 
 
             $labels_coolthing_cat = array(
-                'name'                       => 'Categories',
-                'singular_name'              => 'Categorie',
-                'menu_name'                  => 'Categorie',
-                'all_items'                  => 'Toutes les Categories',
-                'parent_item'                => 'Categorie parente',
-                'parent_item_colon'          => 'Categorie parente:',
+                'name'                       => 'Catégories',
+                'singular_name'              => 'Catégorie',
+                'menu_name'                  => 'Catégorie',
+                'all_items'                  => 'Toutes les Catégories',
+                'parent_item'                => 'Catégorie parente',
+                'parent_item_colon'          => 'Catégorie parente:',
                 'new_item_name'              => 'Nom de la nouvelle categorie',
                 'add_new_item'               => 'Ajouter une categorie',
                 'edit_item'                  => 'Modifier categorie',
