@@ -1,5 +1,22 @@
 .sidebar_photo {
     width: 100%;
     height: auto;
+
+}
+
+
+.sidebar_photo_link {
+    border: 0;
     margin: 0 0 30px;
+    &:hover {
+        border: 0;
+    }
+}
+
+
+
+p.sidebar_caption {
+    text-align: left;
+    font-style: italic;
+    color: $medium_grey;
 }
