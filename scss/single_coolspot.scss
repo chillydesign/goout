@@ -12,83 +12,86 @@
         text-transform: uppercase;
     }
 
-    ul.restaurant_meta {
-        font-family: $sans_font_stack;
-        margin:0;
-        padding:0;
-        text-align: left;
+
+}
+
+ul.restaurant_meta {
+    font-family: $sans_font_stack;
+    margin:0;
+    padding:0;
+    text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+
+
+
+
+
+    li {
+        list-style: none;
+        display:block;
+        padding:0 0 10px;
         display: flex;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
+        font-size: $small_font_size;
 
 
+        width: 100%;
+        flex: 1 auto 0;
 
+            @media (min-width: 768px) {
 
-        li {
-            list-style: none;
-            display:block;
-            padding:0 0 10px;
-            display: flex;
-            flex-wrap: nowrap;
-            font-size: $small_font_size;
+                max-width: 50%;
+                width: 50%;
 
-
-            width: 100%;
-            flex: 1 auto 0;
-
-                @media (min-width: 768px) {
-
-                    max-width: 50%;
-                    width: 50%;
-
-                }
-
-
-            @media (min-width: 992px) {
-                max-width: 25%;
-                width: 25%;
             }
 
 
-            a {
-                color: white;
-                border: 0;
-            }
-
-            p {
-                font-size: 1em;
-                flex: 1 auto 0;
-                line-height: 110%;
-                padding:10px 0 0 10px;
-            }
-            .fourchette_rating {
-                font-size: 2em;
-            }
-
-            div {
-                flex: 1 auto 0;
-                width: 35px;
-                height: 35px;
-                background: red;
-                display: inline-block;
-                text-indent: -9999px;
-                margin:0 8px 0 0;
-                background: no-repeat center center;
-                background-size: 31px;
-                &.icon_star_rating {}
-                &.icon_price_rating { background-image: url('../img/dollar.png');   }
-                &.icon_chef { background-image: url('../img/chef.png');   }
-                &.icon_opening { background-image: url('../img/clock.png');   }
-                &.icon_location { background-image: url('../img/marker.png');   }
-                &.icon_phone { background-image: url('../img/phone.png');   }
-                &.icon_website { background-image: url('../img/link.png');   }
-                &.icon_tag { background-image: url('../img/food.png');   }
-            }
-
-
-
-
-
+        @media (min-width: 992px) {
+            max-width: 25%;
+            width: 25%;
         }
+
+
+        a {
+            color: white;
+            border: 0;
+        }
+
+        p {
+            font-size: 1em;
+            flex: 1 auto 0;
+            line-height: 110%;
+            padding:10px 0 0 10px;
+        }
+        .fourchette_rating {
+            font-size: 2em;
+        }
+
+        div {
+            flex: 1 auto 0;
+            width: 35px;
+            height: 35px;
+            background: red;
+            display: inline-block;
+            text-indent: -9999px;
+            margin:0 8px 0 0;
+            background: no-repeat center center;
+            background-size: 31px;
+            &.icon_star_rating {}
+            &.icon_price_rating { background-image: url('../img/dollar.png');   }
+            &.icon_chef { background-image: url('../img/chef.png');   }
+            &.icon_opening { background-image: url('../img/clock.png');   }
+            &.icon_location { background-image: url('../img/marker.png');   }
+            &.icon_phone { background-image: url('../img/phone.png');   }
+            &.icon_website { background-image: url('../img/link.png');   }
+            &.icon_tag { background-image: url('../img/food.png');   }
+        }
+
+
+
+
+
     }
 }
 

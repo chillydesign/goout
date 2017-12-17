@@ -143,10 +143,22 @@
 ul.cityguide_metas {
     margin: 0 0 20px;
     padding: 0;
+    // look at single_coolspot.scss
     li {
-        list-style: none;
-        display: block;
+            width: 100% ;
+            max-width: 100% ;
         font-family: $sans_font_stack;
+
+        p {
+                font-size: $small_font_size;
+        }
+        a {
+            color: inherit;
+            border: 1px solid transparent;
+            &:hover {
+                border-bottom:1px solid white;
+            }
+        }
     }
 }
 

@@ -31,8 +31,8 @@
                     <div class="cityguidearticle_text">
 
                         <?php $city_guide = get_field('city_guide'); ?>
-                        <?php $telephone = get_field('telephone'); ?>
-                        <?php $address = get_field('address'); ?>
+                        <?php $phone = get_field('telephone'); ?>
+                        <?php $location = get_field('address'); ?>
                         <?php $website = get_field('website'); ?>
 
 
@@ -43,10 +43,11 @@
                         <?php endif; ?>
 
                         <h1><?php the_title(); ?></h1>
-                        <ul class="cityguide_metas">
-                        <?php if($address): ?><li><?php echo $address; ?></li><?php endif;?>
-                        <?php if($telephone): ?><li><?php echo $telephone; ?></li><?php endif;?>
-                        <?php if($website): ?><li><?php echo esc_url($website); ?></li><?php endif;?>
+                        <ul class="restaurant_meta cityguide_metas">
+                            <?php if($location): ?><li><div class="icon_location">Location:</div> <p><?php echo $location; ?></p></li><?php endif;?>
+                            <?php if($phone): ?><li><div class="icon_phone">Phone:</div> <p><?php echo $phone; ?></p></li><?php endif;?>
+                            <?php if($website): ?><li><div class="icon_website">Website:</div> <p><a target="_blank" href="<?php echo esc_url($website); ?>">Site web</a></p></li><?php endif;?>
+
                         </ul>
                         <?php the_content(); ?>
 
