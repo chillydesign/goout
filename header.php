@@ -52,7 +52,7 @@
 </nav>
 
 <div class="pushydiv"> <!-- DIV TO BE PUSHED WHEN MENU OPENS -->
-
+    <div style="position:relative; z-index:9999; background:white;">
         <div class="container">
             <header class="header"  id="header">
                 <a href="<?php echo home_url(); ?>" class="branding"><?php bloginfo('name'); ?></a>
@@ -60,6 +60,7 @@
                 <p id="slogan"><?php echo $site_description; ?></p>
             </header>
         </div>
+      </div>
 
 
 

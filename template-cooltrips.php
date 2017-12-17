@@ -4,7 +4,8 @@
 
 
 <div class="container">
-    <h1 class="fancy_title">Voyage <strong><em>voyage</em></strong>, plus loin que la nuit et le jour voyage voyage <strong><em>Cool Trips</em></strong></h1>
+  <h1 class="fancy_title">Envie de <em><strong>déployer vos ailes</strong></em>? On vous dévoile tous les <em><strong>bons plans</strong></em> du <em><strong>Globe</strong></em>.</h1>
+
 
     <?php get_template_part('partials/cooltrips-list'); ?>
 
