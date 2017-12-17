@@ -105,6 +105,10 @@
                 </div>
             <?php endif; ?>
 
+            <section class="container">
+                <h2 style="text-align:center"><a  style="border:0" href="<?php echo home_url();?>/cool-trips">COOL TRIPS</a></h2>
+            </section>
+
 
         </article>
         <!-- /article -->
