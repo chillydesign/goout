@@ -12,7 +12,7 @@
     .slick-arrow {
 
         appearance:none;
-        background: url('../img/chevron-l.svg') no-repeat center center;
+        background: url('../img/arrow.svg') no-repeat center center;
         // background-color:  transparentize($light_grey,0.5);
         height: 100%;
         width:30px;
@@ -26,12 +26,12 @@
         outline: 0;
 
         &.slick-next {
-            background-image: url('../img/chevron-r.svg');
+
             left: auto;
             right: 0;
         }
         &.slick-prev {
-
+        transform: rotate(180deg);
         }
 
     }

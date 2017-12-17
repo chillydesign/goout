@@ -32,6 +32,7 @@ require('jquery.viewport');
 
         var $issues_sliders = $(".issues_slider");
         var $latest_edition_covers = $('.latest_edition_cover');
+        var $latest_editions_cover = $('#latest_editions_cover');
         var $prev_issue_number = $('#prev_issue_number');
         var $next_issue_number = $('#next_issue_number');
         $issues_sliders.slick({
@@ -50,10 +51,20 @@ require('jquery.viewport');
             var $prevSlideIndex = ((currentSlide - 1 + 5) % 5);
             var $nextSlide = $latest_edition_covers[ $nextSlideIndex  ];
             var $prevSlide = $latest_edition_covers[ $prevSlideIndex ];
+            var $thisSlide = $latest_edition_covers[ currentSlide ];
             var $nextIssueNumber = $nextSlide.dataset.issuenumber;
             var $prevIssueNumber = $prevSlide.dataset.issuenumber;
             $next_issue_number.html($nextIssueNumber);
             $prev_issue_number.html($prevIssueNumber);
+
+
+            if(  $thisSlide.classList.contains('edition_cover_light') ) {
+                $latest_editions_cover.removeClass('currently_dark');
+                $latest_editions_cover.addClass('currently_light');
+            } else {
+                $latest_editions_cover.removeClass('currently_light');
+                $latest_editions_cover.addClass('currently_dark');
+            };
 
         });
 
@@ -185,7 +196,7 @@ require('jquery.viewport');
         })
 
 
-        var $down_arrow = $('#down_arrow');
+        var $down_arrow = $('.down_arrow');
         var $header = $('#header');
         $down_arrow.on('click', function(e){
             e.preventDefault();

@@ -13,6 +13,8 @@
     z-index: 9000;
 
 
+
+
     .latest_edition_cover {
         @extend .background_image;
         height: 600px;
@@ -23,16 +25,16 @@
 
 
 
-            .branding {
-                position: absolute;
-                top:20px;
-                left:20px;
-                z-index: 100;
-                border: 0;
-                &:hover {
-                    border:0;
-                }
+        .branding {
+            position: absolute;
+            top:20px;
+            left:20px;
+            z-index: 100;
+            border: 0;
+            &:hover {
+                border:0;
             }
+        }
 
 
         .subtitle {
@@ -80,14 +82,35 @@
 
     .slick-slider .slick-arrow {
         left: 10px;
-        width: 64px;
+        width: 58px;
+        bottom:126px;
+        height: auto;
         background-size: 30px;
-        background-position: left;
+        background-position: right;
 
         &.slick-next {
             left: auto;
             right: 10px;
             background-position: right;
+        }
+
+    }
+
+
+    &.currently_dark {
+        #prev_issue_number, #next_issue_number {
+            color: #fff;
+        }
+        .slick-slider .slick-arrow {
+            background-image:  url('../img/arrow-white.svg');
+        }
+        #down_arrow {
+            background-image:  url('../img/arrow-white.svg');
+        }
+    }
+    &.currently_light {
+        #prev_issue_number, #next_issue_number {
+            color: #000;
         }
     }
 
@@ -111,16 +134,17 @@
 
 #down_arrow {
 
-    width: 30px;
+    width: 50px;
     height: 30px;
-    background: url('../img/chevron-d.svg') no-repeat center center;
-    background-size: 30px;
+    background: url('../img/arrow.svg') no-repeat center center;
+    background-size: contain;
     position: absolute;
     bottom: 10px;
     left: 49%;
     z-index: 2000;
     border:0;
-    left: calc(50% - 15px);
+    left: calc(50% - 25px);
+    transform: rotate(90deg);
 }
 
 
@@ -128,10 +152,10 @@
     position: absolute;
     line-height: 20px;
     top:50%;
-    top: calc(50% - 10px);
+    top: calc(50% - 73px);
     left: 50px;
     font-size: 2.6em;
-    color: #888;
+
 
 
 }
