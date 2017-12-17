@@ -12,12 +12,12 @@
 
 
         </div>
-        <div class="col-sm-3 col-sm-pull-8">
+        <div class="col-sm-4 col-sm-pull-8">
 
             <?php foreach ( $adverts as $advert ) :  setup_postdata( $advert ); ?>
                 <?php $image = thumbnail_of_post_url($advert->ID, 'medium' ); ?>
                 <?php $lien = get_field('lien', $advert->ID); ?>
-                <a href="<?php echo esc_url($lien); ?>" class="singl_dvr_cont" style="background-image:url('<?php echo $image; ?>')"><?php the_title(); ?></a>
+                <a href="<?php echo esc_url($lien); ?>"  target="_blank" class="singl_dvr_cont" style="background-image:url('<?php echo $image; ?>')"><?php the_title(); ?></a>
             <?php endforeach; wp_reset_postdata(); ?>
 
 

@@ -37,7 +37,7 @@
 
         <div class="container">
             <div class="row">
-                <p class="author col-sm-6 col-sm-push-4"><?php _e( 'Published by', 'webfactor' ); ?> <?php the_author_posts_link(); ?></p>
+                <p class="author col-sm-6 col-sm-push-4"><?php _e( 'Published by', 'webfactor' ); ?> <?php the_author_posts_link(); ?> le <?php the_date('d.m.Y'); ?></p>
             </div>
         </div><!-- END OF AUTHOR -->
 
