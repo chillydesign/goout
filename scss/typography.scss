@@ -229,3 +229,32 @@ p.plus_icon {
 
 
 }
+
+.encadre {
+  display: block;
+  padding: 20px 15px 0;
+  border: solid 2px $dark_grey;
+  margin-bottom: 20px;
+
+
+}
+
+
+.button_article {
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 5px 20px;
+    display: inline-block;
+    border: solid 2px $dark_grey;
+
+    p { padding: 0; margin: 0;}
+    a {
+      padding: 0;
+      margin: 0;
+      color: $dark_grey;
+      border-bottom: 0;
+      &:link, &:visited, &:active{
+        color: $dark_grey;
+      }
+    }
+}

@@ -5,5 +5,9 @@
 }
 
 .button_article {
-  
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 5px 20px;
+    display: inline-block;
+    border: solid 2px black;
 }

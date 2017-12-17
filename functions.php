@@ -862,6 +862,13 @@ function my_theme_add_editor_styles() {
     add_editor_style( 'custom-editor-styles.css' );
 }
 add_action( 'init', 'my_theme_add_editor_styles' );
+function wpse33318_tiny_mce_before_init( $mce_init ) {
+
+    $mce_init['cache_suffix'] = 'v=123';
+
+    return $mce_init;
+}
+add_filter( 'tiny_mce_before_init', 'wpse33318_tiny_mce_before_init' );
 
 
 
