@@ -3,7 +3,13 @@
 
 
 <div class="container">
-<h1 class="fancy_title"><strong><em>Nos articles</em></strong> sur <strong><em>l'art, les expos, la danse, le cinéma, la littérature</em></strong> et <strong><em>le théâtre</em></strong> à <strong><em>Genève</em></strong> et <strong><em>ailleurs</em></strong></h1>
+<h1 class="fancy_title">
+  <?php if(get_query_var('focus')=='focus'){?>
+        <em><strong>Focale ajustée</strong></em> : les <em><strong>Interviews</strong></em>, <em><strong>coups</strong></em> de <em><strong>cœur</strong></em>, <em><strong>reportages</strong></em> et <em><strong>focus</strong></em> de <em><strong>Go Out</strong></em>!
+  <?php } else { ?>
+    <strong><em>Nos articles</em></strong> sur <strong><em>l'art, les expos, la danse, le cinéma, la littérature</em></strong> et <strong><em>le théâtre</em></strong> à <strong><em>Genève</em></strong> et <strong><em>ailleurs</em></strong>
+  <?php } ?>
+</h1>
 <?php get_template_part('partials/categories-list'); ?>
 </div><!--  END OF CONTAINER -->
 
