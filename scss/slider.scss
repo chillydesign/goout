@@ -47,14 +47,15 @@
         left: 0;
         right: 0;
         width: 100%;
+        bottom: -10px!important;
 
         li {
             padding: 0;
             display: inline-block;
             button {
                 appearance:none;
-                height: 5px;
-                width: 5px;
+                height: 10px;
+                width: 10px;
                 border-radius: 50%;
                 margin:0 5px;
                 background: $medium_grey;
