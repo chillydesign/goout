@@ -51,8 +51,8 @@
 
                         <div class="<?php echo $classes[0]; ?>">
                             <div class="cityguidearticle_text cityguide_text city_match">
-
-                                <h2><?php the_title(); ?></h2>
+                                <?php $permalink = get_the_permalink(); ?>
+                                <h2><a href="<?php echo $permalink; ?>"><?php the_title(); ?></h2></a>
                                 <p><?php echo get_the_excerpt(); ?></p>
                                 <ul class="cityguide_metas">
                                     <?php if($address): ?><li><?php echo $address; ?></li><?php endif;?>
@@ -66,7 +66,7 @@
                         <div class="<?php echo $classes[1]; ?>">
                             <div class="image_slider city_match">
                                 <?php foreach ($gallery as $image) : ?>
-                                    <div  class="city_image city_match" style="background-image:url(<?php echo $image['sizes']['medium']; ?>)"></div>
+                                    <div  class="city_image city_match" style="background-image:url(<?php echo $image['sizes']['medium']; ?>)"><a href="<?php echo $permalink; ?>"></a></div>
                                 <?php endforeach; ?>
 
                             </div>
