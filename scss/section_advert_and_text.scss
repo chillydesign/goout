@@ -1,16 +1,10 @@
 
 a.singl_dvr_cont {
-    @extend .background_image;
-    height: 450px;
+
     display: block;
     border: 0;
-    text-indent: -9999px;
-    background-size: contain;
-    background-position: top;
-    background-color: white;
-    margin: 0 0 30px;
 
-    @media(min-width: 776px){height: 300px;}
-    @media(min-width: 998px){height: 400px;}
-    @media(min-width: 1200px){height: 450px;}
+    margin: 0 0 20px;
+
+
 }
