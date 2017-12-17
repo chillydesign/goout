@@ -6,7 +6,10 @@
 
         .latest_image {
             @extend .background_image;
-            height: 340px;
+            height: 450px;
+            @media(min-width: 776px){height: 300px;}
+            @media(min-width: 998px){height: 400px;}
+            @media(min-width: 1200px){height: 450px;}
             margin:0 0 20px;
             border: 0;
         }

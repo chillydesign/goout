@@ -204,7 +204,7 @@ require('jquery.viewport');
                 sortBy: 'most-recent',
                 limit: 6,
                 resolution: 'standard_resolution',
-                template: '<a href="{{link}}" style="background-image:url({{image}})"></a>',
+                template: '<a target="_blank" href="{{link}}" style="background-image:url({{image}})"></a>',
                 success: function(data) {
                 }
             });

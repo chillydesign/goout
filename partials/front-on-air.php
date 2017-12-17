@@ -1,5 +1,5 @@
 <?php
-$videos = new WP_Query(array('post_type' => 'video',   'posts_per_page' =>  4 ));
+$videos = new WP_Query(array('post_type' => 'video',   'posts_per_page' =>  4, 'orderby' =>'date', 'order' => 'DESC' ));
 $v = 0;
 $videos_array = array();
 

@@ -89,7 +89,7 @@ function webfactor_nav()
 }
 
 function wf_version(){
-    return '0.0.9';
+    return '0.1.0';
 }
 
 // Load HTML5 Blank scripts (header.php)
@@ -611,8 +611,7 @@ function convert_events_to_strings() {
             <a class="share_button share_button_facebook" href="https://www.facebook.com/sharer/sharer.php?u='.$link.'"></a>
             <a class="share_button share_button_twitter" href="http://www.twitter.com/share?url='.$link.'&via=GOOUTMAG&text='.$title.'&image-src='.$image.'"></a>
             <a class="share_button share_button_google" href="https://plus.google.com/share?url='.$link.'"></a>
-            <a class="share_button share_button_pinterest" href="http://pinterest.com/pin/create/button/?url='.$link.'&description='.$title.'&media='.$image.'"></a>
-            <a class="share_button share_button_instagram" href="#"></a>
+            <a class="share_button share_button_pinterest" href="http://pinterest.com/pin/create/button/?url='.$link.'&description='.$title.'&image_url='.$image.'"></a>
         </div>';
 
 
@@ -791,6 +790,32 @@ function generate_stars($amount, $max, $class) {
         }
     }
     return $str;
+}
+
+
+
+function social_meta_properties(){
+
+    $smp =  new stdClass();
+
+    if (is_single()) {
+
+        $smp->title = get_the_title();
+        $smp->description = get_the_excerpt();
+        $smp->image =  thumbnail_of_post_url(get_the_ID(), 'medium' );
+        $smp->url = get_the_permalink();
+
+    } else {
+        $smp->title = 'Go Out! Magazine';
+        $smp->description = get_bloginfo('description');
+        $smp->image =   get_template_directory_uri() . '/img/gooutfb.jpg';
+        $smp->url = get_home_url();
+    }
+
+
+    return $smp;
+
+
 }
 
 
