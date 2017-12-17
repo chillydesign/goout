@@ -633,7 +633,7 @@ function get_cityguidearticles_for_cityguide($cityguide_id){
 
     $posts = new WP_Query(array(
         'post_type'  => 'cityguidearticle',
-        'posts_per_page' => 3,
+        'posts_per_page' => -1,
         'post_status' => 'publish',
         'meta_query' => array(
             array(
