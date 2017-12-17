@@ -84,7 +84,7 @@ require('jquery.viewport');
 
 
 
-        var $first_articles_sliders = $('.first_articles_slider');
+        var $first_articles_sliders = $('.first_articles_slider, .latest_edition_slider');
         $first_articles_sliders.slick({
             dots: true,
             infinite: true,

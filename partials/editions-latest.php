@@ -19,9 +19,10 @@ $ed = 0;
             <div class=" editions_index">
                 <?php while($editions->have_posts()) : $editions->the_post();  ?>
 
+                        <?php $issue_link = get_field('issue_link'); ?>
                         <?php $image = ( has_post_thumbnail()) ? thumbnail_of_post_url(get_the_ID(),  'small') : ''; ?>
 
-                            <a class="edition"  href="<?php the_permalink(); ?>">
+                            <a class="edition"  target="_blank" href="<?php echo $issue_link; ?>">
                                 <img class="" src="<?php echo $image; ?>" alt="<?php the_title(); ?>">
                             </a>
 
