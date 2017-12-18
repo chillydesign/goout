@@ -178,7 +178,8 @@ nav#navigation_menu {
                 display: block;
                 padding:10px 10px 10px 50px;
                 text-transform: uppercase;
-                color: lighten($font_color,10);
+                // color: lighten($font_color,10);
+                color: $dark_grey;
                 border:0;
                 transition: all 0.3s;
 
@@ -267,3 +268,11 @@ nav#navigation_menu {
         animation: fadeIn $transition_time;
     }
 }
+
+#next_issue_number, #prev_issue_number, #latest_editions_cover .slick-next.slick-arrow, #latest_editions_cover .slick-prev.slick-arrow {
+  opacity: 0;
+  transition-delay:0.1s;
+  transition: 0.2s ease-in;
+}
+
+.putbacktheopacity {opacity: 1!important;}

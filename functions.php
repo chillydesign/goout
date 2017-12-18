@@ -619,10 +619,13 @@ function convert_events_to_strings() {
 
 function show_advert($post) {
     $image = thumbnail_of_post_url($post->ID,  'large' ) ;
+    $url = get_field('lien', $post->ID);
     if ($image) :
-        $str = '<div class="dvrt_container">';
+        $str = '<a href="' . $url .'" target="_blank">';
+        $str .= '<div class="dvrt_container">';
         $str .= '<div class="dvrt_image" style="background-image:url(\'' .  $image . '\')"></div>';
         $str .= '</div>';
+        $str .= '</a>';
         echo $str;
     endif;
 

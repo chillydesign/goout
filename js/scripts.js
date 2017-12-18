@@ -12,6 +12,9 @@ require('jquery.viewport');
 
         'use strict';
 
+        $('.issues_slider').on('mousemove', function(){
+          $('#next_issue_number, #prev_issue_number, #latest_editions_cover .slick-next.slick-arrow, #latest_editions_cover .slick-prev.slick-arrow ').addClass('putbacktheopacity');
+        });
 
         // do window.scroll events periodically to save resoutces
         var scrollTimer = null;
