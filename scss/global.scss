@@ -33,10 +33,12 @@ section {
 .animate_in_viewport {
 
 
-    overflow: hidden;
+    overflow: hidden!important;
     article {
         transition: all 1s ease-in-out;
-        transform: translateX(-110%);
+    //    transform: translateX(-110%); // animation to slide from the left
+        transform: translateY(30px);  // animation to slide from the bottom
+        opacity: 0;
 
 
     }
@@ -50,11 +52,12 @@ section {
 
     &.animating {
         article {
-                transform: translateX(0%);
-
+    //            transform: translateX(0%); // animation to slide from the left
+            transform: translateY(0px); // animation to slide from the bottom
+            opacity: 1;
         }
     }
-} 
+}
 
 
 iframe {
