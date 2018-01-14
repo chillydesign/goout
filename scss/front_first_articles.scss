@@ -23,6 +23,10 @@ $first_image_height: 460px;
             a {
                 color: $medium_grey;
             }
+
+            &.category a {
+              color: $primary_color;
+            }
         }
 
 
