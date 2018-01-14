@@ -1,14 +1,14 @@
 {
-  "name": "blanktheme",
-  "version": "0.0.2",
-  "description": "This is the blank theme used by webfactor.ch when starting new wordpress projects.",
+  "name": "Goout 2018",
+  "version": "0.2.0",
+  "description": "This is the Goout theme made by webfactor.ch .",
   "main": "index.php",
   "scripts": {
     "test": "say test"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chillydesign/blanktheme.git"
+    "url": "git+https://github.com/chillydesign/goout.git"
   },
   "keywords": [
     "wordpress",
@@ -19,9 +19,9 @@
   "author": "Charles Harvey",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/chillydesign/blanktheme/issues"
+    "url": "https://github.com/chillydesign/goout/issues"
   },
-  "homepage": "https://github.com/chillydesign/blanktheme#readme",
+  "homepage": "https://github.com/chillydesign/goout#readme",
   "dependencies": {
     "headroom.js": "^0.9.4",
     "instafeed.js": "^1.4.1",
