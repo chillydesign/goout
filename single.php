@@ -9,8 +9,9 @@
 
 
 
-
-        <?php $image = ( has_post_thumbnail()) ? thumbnail_of_post_url(get_the_ID(),  'large') : ''; ?>
+        <?php $has_post_thumbnail = has_post_thumbnail(); ?>
+        <?php $image = ( $has_post_thumbnail ) ? thumbnail_of_post_url(get_the_ID(),  'large') : ''; ?>
+        <?php $image_caption = ( $has_post_thumbnail ) ?  get_post(get_post_thumbnail_id())->post_excerpt   : false; ?>
         <div class="featured_image" style="background-image:url('<?php echo $image; ?>');">
             <div class="article_title_box">
                 <div class="article_title">
@@ -33,6 +34,9 @@
                 </div>
                 <div class="article_title_bg"></div>
             </div>
+            <?php if ($image_caption) : ?>
+                    <div class="single_featured_image_caption"><?php echo $image_caption; ?></div>
+            <?php endif; ?>
         </div><!-- END OF FEATURED IMAGE -->
 
         <div class="container">

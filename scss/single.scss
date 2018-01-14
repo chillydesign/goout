@@ -16,9 +16,21 @@ section  {
 
 .caption {
     text-align: center;
-    font-style: italic;
+    // font-style: italic;
     color: $medium_grey;
-    margin: -20px 0 10px; 
+    margin: -20px 0 10px;
+}
+
+
+.single_featured_image_caption {
+    background: transparentize($dark_grey,0.5);
+    color: white;
+    padding: 10px;
+    font-size: $small_font_size;
+    display: inline-block;
+    position: absolute;
+    bottom:0;
+    left:0;
 }
 
 
@@ -51,6 +63,7 @@ section  {
         }
 
     }
+
 
     .article_title_bg {
 

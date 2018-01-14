@@ -89,7 +89,8 @@ function create_custom_post_types() {
         'has_archive' => true,
         'supports' => array(
             'title',
-            'thumbnail'
+            'thumbnail',
+            'excerpt'
         ), // Go to Dashboard Custom HTML5 Blank post for supports
         'can_export' => true, // Allows export in Tools > Export
         'taxonomies' => array(

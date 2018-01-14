@@ -17,7 +17,12 @@
         <?php $website = get_field('website'); ?>
         <?php $gallery = get_field('gallery'); ?>
         <?php $tags =  get_the_terms( $post_id, 'coolspot_tag' ); ?>
-        <?php  if($tags) $tags_string =  array_map( function($tag) { return $tag->name;    }, $tags);  ?>
+        <?php  if($tags) {
+            $tags_string =  array_map( function($tag) {
+                $link = get_tag_link( $tag );
+                return '<a href="'. $link.'">'. $tag->name .'</a>';
+              }, $tags);
+        };   ?>
         <?php $cat =  get_the_terms( $post_id, 'coolspot_cat' ); ?>
         <?php $cat_strings =  array_map( function($cat) {
              return   '<span>' . $cat->name[0] .'</span>' .  $cat->name;
@@ -65,12 +70,7 @@
                     </ul>
                 </div>
 
-                <ul class="restaurant_meta">
-
-
-
-                </ul>
-
+        
             </div>
         </header>
 
@@ -86,6 +86,9 @@
                         <div class="gallery_images">
                             <?php foreach ($gallery as $image) : ?>
                                 <img src="<?php echo $image['sizes']['large']; ?>" alt="">
+                                <?php if (strlen($image['caption'])) : ?>
+                                    <p class="caption"><?php echo $image['caption']; ?></p>
+                                <?php endif; ?>
                             <?php endforeach; ?>
                         </div>
                     <?php endif;?>
@@ -107,7 +110,7 @@
 
                     <?php if (sizeof($other_coolspots)> 0) : ?>
                         <div class="other_coolspots">
-                        <h2>Restaurants <span>similaires</span></h2>
+                        <h2>Lieux <span>similaires</span></h2>
                         <?php foreach ($other_coolspots as $other_coolspot) : ?>
                             <?php $other_image = thumbnail_of_post_url( $other_coolspot->ID, 'small' ); ?>
                                 <div class="other_coolspot">

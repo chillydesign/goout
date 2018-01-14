@@ -85,7 +85,7 @@ ul.restaurant_meta {
             &.icon_location { background-image: url('../img/marker.png');   }
             &.icon_phone { background-image: url('../img/phone.png');   }
             &.icon_website { background-image: url('../img/link.png');   }
-            &.icon_tag { background-image: url('../img/food.png');   }
+            &.icon_tag { background-image: url('../img/star_circle.png');   }
         }
 
 
@@ -131,6 +131,9 @@ ul.restaurant_meta {
     }
 }
 
+.stars_container {
+    display: inline-block;
+}
 
 span.stars {
     background:  url('../img/star_grey.svg') no-repeat center center;

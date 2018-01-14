@@ -377,7 +377,7 @@ add_filter('the_category', 'remove_category_rel_from_category_list'); // Remove 
 add_filter('the_excerpt', 'shortcode_unautop'); // Remove auto <p> tags in Excerpt (Manual Excerpts only)
 add_filter('the_excerpt', 'do_shortcode'); // Allows Shortcodes to be executed in Excerpt (Manual Excerpts only)
 add_filter('excerpt_more', 'html5_blank_view_article'); // Add 'View Article' button instead of [...] for Excerpts
-add_filter('show_admin_bar', 'remove_admin_bar'); // Remove Admin bar
+// add_filter('show_admin_bar', 'remove_admin_bar'); // Remove Admin bar
 add_filter('style_loader_tag', 'html5_style_remove'); // Remove 'text/css' from enqueued stylesheet
 add_filter('post_thumbnail_html', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to thumbnails
 add_filter('image_send_to_editor', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to post images
@@ -783,7 +783,7 @@ function generate_map($location) {
 
 
 function generate_stars($amount, $max, $class) {
-    $str = '';
+    $str = '<div class="stars_container">';
     $whole_amount = floor($amount);
     $has_half = ($amount != $whole_amount );
     $need_to_do_half = true;
@@ -802,6 +802,7 @@ function generate_stars($amount, $max, $class) {
 
         }
     }
+    $str.= '</div>';
     return $str;
 }
 
@@ -810,12 +811,16 @@ function generate_stars($amount, $max, $class) {
 function social_meta_properties(){
 
     $smp =  new stdClass();
+    global $post;
 
     if (is_single()) {
 
+        $post_id = get_the_ID();
+        $excerpt  =  get_the_excerpt();
+        if ($excerpt == '') $excerpt =  wp_trim_words($post->post_content,20);
         $smp->title = get_the_title();
-        $smp->description = get_the_excerpt();
-        $smp->image =  thumbnail_of_post_url(get_the_ID(), 'medium' );
+        $smp->description = $excerpt;
+        $smp->image =  thumbnail_of_post_url( $post_id, 'medium' );
         $smp->url = get_the_permalink();
 
     } else {

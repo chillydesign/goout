@@ -40,7 +40,7 @@ $focus_archive_link = get_post_type_archive_link( 'post' )  . '?focus=focus';
 
                             <p class="category"><?php the_category(', '); ?></p>
                             <h2><a href="<?php echo $permalink; ?>" title="<?php the_title(); ?>"><?php echo get_the_title(); ?></a></h2>
-                            <p><?php echo get_the_excerpt(); ?><a class="read_more" href="' . $permalink . '"> lire plus...</a></p>
+                            <p><?php echo get_the_excerpt(); ?><a class="read_more" href="<?php echo $permalink; ?>"> lire plus...</a></p>
 
                             <?php get_template_part('partials/sharing-buttons'); ?>
 
