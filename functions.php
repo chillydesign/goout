@@ -667,39 +667,49 @@ function get_cityguide_and_escapades() {
 
 function getBrightness($url) {
 
-    if (   stripos( $url, '.jpg' )  > 0 ||    stripos( $url, '.jpeg' )  > 0  ) {
-        $gdHandle = imagecreatefromjpeg($url);
-    } else if (   stripos( $url, '.png' )  )  {
-        $gdHandle = imagecreatefromjpeg($url);
-    } else {
-        $gdHandle = false;
-    }
+
+    //replace url with its file location,
+    // this is so imagecreatefromjpeg works
+    $tdu = wp_upload_dir();
+    $file  = explode($tdu['baseurl'], $url );
+
+    if (sizeof($file) > 1) {
+        $url = $tdu['basedir'] . $file[1];
 
 
-    if ($gdHandle) {
-        $width = imagesx($gdHandle);
-        $height = imagesy($gdHandle);
-
-        $totalBrightness = 0;
-
-        for ($x = 0; $x < $width; $x++) {
-            for ($y = 0; $y < $height; $y++) {
-                $rgb = imagecolorat($gdHandle, $x, $y);
-
-                $red = ($rgb >> 16) & 0xFF;
-                $green = ($rgb >> 8) & 0xFF;
-                $blue = $rgb & 0xFF;
-
-                $totalBrightness += (max($red, $green, $blue) + min($red, $green, $blue)) / 2;
-            }
+        if (   stripos( $url, '.jpg' )  > 0 ||    stripos( $url, '.jpeg' )  > 0  ) {
+            $gdHandle = imagecreatefromjpeg($url);
+        } else if (   stripos( $url, '.png' )  )  {
+            $gdHandle = imagecreatefrompng($url);
+        } else {
+            $gdHandle = false;
         }
 
-        imagedestroy($gdHandle);
 
-        return ($totalBrightness / ($width * $height)) / 2.55;
+        if ($gdHandle) {
+            $width = imagesx($gdHandle);
+            $height = imagesy($gdHandle);
 
+            $totalBrightness = 0;
+
+            for ($x = 0; $x < $width; $x++) {
+                for ($y = 0; $y < $height; $y++) {
+                    $rgb = imagecolorat($gdHandle, $x, $y);
+
+                    $red = ($rgb >> 16) & 0xFF;
+                    $green = ($rgb >> 8) & 0xFF;
+                    $blue = $rgb & 0xFF;
+
+                    $totalBrightness += (max($red, $green, $blue) + min($red, $green, $blue)) / 2;
+                }
+            }
+
+            imagedestroy($gdHandle);
+
+            return ($totalBrightness / ($width * $height)) / 2.55;
+
+        }
     }
-
 
 
 }
