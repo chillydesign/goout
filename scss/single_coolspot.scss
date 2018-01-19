@@ -98,6 +98,8 @@ ul.restaurant_meta {
 .surlafourchette {
   position: relative;
   top: 4.9px;
+  display: inline-block;
+  margin-left: 16px;
 }
 
 .tag_reserve {
@@ -216,5 +218,56 @@ span.price_dots {
             }
 
         }
+    }
+}
+.toggle_booking {
+  font-size: 1.6em;
+  text-align: center;
+  background: black;
+  padding: 12px 15px;
+  color: white;
+  margin-bottom: 40px;
+  cursor: pointer;
+  font-family: $sans_font_stack;
+}
+.booking_popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    padding: 100px 10px 50px;
+    background: rgba(0,0,0,0.8);
+    z-index: 9999;
+    text-align: center;
+
+    .close_booking {
+        font-size: 50px;
+        color: white;
+        width: 600px;
+        max-width: 100%;
+        text-align: right;
+        margin: auto;
+        cursor: pointer;
+        span {
+          transform: rotate(45deg);
+          display: inline-block;
+          position: relative;
+          right: -30px;
+          @media (max-width: 768px) {
+            right: -8px;
+          }
+        }
+    }
+
+    iframe {
+      width: 600px;
+      max-width: 100%;
+      max-height: 479px;
+      height: calc(100vh - 100px);
+      background: white;
     }
 }

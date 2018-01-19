@@ -13,6 +13,7 @@
         <?php $chef = get_field('chef'); ?>
         <?php $phone = get_field('phone'); ?>
         <?php $la_fourchette_link = get_field('la_fourchette_link'); ?>
+        <?php $reservation_la_fourchette = get_field('reservation_la_fourchette'); ?>
         <?php $location = get_field('location'); ?>
         <?php $website = get_field('website'); ?>
         <?php $gallery = get_field('gallery'); ?>
@@ -70,7 +71,7 @@
                     </ul>
                 </div>
 
-        
+
             </div>
         </header>
 
@@ -99,6 +100,14 @@
 
                     <?php if($la_fourchette_link):  ?>
                         <a href="<?php echo esc_url($la_fourchette_link); ?>" target="_blank" class="button">  <span class="tag_reserve"></span> Réserver avec lafourchette.ch</a>
+                    <?php endif; ?>
+
+                    <?php if($reservation_la_fourchette): ?>
+                      <div class="toggle_booking">Réserver sur LaFourchette</div>
+                      <div class="booking_popup">
+                        <div class="close_booking"><span>+</span></div>
+                        <iframe src="<?php echo $reservation_la_fourchette;?>"></iframe>
+                      </div>
                     <?php endif; ?>
 
                     <?php get_template_part('partials/sharing-buttons'); ?>

@@ -225,6 +225,16 @@ require('jquery.viewport');
             feed.run();
         }
 
+        //Popup Réservations La Fourchette
+
+        $('div.toggle_booking').on('click', function(){
+          $('.booking_popup').show();
+        });
+
+        $('.close_booking span').on('click', function(){
+          $('.booking_popup').hide();
+        });
+
 
 
         // MAP
