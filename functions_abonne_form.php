@@ -66,7 +66,7 @@ function send_abonne_emails($data){
 
 
     $email_total = $emailheader  . $content . $emailfooter;
-    wp_mail( 'harvey.charles@gmail.com' , $subject, $email_total, $headers );
+    wp_mail( 'info@gooutmag.ch' , $subject, $email_total, $headers );
 
 
 
