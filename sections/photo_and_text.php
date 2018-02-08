@@ -12,7 +12,7 @@
 // };
 
 
-$classes = [ 'col-sm-8 col-sm-push-4', 'col-sm-3 col-sm-pull-8'  ];
+$classes = array('col-sm-8 col-sm-push-4', 'col-sm-3 col-sm-pull-8');
 
 
 ?>

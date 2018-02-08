@@ -43,7 +43,7 @@
                     <?php $address = get_field('address'); ?>
                     <?php $website = get_field('website'); ?>
                     <?php $gallery = get_field('gallery'); ?>
-                    <?php $classes = ( $aa % 2 == 0 ) ?  [ 'col-sm-6', 'col-sm-6'  ] : [ 'col-sm-6 col-sm-push-6', 'col-sm-6 col-sm-pull-6'  ]; ?>
+                    <?php $classes = ( $aa % 2 == 0 ) ?  array('col-sm-6', 'col-sm-6') : array('col-sm-6 col-sm-push-6', 'col-sm-6 col-sm-pull-6'); ?>
 
 
                     <div class="row"  data-mh="city-group">

@@ -24,7 +24,7 @@ $focus_archive_link = get_post_type_archive_link( 'post' )  . '?focus=focus';
 
         <h5><a href="<?php echo $focus_archive_link ; ?>">Focus</a></h5>
             <?php while($focus->have_posts()) : $focus->the_post();  ?>
-                <?php $col_class = ( $f == 1 ) ? ['col-sm-6 col-sm-push-6', 'col-sm-6 col-sm-pull-6' ] : ['col-sm-6', 'col-sm-6'] ?>
+                <?php $col_class = ( $f == 1 ) ? array('col-sm-6 col-sm-push-6', 'col-sm-6 col-sm-pull-6') : array('col-sm-6', 'col-sm-6') ?>
                 <div class="focus_article focus_article_<?php echo $f; ?>">
                     <div class="row">
 

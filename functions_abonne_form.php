@@ -11,7 +11,8 @@ add_action( 'admin_post_abonne_form',  'process_abonne_form' );
 function process_abonne_form() {
 
     $referer = $_SERVER['HTTP_REFERER'];
-    $referer =  explode('?',   $referer)[0];
+    $referer =  explode('?',   $referer);
+    $referer = $referer[0];
 
     // IF DATA HAS BEEN POSTED
     if ( isset($_POST['action'])  && $_POST['action'] == 'abonne_form'   ) {
