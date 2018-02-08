@@ -3,7 +3,7 @@
 $posts_array =  convert_posts_to_strings();
 $current_cat = get_category( get_query_var( 'cat' ) );
 $title = "<h1><strong><em>Nos articles</em></strong> sur <strong><em>l'art, les expos, la danse, le cinéma, la littérature</em></strong> et <strong><em>le théâtre</em></strong> à <strong><em>Genève</em></strong> et <strong><em>ailleurs</em></strong></h1>";
-$show_artist_of_month = false;
+$show_artist_of_month = true;
 
 $category_id = $current_cat->cat_ID;
 if ($current_cat->parent > 0) {

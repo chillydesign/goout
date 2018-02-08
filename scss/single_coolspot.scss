@@ -68,32 +68,32 @@ ul.restaurant_meta {
             font-size: 2em;
         }
 
-        div {
-            flex: 1 auto 0;
-            width: 35px;
-            height: 35px;
-            background: red;
-            display: inline-block;
-            text-indent: -9999px;
-            margin:0 8px 0 0;
-            background: no-repeat center center;
-            background-size: 31px;
-            &.icon_star_rating {}
-            &.icon_price_rating { background-image: url('../img/dollar.png');   }
-            &.icon_chef { background-image: url('../img/chef.png');   }
-            &.icon_opening { background-image: url('../img/clock.png');   }
-            &.icon_location { background-image: url('../img/marker.png');   }
-            &.icon_phone { background-image: url('../img/phone.png');   }
-            &.icon_website { background-image: url('../img/link.png');   }
-            &.icon_tag { background-image: url('../img/star_circle.png');   }
-        }
-
-
-
 
 
     }
 }
+
+div.fancy_icon {
+    flex: 1 auto 0;
+    width: 35px;
+    height: 35px;
+    background: red;
+    display: inline-block;
+    text-indent: -9999px;
+    margin:0 8px 0 0;
+    background: no-repeat center center;
+    background-size: 31px;
+    &.icon_star_rating {}
+    &.icon_price_rating { background-image: url('../img/dollar.png');   }
+    &.icon_chef { background-image: url('../img/chef.png');   }
+    &.icon_opening { background-image: url('../img/clock.png');   }
+    &.icon_location { background-image: url('../img/marker.png');   }
+    &.icon_phone { background-image: url('../img/phone.png');   }
+    &.icon_website { background-image: url('../img/link.png');   }
+    &.icon_tag { background-image: url('../img/star_circle.png');   }
+}
+
+
 
 .surlafourchette {
   position: relative;

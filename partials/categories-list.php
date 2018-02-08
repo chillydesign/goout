@@ -3,6 +3,7 @@ $categories_args =  array("hide_empty" => 1);
 $current_cat = get_category( get_query_var( 'cat' ) );
 $current_cat_id = 0;
 
+if (!isset($current_cat->errors)) {
 if ( $current_cat->parent > 0 ) {
     $categories_args['parent'] = $current_cat->parent;
     $parent = get_category( $current_cat->parent );
@@ -12,6 +13,7 @@ if ( $current_cat->parent > 0 ) {
     $categories_args['parent'] = $current_cat->cat_ID;
     $parent_link =  get_category_link( $current_cat );
     $current_cat_id = 0;
+}
 }
 
 

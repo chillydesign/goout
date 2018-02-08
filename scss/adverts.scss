@@ -9,9 +9,27 @@
         height: 400px;
         margin:0 0 20px;
         border: 0;
-        display: inline-block;
+            display: none;
         background-color: $light_grey;
         background-attachment: fixed;
     }
+
+    .dvrt_image_img {
+        width: 100%;
+        height: auto;
+
+    }
+
+      @media (min-width: 768px) {
+
+          .dvrt_image_img {
+                display: none;
+          }
+
+          .dvrt_image {
+              display: inline-block;
+      }
+
+      }
 
 }

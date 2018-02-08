@@ -13,7 +13,7 @@
         </div>
 
 
-        <p class="copyright">&copy; <?php echo date('Y'); ?>  Go Out! Magazine Culturel Genevois – arts, culture &amp; lifestyle à Genève et en Suisse. Website by <a href="//webfactor.ch" title="Webfactor">Webfactor</a>.</p>
+        <p class="copyright">&copy; <?php echo date('Y'); ?>  Go Out! Magazine Culturel Genevois – arts, culture &amp; lifestyle à Genève et en Suisse. Website by <a target="_blank" href="//webfactor.ch" title="Webfactor">Webfactor</a>.</p>
     </div>
 
 </footer>

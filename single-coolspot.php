@@ -51,22 +51,22 @@
 
                         <?php if($price_rating || $price_rating == '0'): ?>
                             <li>
-                                <div class="icon_price_rating">Price rating:</div>
+                                <div class="fancy_icon icon_price_rating">Price rating:</div>
                                 <p><?php echo generate_stars($price_rating, 5, 'price_dots'); ?></p>
                             </li>
                         <?php endif;?>
 
-                        <?php if($chef): ?><li><div class="icon_chef">Chef:</div> <p><?php echo $chef; ?></p></li><?php endif;?>
+                        <?php if($chef): ?><li><div class="fancy_icon icon_chef">Chef:</div> <p><?php echo $chef; ?></p></li><?php endif;?>
 
 
-                        <?php if($tags): ?><li><div class="icon_tag">Etiquettes:</div> <p><?php echo implode($tags_string, ' | ' ); ?></p></li><?php endif;?>
+                        <?php if($tags): ?><li><div class="fancy_icon icon_tag">Etiquettes:</div> <p><?php echo implode($tags_string, ' | ' ); ?></p></li><?php endif;?>
 
-                        <?php if($opening_times): ?><li><div class="icon_opening">Opening times:</div><p><?php echo $opening_times; ?></p></li><?php endif;?>
-                        <?php if($location): ?><li><div class="icon_location">Location:</div> <p><?php echo $location; ?></p></li><?php endif;?>
+                        <?php if($opening_times): ?><li><div class="fancy_icon icon_opening">Opening times:</div><p><?php echo $opening_times; ?></p></li><?php endif;?>
+                        <?php if($location): ?><li><div class="fancy_icon icon_location">Location:</div> <p><?php echo $location; ?></p></li><?php endif;?>
 
 
-                        <?php if($phone): ?><li><div class="icon_phone">Phone:</div> <p><?php echo $phone; ?></p></li><?php endif;?>
-                        <?php if($website): ?><li><div class="icon_website">Website:</div> <p><a target="_blank" href="<?php echo esc_url($website); ?>">Site web</a></p></li><?php endif;?>
+                        <?php if($phone): ?><li><div class="fancy_icon icon_phone">Phone:</div> <p><?php echo $phone; ?></p></li><?php endif;?>
+                        <?php if($website): ?><li><div class="fancy_icon icon_website">Website:</div> <p><a target="_blank" href="<?php echo esc_url($website); ?>">Site web</a></p></li><?php endif;?>
 
                         <?php if($reservation_la_fourchette): ?><li><p class="toggle_booking">Réserver sur LaFourchette</p></li><?php endif;?>
 

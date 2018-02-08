@@ -624,6 +624,7 @@ function show_advert($post) {
         $str = '<a href="' . $url .'" target="_blank">';
         $str .= '<div class="dvrt_container">';
         $str .= '<div class="dvrt_image" style="background-image:url(\'' .  $image . '\')"></div>';
+        $str .= '<img class="dvrt_image_img" src="' .  $image . '" />';
         $str .= '</div>';
         $str .= '</a>';
         echo $str;

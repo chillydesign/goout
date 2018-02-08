@@ -1,10 +1,26 @@
 .artist_of_month_box {
     border:1px solid $font_color;
 
+    a {
+        border: 0;
+        font-size: $font_size;
+        display: inline-block;
+    }
+    span {
+        position: relative;
+        top:10px;
+    }
     img  {
         width: 100%;
         height: auto;
         margin:0 0 -1px;
+    }
+    div.icon_website {
+        background-color: $dark_grey;
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
+        margin: 5px;
     }
 
     h2 {
