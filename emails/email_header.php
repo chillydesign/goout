@@ -115,7 +115,7 @@
                 <tr>
 					<td bgcolor="#ffffff" align="center">
 
-                        <a href="http://gooutmag.ch/" target="_blank"><img src="https://webfactor.ch/projets/goout/wp-content/themes/goout/img/go_out_header.png" width="100%" height=""  border="0" align="left" style="width: 100%; max-width:600px; margin-bottom: 5px;">
+                        <a href="http://gooutmag.ch/" target="_blank"><img src="http://gooutmag.ch/wp-content/themes/goout/img/go_out_header.png" width="100%" height=""  border="0" align="left" style="width: 100%; max-width:600px; margin-bottom: 5px;">
 						</a>
 					</td>
                 </tr>
