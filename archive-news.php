@@ -3,8 +3,8 @@
 <div class="container">
 
 
-    <h1 class="fancy_title">On en <strong><em>parle</em></strong>.</h1>
-    <?php get_template_part('partials/categories-news'); ?>
+    <h1 class="fancy_title"><em><strong>L'actualité</strong> en un <strong>tour de piste</strong></em>.</h1>
+    <?php //get_template_part('partials/categories-news'); ?>
     <?php get_template_part('partials/archive-news'); ?>
     <?php get_template_part('pagination'); ?>
 

@@ -188,12 +188,12 @@ require('jquery.viewport');
         // submenus in navigation
         $('.menu-item-has-children > a').each(function(){
             var $this = $(this);
-            $this.append('<div class="expander">Expand</div>');
+            $this.append('<div class="expander">Ouvrir</div>');
 
             $('.expander', $this).on('click', function(e){
                 var $expander = $(this);
                 e.preventDefault();
-                $this.parent().find('ul').toggle();
+                $this.parent().find('ul').slideToggle();
                 $expander.toggleClass('expanded');
             })
         })
@@ -227,7 +227,7 @@ require('jquery.viewport');
 
         //Popup Réservations La Fourchette
 
-        $('div.toggle_booking').on('click', function(){
+        $('.toggle_booking').on('click', function(){
           $('.booking_popup').show();
         });
 

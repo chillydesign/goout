@@ -10,7 +10,7 @@
 <div class="container">
 
 
-    <h1 class="fancy_title">Nos <strong><em>Partenaires</em></strong>.</h1>
+    <h1 class="fancy_title"><em><strong>Partenaires</strong> et <strong>Ego Boosters</strong></em>.</h1>
 
     <div class="partners_archive_container">
 
@@ -21,7 +21,7 @@
             <?php $link = get_field('link'); ?>
             <?php if ($image) : ?>
                 <div class="single_partner">
-                    <?php if ($link): ?> <a   href="<?php echo esc_url($link); ?>"> <?php endif; ?>
+                    <?php if ($link): ?> <a target="_blank"  href="<?php echo esc_url($link); ?>"> <?php endif; ?>
                             <div class="partner_image" style=background-image:url("<?php echo $image; ?>)"></div>
                         <?php if ($link): ?></a> <?php endif; ?>
                     </div>

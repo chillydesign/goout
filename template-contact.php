@@ -4,7 +4,7 @@
 <?php $tdu = get_template_directory_uri(); ?>
 
 <div class="container">
-    <h1><?php the_title(); ?></h1>
+    <h1><em><?php the_title(); ?></em></h1>
 </div>
 
 

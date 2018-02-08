@@ -68,6 +68,8 @@
                         <?php if($phone): ?><li><div class="icon_phone">Phone:</div> <p><?php echo $phone; ?></p></li><?php endif;?>
                         <?php if($website): ?><li><div class="icon_website">Website:</div> <p><a target="_blank" href="<?php echo esc_url($website); ?>">Site web</a></p></li><?php endif;?>
 
+                        <?php if($reservation_la_fourchette): ?><li><p class="toggle_booking">Réserver sur LaFourchette</p></li><?php endif;?>
+
                     </ul>
                 </div>
 
