@@ -1,6 +1,6 @@
 <?php $images =  get_sub_field('images'); ?>
 <?php $tdu = get_template_directory_uri(); ?>
-<?php $image_array = []; ?>
+<?php $image_array = array(); ?>
 <?php
 foreach( $images as $image ):
     $str = '<li  class="gallery_image">';

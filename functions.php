@@ -550,7 +550,7 @@ echo $str;
 
 
 function convert_posts_to_strings() {
-    $posts_array = []; $v = 0;
+    $posts_array = array(); $v = 0;
     if (have_posts()): while (have_posts()) : the_post();
     $image_size = ($v == 0 ) ? 'large' : 'medium';
     $permalink = get_the_permalink();
@@ -574,7 +574,7 @@ function convert_posts_to_strings() {
 
 
 function convert_events_to_strings() {
-    $posts_array = []; $v = 0;
+    $posts_array = array(); $v = 0;
     if (have_posts()): while (have_posts()) : the_post();
     $image_size = ($v % 2 == 1 ) ? 'medium' : 'large';
     $push_event_up = ($v % 8 == 4 || $v % 8 == 6 ) ? 'push_up' : '';
