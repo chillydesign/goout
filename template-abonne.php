@@ -7,7 +7,7 @@
 
     <div class="container">
 
-        <h1><?php the_title(); ?></h1>
+        <h1><em><?php the_title(); ?></em></h1>
     </div>
     <div id="dont_show_subscription_button">
         <?php get_template_part('partials/front', 'latest-edition' ); ?>

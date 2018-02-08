@@ -14,7 +14,7 @@
             <div class="col-xs-6">
                 <h2><?php echo get_the_title(); ?></h2>
                 <p><?php echo $subtitle; ?></p>
-                <?php if( $website) : ?>
+                <?php if( false) : ?>
                     <div class="fancy_icon icon_website">Website:</div> <span><a target="_blank" href="<?php echo esc_url($website); ?>">Site web</a></span>
                 <?php endif; ?>
 
