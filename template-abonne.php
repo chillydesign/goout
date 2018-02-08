@@ -16,6 +16,10 @@
 
     <div class="container">
 
+        <?php if (isset($_GET['success'])) : ?>
+            <p class="success">Merci!</p>
+        <?php endif; ?>
+
         <h3>JE M'ABONNE</h3>
 
         <form action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post">
