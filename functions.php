@@ -773,7 +773,7 @@ function generate_map($location) {
     $str = '';
 
     $str .= '<div style="height:200px" id="map_container"></div>';
-    $str .= "<script type='text/javascript' src='//maps.google.com/maps/api/js?key=AIzaSyC-BDJZU14ltCrYRPei33a4ZSQfJqRbxNY&#038;ver=4.8.1'></script>";
+    $str .= "<script type='text/javascript' src='//maps.google.com/maps/api/js?key=AIzaSyAxQfqRqtPLAW4BolFMCxTiv9y--R8CXdU&#038;ver=4.8.1'></script>";
     $str .=  '<script> var  place_location = "'. $location. '";</script>';
 
 

@@ -11,7 +11,7 @@
                     <h3><?php echo $titre; ?></h3>
                 <?php endif; ?>
                 <div style="height:400px" id="map_container"></div>
-                <script type='text/javascript' src='//maps.google.com/maps/api/js?key=AIzaSyC-BDJZU14ltCrYRPei33a4ZSQfJqRbxNY&#038;ver=4.8.1'></script>
+                <script type='text/javascript' src='//maps.google.com/maps/api/js?key=AIzaSyAxQfqRqtPLAW4BolFMCxTiv9y--R8CXdU&#038;ver=4.8.1'></script>
                 <script> var  place_location = "<?php echo  $location; ?>";</script>
             </div>
         </div>
