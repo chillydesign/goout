@@ -1,0 +1,45 @@
+.hotspot_articles {
+
+    .hotspot_article {
+
+        margin:0 0 10px;
+
+        .latest_image {
+            @extend .background_image;
+            height: 340px;
+            margin:0 0 20px;
+            border: 0;
+        }
+
+        .latest_text {
+
+            margin:0 0 10px;
+
+            h2 {
+                padding: 0 0 10px ;
+                font-family: $sans_font_stack;
+                font-weight: normal;
+                text-transform: uppercase;
+                font-size: 2.2em;
+
+                a {
+                    color: inherit;
+                    border:0;
+                }
+            }
+
+            p {
+                font-size: $small_font_size;
+
+                &.category {
+                    padding: 0;
+                }
+            }
+
+        }
+
+
+
+    }
+
+}

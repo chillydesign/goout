@@ -6,8 +6,9 @@ $tdu = get_template_directory_uri();
 $post_types = array('post', 'coolspot', 'coolthing', 'cityguidearticle', 'cityguide', 'escapade' );
 $user_args = array(
     'role__in'     => array('editor', 'administrator'),
-    'exclude' => array(1) //exclude webfactor employees
-
+    'exclude' => array(1), //exclude webfactor employees
+    'orderby' => 'meta_value',
+    'meta_key' => 'order'
 );
 $members = get_users( $user_args );
 $member_strings = array();
@@ -33,7 +34,7 @@ foreach ($members as $member) :
     $member_detail = '<div class="member_detail"  id="member_'.$member_id.'"   >';
     $member_detail .= '<div class="picture_info">';
     $member_detail .= '<div class="member_picture" style="background-image:url('. $picture.');" ></div>';
-    $member_detail .= '<div class="member_info"><h2>'. $display_name  .'</h2><div class="member_info_box">';
+    $member_detail .= '<div class="member_info"><h2>'. $display_name .'</h2><div class="member_info_box">';
     if ($job_title) $member_detail .= '<p class="job_title">' .  $job_title .'</p>';
     if ($biography) $member_detail .= '<div class="biography">' .  $biography .'</div>';
     if ($email) $member_detail .= '<p class="email">' .  $email .'</p>';

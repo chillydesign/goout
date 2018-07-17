@@ -1,0 +1,33 @@
+.hotspot_header {
+    background: $font_color;
+    color: white;
+    height: auto;
+    position: relative;
+    margin:0 0 40px;
+    padding:20px 0;
+
+    h1 {
+        padding:0 0 10px;
+        margin: 0;
+    }
+
+    .restaurant_meta {
+        margin:0;
+        padding-bottom:0;
+        text-align: left;
+        li {
+            list-style: none;
+            display:block;
+            padding:0 0 5px;
+        }
+    }
+}
+
+
+.gallery_images {
+    img {
+        width: 100%;
+        height: auto;
+        margin:0 0 30px;
+    }
+}
