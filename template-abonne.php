@@ -28,7 +28,7 @@
             <div class="row">
                 <div class="col-sm-6 col-md-3">
                     <label class=" abonne_label">
-                        <span>Le Sympathetique</span><span class="subscription_price">50 chf</span>
+                        <span>Le Sympathique</span><span class="subscription_price">50 chf</span>
                         <input type="radio" name="subscription_type" value="sympathetique" />
                     </label>
                 </div>
